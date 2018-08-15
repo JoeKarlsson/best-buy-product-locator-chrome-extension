@@ -1,5 +1,5 @@
 {
-  "name": "react-chrome-extension-boilerplate",
+  "name": "best-buy-product-locator-chrome-extention",
   "version": "0.9.0",
   "description": "Boilerplate for Chrome extension React.js project",
   "scripts": {
@@ -14,10 +14,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jhen0409/react-chrome-extension-boilerplate.git"
+    "url": "https://github.com/JoeKarlsson/best-buy-product-locator-chrome-extention"
   },
-  "keywords": ["chrome", "extension", "react", "redux", "hot reload", "webpack", "boilerplate"],
-  "author": "Jhen <developer@jhen.me>",
+  "keywords": [
+    "chrome",
+    "extension",
+    "react",
+    "redux",
+    "hot reload",
+    "webpack",
+    "boilerplate"
+  ],
+  "author": "Joe Karlsson <joekarlsson1@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.3.15",
