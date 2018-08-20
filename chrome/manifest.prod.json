@@ -1,10 +1,10 @@
 {
   "version": "0.0.0",
-  "name": "react-chrome-extension-example",
+  "name": "best-buy-product-locator",
   "manifest_version": 2,
   "description": "Example for react-chrome-extension-boilerplate",
   "browser_action": {
-    "default_title": "React Chrome Extension Example",
+    "default_title": "Best Buy Product Locator",
     "default_popup": "popup.html"
   },
   "icons": {
