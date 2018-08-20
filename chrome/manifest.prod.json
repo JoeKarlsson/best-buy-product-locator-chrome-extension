@@ -12,12 +12,10 @@
     "48": "img/icon-48.png",
     "128": "img/icon-128.png"
   },
-  "web_accessible_resources": [
-    "inject.html"
-  ],
+  "web_accessible_resources": ["inject.html"],
   "background": {
     "page": "background.html"
   },
-  "permissions": [ "contextMenus", "tabs", "storage", "https://github.com/*" ],
-  "content_security_policy": "default-src 'self'; script-src 'self'; style-src * 'unsafe-inline'; img-src 'self' data:;"
+  "permissions": ["webRequest", "contextMenus", "tabs", "storage", "https://api.bestbuy.com/*"],
+  "content_security_policy": "default-src 'self'; script-src 'self' https://api.bestbuy.com; style-src * 'unsafe-inline'; connect-src https://api.bestbuy.com; img-src 'self' data:;"
 }

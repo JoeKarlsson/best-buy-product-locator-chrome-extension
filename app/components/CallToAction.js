@@ -1,10 +1,31 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import styled from 'styled-components';
+import { COLORS } from '../constants/styles';
 
-const CallToAction = () => (
+const H1 = styled.h1`
+  color: ${COLORS.darkBlue};
+`;
+
+const CallToAction = props => (
   <div>
-    Want it faster? This same product is available at Best Buy. Order now and pick it up in 1 hour.
-    Price: $129.99
+    <H1>Want it faster? </H1>
+    <p>
+      This same product is available right now at the{' '}
+      <a target="_blank" href={props.nearestStoreMapUrl}>
+        Best Buy in {props.nearestStore}.
+      </a>{' '}
+      Order now and pick it up in 1 hour.
+    </p>
+    <p>
+      Price: <b>${props.price}</b>
+    </p>
   </div>
 );
+
+CallToAction.propTypes = {
+  nearestStore: PropTypes.string.isRequired,
+  nearestStoreMapUrl: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired
+};
 
 export default CallToAction;

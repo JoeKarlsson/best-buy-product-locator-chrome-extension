@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 
 const customPath = path.join(__dirname, './customPublicPath');
 
@@ -34,25 +33,15 @@ module.exports = {
     extensions: ['*', '.js']
   },
   module: {
-    rules: [{
-      test: /\.js$/,
-      loader: 'babel-loader',
-      exclude: /node_modules/,
-      query: {
-        presets: ['react-optimize']
-      }
-    }, {
-      test: /\.css$/,
-      use: [
-        'style-loader',
-        'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-        {
-          loader: 'postcss-loader',
-          options: {
-            plugins: () => [autoprefixer]
-          }
+    rules: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: ['react-optimize']
         }
-      ]
-    }]
+      }
+    ]
   }
 };

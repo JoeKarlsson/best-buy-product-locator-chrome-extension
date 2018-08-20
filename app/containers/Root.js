@@ -1,5 +1,22 @@
 import React, { Component } from 'react';
+import { injectGlobal } from 'styled-components';
 import App from './App';
+import { COLORS, STYLES } from '../constants/styles';
+
+injectGlobal`
+  body {
+    margin 0;
+    background: ${COLORS.white};
+    color: ${COLORS.black};
+    font-size: ${STYLES.fontSize};
+    font-family: ${STYLES.fontFamily};
+    padding: 5px 20px 20px 20px;
+  }
+
+  a, a:visited {
+    color: ${COLORS.blue};
+  }
+`;
 
 export default class Root extends Component {
   render() {
