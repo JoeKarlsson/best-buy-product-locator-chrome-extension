@@ -1,0 +1,12 @@
+# This file is used to ADD the “dist/” folder to the npm repository.
+# If this file didn’t exist, then the .ignore file is used to hide
+# files from the npm repo.
+
+# OS and Editor files
+.DS_Store
+.vscode/
+.idea/
+
+# This application
+node_modules/
+webpack.stats.json

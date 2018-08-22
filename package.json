@@ -8,14 +8,29 @@
     "compress": "node scripts/compress",
     "compress-keygen": "crx keygen",
     "clean": "rimraf build/ dev/ *.zip *.crx",
-    "lint": "eslint app chrome test scripts webpack/*.js"
+    "lint": "eslint app chrome test scripts webpack/*.js",
+		"healthcheck": "npm run lint",
+    "prepublish": "npm run build",
+    "precommit": "npm run lint",
+    "prepush": "npm prune && npm run healthcheck",
+    "postcommit": "git status && pretty-quick --staged",
+    "postmerge": "npm install && npm audit"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/JoeKarlsson/best-buy-product-locator-chrome-extention"
   },
-  "keywords": ["chrome", "extension", "react", "redux", "hot reload", "webpack", "boilerplate"],
-  "author": "Joe Karlsson <joekarlsson1@gmail.com>",
+  "keywords": [
+    "Best Buy",
+    "chrome",
+    "extension",
+    "react",
+    "redux",
+    "hot reload",
+    "webpack",
+    "boilerplate"
+  ],
+  "author": "Joe Karlsson <joekarlsson1@gmail.com> & Eric Moore",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.3.15",
@@ -40,9 +55,11 @@
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.5.0",
+    "husky": "^0.14.3",
     "jsdom": "^9.2.1",
     "minimist": "^1.2.0",
     "postcss-loader": "^1.2.1",
+    "pretty-quick": "^1.6.0",
     "react-addons-test-utils": "^15.0.2",
     "rimraf": "^2.4.3",
     "shelljs": "^0.7.0",
