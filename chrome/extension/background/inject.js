@@ -37,7 +37,11 @@ function loadScript(name, tabId, cb) {
 }
 
 // this would be our whitelist
-const arrowURLs = ['^https://www.amazon\\.com', '^https://target\\.com', '^https://walmart\\.com'];
+const arrowURLs = [
+  '^https://www.amazon\\.com',
+  '^https://www.target\\.com',
+  '^https://www.walmart\\.com'
+];
 
 chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
   if (changeInfo.status !== 'loading' || !tab.url.match(arrowURLs.join('|'))) return;

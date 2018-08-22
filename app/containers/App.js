@@ -41,7 +41,7 @@ export default class App extends Component {
       // TODO: figure out how to get zipcode or geolocation coordinates
       const storeData = await fetchStoreData(skuId, '55423', '15');
 
-      if (storeData.stores && Array.isArray(storeData.stores)) {
+      if (storeData.stores && storeData.stores.length > 0) {
         const nearestStore = storeData.stores[0];
 
         const { city, region, lat, lng } = nearestStore;

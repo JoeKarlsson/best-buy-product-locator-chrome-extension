@@ -12,6 +12,9 @@ switch (window.location.host) {
   case 'www.amazon.com':
     selector = 'prodDetails';
     break;
+  case 'www.target.com':
+    selector = 'tabContent-tab-Details';
+    break;
 }
 
 const modelRegex = new RegExp(/\b((?=[A-Za-z/ -]{0,19}\d)[A-Za-z0-9/ -]{4,20})\b/);
