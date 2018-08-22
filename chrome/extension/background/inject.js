@@ -13,24 +13,35 @@ function loadScript(name, tabId, cb) {
   } else {
     // dev: async fetch bundle
     fetch(`http://localhost:3000/js/${name}.bundle.js`)
-    .then(res => res.text())
-    .then((fetchRes) => {
-      // Load redux-devtools-extension inject bundle,
-      // because inject script and page is in a different context
-      const request = new XMLHttpRequest();
-      request.open('GET', 'chrome-extension://lmhkpmbekcpmknklioeibfkpmmfibljd/js/redux-devtools-extension.js');  // sync
-      request.send();
-      request.onload = () => {
-        if (request.readyState === XMLHttpRequest.DONE && request.status === 200) {
-          chrome.tabs.executeScript(tabId, { code: request.responseText, runAt: 'document_start' });
-        }
-      };
-      chrome.tabs.executeScript(tabId, { code: fetchRes, runAt: 'document_end' }, cb);
-    });
+      .then(res => res.text())
+      .then((fetchRes) => {
+        // Load redux-devtools-extension inject bundle,
+        // because inject script and page is in a different context
+        const request = new XMLHttpRequest();
+        request.open(
+          'GET',
+          'chrome-extension://lmhkpmbekcpmknklioeibfkpmmfibljd/js/redux-devtools-extension.js'
+        ); // sync
+        request.send();
+        request.onload = () => {
+          if (request.readyState === XMLHttpRequest.DONE && request.status === 200) {
+            chrome.tabs.executeScript(tabId, {
+              code: request.responseText,
+              runAt: 'document_start'
+            });
+          }
+        };
+        chrome.tabs.executeScript(tabId, { code: fetchRes, runAt: 'document_end' }, cb);
+      });
   }
 }
 
-const arrowURLs = ['^https://github\\.com'];
+// this would be our whitelist
+const arrowURLs = [
+  '^https://www.amazon\\.com',
+  '^https://www.target\\.com',
+  '^https://www.walmart\\.com'
+];
 
 chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
   if (changeInfo.status !== 'loading' || !tab.url.match(arrowURLs.join('|'))) return;
