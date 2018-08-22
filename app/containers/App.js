@@ -3,7 +3,7 @@ import CloseButton from '../components/CloseButton';
 import Logo from '../components/logo';
 import CallToAction from '../components/CallToAction';
 import AddToCartButton from '../components/AddToCartButton';
-import { getModelNumber, fetchProductData, fetchStoreData } from '../util/util';
+import { fetchProductData, fetchStoreData } from '../util/util';
 
 export default class App extends Component {
   constructor() {
