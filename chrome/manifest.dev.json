@@ -16,6 +16,6 @@
   "background": {
     "page": "background.html"
   },
-  "permissions": ["webRequest", "contextMenus", "management", "tabs", "storage", "https://api.bestbuy.com/*"],
+  "permissions": ["webRequest", "contextMenus", "management", "tabs", "storage", "https://*.com/*"],
   "content_security_policy": "default-src 'self'; script-src 'self' http://localhost:3000 https://localhost:3000 https://api.bestbuy.com 'unsafe-eval'; connect-src http://localhost:3000 https://localhost:3000 https://api.bestbuy.com; style-src * 'unsafe-inline' 'self' blob:; img-src 'self' data:;"
 }

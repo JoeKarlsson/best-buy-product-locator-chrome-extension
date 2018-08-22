@@ -3,6 +3,7 @@ import API_KEY from '../../api-key';
 const BASE_URL = 'https://api.bestbuy.com/v1/';
 
 export function getModelNumber() {
+  const modelRegex = new RegExp(/\b((?=[A-Za-z/ -]{0,19}\d)[A-Za-z0-9/ -]{4,20})\b/);
   // TODO: write DOM-scraper function to get product model number
 }
 

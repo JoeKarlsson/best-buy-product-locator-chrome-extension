@@ -17,11 +17,24 @@ export default class App extends Component {
     };
   }
   async componentDidMount() {
-    // const modelNumber = await getModelNumber();
-
-    const productData = await fetchProductData('UN32N5300AFXZA'); // swap with model number
-
-    if (productData.products && Array.isArray(productData.products)) {
+    // check local storage for existing model numbers on page
+    chrome.storage.local.get(['modelNumbers'], (result) => {
+      if (result.modelNumbers && result.modelNumbers.length > 0) {
+        result.modelNumbers.forEach(async (modelNumber) => {
+          this.getAvailability(modelNumber);
+        });
+      }
+    });
+    // set up listener for model number DOM scraper
+    chrome.runtime.onMessage.addListener((modelNumbers, sender) => {
+      modelNumbers.forEach(async (modelNumber) => {
+        this.getAvailability(modelNumber);
+      });
+    });
+  }
+  getAvailability = async (modelNumber) => {
+    const productData = await fetchProductData(modelNumber);
+    if (productData.products && productData.products.length > 0) {
       const product = productData.products[0];
       const skuId = product.sku;
 
@@ -40,7 +53,7 @@ export default class App extends Component {
         });
       }
     }
-  }
+  };
   render() {
     return (
       <div>
