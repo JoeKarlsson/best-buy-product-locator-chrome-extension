@@ -1,7 +1,7 @@
 {
-  "name": "best-buy-product-locator-chrome-extention",
+  "name": "best-buy-product-locator-chrome-extension",
   "version": "0.9.0",
-  "description": "Shows you if you can pick up your product at the nearest Best Buy store.",
+  "description": "Two day shipping to slow for you? This chrome extension will tell you if the Amazon product you are browsing is available at a Best Buy store for immediate in store pickup.",
   "scripts": {
     "dev": "node scripts/dev",
     "build": "node scripts/build",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JoeKarlsson/best-buy-product-locator-chrome-extention"
+    "url": "https://github.com/JoeKarlsson/best-buy-product-locator-chrome-extension"
   },
   "keywords": [
     "Best Buy",
@@ -30,7 +30,7 @@
     "webpack",
     "boilerplate"
   ],
-  "author": "Joe Karlsson <joekarlsson1@gmail.com> & Eric Moore",
+  "author": "Joe Karlsson <joekarlsson1@gmail.com> & Eric Moore <moore.ericc@gmail.com >",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.3.15",

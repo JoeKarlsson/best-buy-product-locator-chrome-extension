@@ -1,6 +1,6 @@
-# React Chrome Extension Boilerplate
+# Best Buy Product Locator Chrome Extension
 
-> Boilerplate for Chrome Extension React.js project.
+> Two day shipping to slow for you? This chrome extension will tell you if the Amazon product you are browsing is available at a Best Buy store for immediate in store pickup.
 
 [![stars][stars]][stars-url]
 [![pr][pr]][pr-url]
@@ -12,7 +12,7 @@
 
 ```bash
 # clone it
-$ git clone https://github.com/JoeKarlsson/best-buy-product-locator-chrome-extention.git
+$ git clone https://github.com/JoeKarlsson/best-buy-product-locator-chrome-extension.git
 
 # Install dependencies
 $ npm install
@@ -77,7 +77,7 @@ $ npm test -- --watch  # watch files
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/best-buy-product-locator-chrome-extention/blob/develop/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/best-buy-product-locator-chrome-extension/blob/develop/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ### TLDR;
 
@@ -118,9 +118,9 @@ Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/best-buy-product-lo
 
 [pr]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg
 [pr-url]: CONTRIBUTING.md
-[stars]: https://img.shields.io/github/stars/JoeKarlsson/best-buy-product-locator-chrome-extention.svg?style=flat-square
-[stars-url]: https://github.com/JoeKarlsson/best-buy-product-locator-chrome-extention/stargazers
-[license]: https://img.shields.io/github/license/JoeKarlsson/best-buy-product-locator-chrome-extention.svg
-[license-url]: https://github.com/JoeKarlsson/best-buy-product-locator-chrome-extention/blob/develop/LICENSE
-[twitter]: https://img.shields.io/twitter/url/https/github.com/JoeKarlsson/best-buy-product-locator-chrome-extention.svg?style=social&style=flat-square
-[twitter-url]: https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FJoeKarlsson%2Fbest-buy-product-locator-chrome-extention
+[stars]: https://img.shields.io/github/stars/JoeKarlsson/best-buy-product-locator-chrome-extension.svg?style=flat-square
+[stars-url]: https://github.com/JoeKarlsson/best-buy-product-locator-chrome-extension/stargazers
+[license]: https://img.shields.io/github/license/JoeKarlsson/best-buy-product-locator-chrome-extension.svg
+[license-url]: https://github.com/JoeKarlsson/best-buy-product-locator-chrome-extension/blob/develop/LICENSE
+[twitter]: https://img.shields.io/twitter/url/https/github.com/JoeKarlsson/best-buy-product-locator-chrome-extension.svg?style=social&style=flat-square
+[twitter-url]: https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FJoeKarlsson%2Fbest-buy-product-locator-chrome-extension
