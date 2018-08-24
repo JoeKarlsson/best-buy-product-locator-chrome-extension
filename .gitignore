@@ -21,12 +21,14 @@ selenium-debug.log
 errorShots
 build/
 dev/
+api-key.js
 
 *.zip
 *.crx
 *.pem
 update.xml
 
+<<<<<<< HEAD
 
 # OS generated files #
 ######################
@@ -51,3 +53,4 @@ Temporary Items
 .idea/
 node
 .vscode
+api-key.js
