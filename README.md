@@ -87,6 +87,10 @@ Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/best-buy-product-lo
 1. Push to the branch: `git push origin my-new-feature`
 1. Submit a pull request :D
 
+## Related Links
+
+- [Best Buy Developer Portal](https://developer.bestbuy.com/)
+
 ## LICENSE
 
 [MIT](LICENSE)
@@ -111,10 +115,6 @@ Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/best-buy-product-lo
     <tr>
   <tbody>
 </table>
-
-## Related Links
-
-- [Best Buy Developer Portal](https://developer.bestbuy.com/)
 
 [pr]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg
 [pr-url]: CONTRIBUTING.md
