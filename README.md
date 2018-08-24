@@ -77,7 +77,7 @@ $ npm test -- --watch  # watch files
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/best-buy-product-locator-chrome-extension/blob/develop/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/best-buy-product-locator-chrome-extension/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ### TLDR;
 
