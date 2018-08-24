@@ -28,8 +28,6 @@ api-key.js
 *.pem
 update.xml
 
-<<<<<<< HEAD
-
 # OS generated files #
 ######################
 .DS_Store
@@ -53,4 +51,3 @@ Temporary Items
 .idea/
 node
 .vscode
-api-key.js
