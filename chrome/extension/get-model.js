@@ -34,7 +34,9 @@ walkDOM(document.getElementById(selector), (node) => {
   }
 });
 
-chrome.extension.sendMessage(modelNumbers);
+const TEST_SKUS = ['UN55NU7100FXZA'];
+
+chrome.extension.sendMessage(TEST_SKUS);
 chrome.storage.local.set({
-  modelNumbers,
+  modelNumbers: TEST_SKUS,
 });

@@ -16,6 +16,14 @@
   "background": {
     "page": "background.html"
   },
-  "permissions": ["webRequest", "contextMenus", "tabs", "storage", "https://api.bestbuy.com/*"],
+  "permissions": [
+    "webRequest",
+    "contextMenus",
+    "tabs",
+    "storage",
+    "https://api.bestbuy.com/*",
+    "https://github.com/*",
+    "https://www.amazon.com/*"
+  ],
   "content_security_policy": "default-src 'self'; script-src 'self' https://api.bestbuy.com; style-src * 'unsafe-inline'; connect-src https://api.bestbuy.com; img-src 'self' data:;"
 }

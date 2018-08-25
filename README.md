@@ -2,6 +2,8 @@
 
 > Two day shipping to slow for you? This chrome extension will tell you if the Amazon product you are browsing is available at a Best Buy store for immediate in store pickup.
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/5c4528a150a453a05d2e/maintainability)](https://codeclimate.com/github/JoeKarlsson/best-buy-product-locator-chrome-extension/maintainability)
+[![deps][deps]][deps-url]
 [![stars][stars]][stars-url]
 [![pr][pr]][pr-url]
 [![license][license]][license-url]
@@ -116,6 +118,8 @@ Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/best-buy-product-lo
   <tbody>
 </table>
 
+[deps]: https://david-dm.org/JoeKarlsson/best-buy-product-locator-chrome-extension/status.svg
+[deps-url]: https://david-dm.org/JoeKarlsson/best-buy-product-locator-chrome-extension
 [pr]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg
 [pr-url]: CONTRIBUTING.md
 [stars]: https://img.shields.io/github/stars/JoeKarlsson/best-buy-product-locator-chrome-extension.svg?style=flat-square

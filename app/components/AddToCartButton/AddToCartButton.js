@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import styled from 'styled-components';
-import { COLORS, STYLES } from '../constants/styles';
+import { COLORS, STYLES } from '../../constants/styles';
 
 const Button = styled.button`
   background: ${COLORS.yellow};
