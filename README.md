@@ -4,6 +4,8 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/5c4528a150a453a05d2e/maintainability)](https://codeclimate.com/github/JoeKarlsson/best-buy-product-locator-chrome-extension/maintainability)
 [![BCH compliance](https://bettercodehub.com/edge/badge/JoeKarlsson/best-buy-product-locator-chrome-extension?branch=master)](https://bettercodehub.com/)
+[![Build Status](https://travis-ci.org/JoeKarlsson/best-buy-product-locator-chrome-extension.svg?branch=master)](https://travis-ci.org/JoeKarlsson/best-buy-product-locator-chrome-extension)
+[![Coverage Status](https://coveralls.io/repos/github/JoeKarlsson/best-buy-product-locator-chrome-extension/badge.svg?branch=master)](https://coveralls.io/github/JoeKarlsson/best-buy-product-locator-chrome-extension?branch=master)
 [![deps][deps]][deps-url]
 [![stars][stars]][stars-url]
 [![pr][pr]][pr-url]
