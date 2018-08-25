@@ -3,16 +3,18 @@ const webpack = require('webpack');
 
 const customPath = path.join(__dirname, './customPublicPath');
 
+require('dotenv').config();
+
 module.exports = {
   entry: {
     app: [customPath, path.join(__dirname, '../chrome/extension/app')],
     background: [customPath, path.join(__dirname, '../chrome/extension/background')],
-    inject: [customPath, path.join(__dirname, '../chrome/extension/inject')]
+    inject: [customPath, path.join(__dirname, '../chrome/extension/inject')],
   },
   output: {
     path: path.join(__dirname, '../build/js'),
     filename: '[name].bundle.js',
-    chunkFilename: '[id].chunk.js'
+    chunkFilename: '[id].chunk.js',
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
@@ -20,17 +22,18 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       comments: false,
       compressor: {
-        warnings: false
-      }
+        warnings: false,
+      },
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
-    })
+        NODE_ENV: JSON.stringify('production'),
+        BBY_API_KEY: JSON.stringify(process.env.BBY_API_KEY || 'NO_API_KEY_FOUND'),
+      },
+    }),
   ],
   resolve: {
-    extensions: ['*', '.js']
+    extensions: ['*', '.js'],
   },
   module: {
     rules: [
@@ -39,9 +42,9 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: ['react-optimize']
-        }
-      }
-    ]
-  }
+          presets: ['react-optimize'],
+        },
+      },
+    ],
+  },
 };
