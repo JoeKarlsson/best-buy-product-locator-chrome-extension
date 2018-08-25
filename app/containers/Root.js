@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { injectGlobal } from 'styled-components';
-import App from './App';
+import App from './App/App';
 import { COLORS, STYLES } from '../constants/styles';
 
 // eslint-disable-next-line no-unused-expressions

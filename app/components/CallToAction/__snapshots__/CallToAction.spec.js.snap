@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CallToAction rendering initial state is rendered 1`] = `
+<div>
+  <h1
+    className="sc-bdVaJa jxTgeY"
+  >
+    Want it faster? 
+  </h1>
+  <p>
+    This same product is available right now at the
+     
+    <a
+      href="www.testurl.com"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Best Buy in 
+      Richfeild, MN
+      .
+    </a>
+     
+    Order now and pick it up in 1 hour.
+  </p>
+  <p>
+    Price: 
+    <b>
+      $
+      1234
+    </b>
+  </p>
+</div>
+`;

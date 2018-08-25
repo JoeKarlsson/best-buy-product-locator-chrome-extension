@@ -6,27 +6,29 @@ const port = 3000;
 const customPath = path.join(__dirname, './customPublicPath');
 const hotScript = 'webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true';
 
+require('dotenv').config();
+
 const baseDevConfig = () => ({
   devtool: 'eval-cheap-module-source-map',
   entry: {
     app: [customPath, hotScript, path.join(__dirname, '../chrome/extension/app')],
-    background: [customPath, hotScript, path.join(__dirname, '../chrome/extension/background')]
+    background: [customPath, hotScript, path.join(__dirname, '../chrome/extension/background')],
   },
   devMiddleware: {
     publicPath: `http://${host}:${port}/js`,
     stats: {
-      colors: true
+      colors: true,
     },
     noInfo: true,
-    headers: { 'Access-Control-Allow-Origin': '*' }
+    headers: { 'Access-Control-Allow-Origin': '*' },
   },
   hotMiddleware: {
-    path: '/js/__webpack_hmr'
+    path: '/js/__webpack_hmr',
   },
   output: {
     path: path.join(__dirname, '../dev/js'),
     filename: '[name].bundle.js',
-    chunkFilename: '[id].chunk.js'
+    chunkFilename: '[id].chunk.js',
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -36,12 +38,13 @@ const baseDevConfig = () => ({
       __HOST__: `'${host}'`,
       __PORT__: port,
       'process.env': {
-        NODE_ENV: JSON.stringify('development')
-      }
-    })
+        NODE_ENV: JSON.stringify('development'),
+        BBY_API_KEY: JSON.stringify(process.env.BBY_API_KEY || 'NO_API_KEY_FOUND'),
+      },
+    }),
   ],
   resolve: {
-    extensions: ['*', '.js']
+    extensions: ['*', '.js'],
   },
   module: {
     rules: [
@@ -50,11 +53,11 @@ const baseDevConfig = () => ({
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
-          presets: ['react-hmre']
-        }
-      }
-    ]
-  }
+          presets: ['react-hmre'],
+        },
+      },
+    ],
+  },
 });
 
 const injectPageConfig = baseDevConfig();
@@ -64,7 +67,7 @@ delete injectPageConfig.module.rules[0].options;
 injectPageConfig.plugins.shift(); // remove HotModuleReplacementPlugin
 injectPageConfig.output = {
   path: path.join(__dirname, '../dev/js'),
-  filename: 'inject.bundle.js'
+  filename: 'inject.bundle.js',
 };
 const appConfig = baseDevConfig();
 

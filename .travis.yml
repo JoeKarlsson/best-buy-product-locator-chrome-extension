@@ -1,12 +1,14 @@
 sudo: required
 dist: trusty
 language: node_js
+notifications:
+  email: false
 node_js:
-  - "6"
-  - "7"
+  - "8"
+  - "9"
+  - "10"
 cache:
   directories:
-    - $HOME/.yarn-cache
     - node_modules
 env:
   - CXX=g++-4.8
@@ -21,8 +23,7 @@ addons:
 
 install:
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
-  - npm install -g yarn
-  - yarn install
+  - npm install
 
 before_script:
   - export DISPLAY=:99.0
@@ -30,7 +31,14 @@ before_script:
   - sleep 3
 
 script:
-  - yarn run lint
-  - yarn test
-  - yarn run build
-  - yarn run test-e2e
+  - npm run lint
+  - npm test
+  - npm run build
+
+jobs:
+  include:
+    - stage: Produce Coverage
+      node_js: node
+      script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+
+after_success: npm run coverage
