@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import CloseButton from '../components/CloseButton/CloseButton';
-import Logo from '../components/Logo/Logo';
-import CallToAction from '../components/CallToAction/CallToAction';
-import AddToCartButton from '../components/AddToCartButton/AddToCartButton';
-import { fetchProductData, fetchStoreData } from '../util/util';
+import CloseButton from '../../components/CloseButton/CloseButton';
+import Logo from '../../components/Logo/Logo';
+import CallToAction from '../../components/CallToAction/CallToAction';
+import AddToCartButton from '../../components/AddToCartButton/AddToCartButton';
+import { fetchProductData, fetchStoreData } from '../../util/util';
 
 export default class App extends Component {
   constructor() {
