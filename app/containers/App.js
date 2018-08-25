@@ -46,7 +46,9 @@ export default class App extends Component {
       if (storeData.stores && storeData.stores.length > 0) {
         const nearestStore = storeData.stores[0];
 
-        const { city, region, lat, lng } = nearestStore;
+        const {
+          city, region, lat, lng
+        } = nearestStore;
         this.setState({
           addToCartUrl: product.addToCartUrl,
           nearestStore: `${city}, ${region}`,
@@ -58,16 +60,19 @@ export default class App extends Component {
   };
 
   render() {
+    const {
+      nearestStore, nearestStoreMapUrl, price, addToCartUrl
+    } = this.state;
     return (
       <div>
         <CloseButton />
         <Logo />
         <CallToAction
-          nearestStore={this.state.nearestStore}
-          nearestStoreMapUrl={this.state.nearestStoreMapUrl}
-          price={this.state.price}
+          nearestStore={nearestStore}
+          nearestStoreMapUrl={nearestStoreMapUrl}
+          price={price}
         />
-        <AddToCartButton addToCartUrl={this.state.addToCartUrl} />
+        <AddToCartButton addToCartUrl={addToCartUrl} />
       </div>
     );
   }

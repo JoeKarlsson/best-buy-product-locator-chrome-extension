@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLORS, STYLES } from '../../constants/styles';
 
@@ -22,11 +23,14 @@ const Button = styled.button`
   }
 `;
 
-const AddToCartButton = props => (
-  <a target="_blank" rel="noopener noreferrer" href={props.addToCartUrl}>
-    <Button>Buy on BestBuy.com</Button>
-  </a>
-);
+const AddToCartButton = (props) => {
+  const { addToCartUrl } = props;
+  return (
+    <a target="_blank" rel="noopener noreferrer" href={addToCartUrl}>
+      <Button>Buy on BestBuy.com</Button>
+    </a>
+  );
+};
 
 AddToCartButton.propTypes = {
   addToCartUrl: PropTypes.string.isRequired,
