@@ -6,7 +6,7 @@
     "start": "node scripts/dev",
     "dev": "node scripts/dev",
     "test": "jest --coverage",
-    "coverage": "nyc report --temp-directory=coverage --reporter=text-lcov | coveralls",
+    "coverage": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "test:watch": "jest --watch",
     "test:updateSnapshot": "jest --updateSnapshot",
     "test:coverage": "jest --coverage",
@@ -25,6 +25,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/JoeKarlsson/best-buy-product-locator-chrome-extension"
+  },
+  "bugs": {
+    "url": "https://github.com/JoeKarlsson/best-buy-product-locator-chrome-extension/issues"
   },
   "keywords": [
     "Best Buy",
@@ -54,6 +57,7 @@
     "babel-preset-stage-0": "^6.3.13",
     "babel-runtime": "^6.3.19",
     "chromedriver": "^2.33.2",
+    "coveralls": "^3.0.2",
     "cross-env": "^5.2.0",
     "crx": "^3.0.3",
     "dotenv": "^6.0.0",

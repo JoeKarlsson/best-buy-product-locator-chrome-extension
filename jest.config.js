@@ -1,13 +1,13 @@
 module.exports = {
   setupFiles: ['./jestsetup.js'],
-  collectCoverageFrom: ['src/**/*.js'],
+  collectCoverageFrom: ['app/**/*.js'],
   coveragePathIgnorePatterns: [
     '<rootDir>/scripts',
     '<rootDir>/webpack',
     '<rootDir>/chrome',
     '<rootDir>/build',
     '<rootDir>/dev',
-    '<rootDir>/src/app/containers/Root',
+    '<rootDir>/app/containers/Root',
   ],
   coverageReporters: ['html', 'text-summary', 'text', 'json', 'lcov'],
   coverageDirectory: 'coverage',
