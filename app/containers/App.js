@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import CloseButton from '../components/CloseButton';
-import Logo from '../components/Logo';
-import CallToAction from '../components/CallToAction';
-import AddToCartButton from '../components/AddToCartButton';
+import CloseButton from '../components/CloseButton/CloseButton';
+import Logo from '../components/Logo/Logo';
+import CallToAction from '../components/CallToAction/CallToAction';
+import AddToCartButton from '../components/AddToCartButton/AddToCartButton';
 import { fetchProductData, fetchStoreData } from '../util/util';
 
 export default class App extends Component {
@@ -16,6 +16,7 @@ export default class App extends Component {
       price: 0,
     };
   }
+
   async componentDidMount() {
     // check local storage for existing model numbers on page
     chrome.storage.local.get(['modelNumbers'], (result) => {
@@ -32,6 +33,7 @@ export default class App extends Component {
       });
     });
   }
+
   getAvailability = async (modelNumber) => {
     const productData = await fetchProductData(modelNumber);
     if (productData.products && productData.products.length > 0) {
@@ -54,6 +56,7 @@ export default class App extends Component {
       }
     }
   };
+
   render() {
     return (
       <div>
