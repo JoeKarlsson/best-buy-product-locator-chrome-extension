@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLORS } from '../../constants/styles';
 
@@ -27,5 +28,7 @@ CallToAction.propTypes = {
   nearestStoreMapUrl: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
 };
+
+CallToAction.defaultProps = {};
 
 export default CallToAction;
