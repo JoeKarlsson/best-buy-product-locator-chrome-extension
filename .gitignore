@@ -22,6 +22,7 @@ errorShots
 build/
 dev/
 api-key.js
+.env
 
 *.zip
 *.crx
