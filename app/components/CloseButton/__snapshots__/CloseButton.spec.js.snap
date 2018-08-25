@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CloseButton rendering initial state is rendered 1`] = `
+<div
+  className="sc-bdVaJa jZTfEh"
+  onClick={[Function]}
+>
+  <div
+    className="sc-bwzfXH ljmoGr"
+  >
+    ×
+  </div>
+</div>
+`;
