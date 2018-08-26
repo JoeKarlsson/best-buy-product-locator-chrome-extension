@@ -1,28 +1,68 @@
 import React from 'react';
-import { shallow, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 import App from './App';
 
-configure({ adapter: new Adapter() });
-
 describe('App', () => {
-  let wrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(<App />);
-  });
-
   describe('rendering', () => {
     describe('initial state', () => {
-      it('is rendered', () => {
-        const component = renderer.create(<App />);
+      it('is rendered heathy state', () => {
+        const nearestStore = 'Richfeild';
+        const nearestStoreMapUrl = 'www.testurl.com';
+        const price = 1234;
+        const addToCartUrl = 'www.testurl.com';
+        const isLoading = false;
+
+        const component = renderer.create(
+          <App
+            nearestStore={nearestStore}
+            nearestStoreMapUrl={nearestStoreMapUrl}
+            price={price}
+            addToCartUrl={addToCartUrl}
+            isLoading={isLoading}
+          />,
+        );
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot();
       });
 
-      it('is rendered correctly', () => {
-        expect(wrapper).toHaveLength(1);
+      it('is rendered loading state', () => {
+        const nearestStore = 'Richfeild';
+        const nearestStoreMapUrl = 'www.testurl.com';
+        const price = 1234;
+        const addToCartUrl = 'www.testurl.com';
+        const isLoading = true;
+
+        const component = renderer.create(
+          <App
+            nearestStore={nearestStore}
+            nearestStoreMapUrl={nearestStoreMapUrl}
+            price={price}
+            addToCartUrl={addToCartUrl}
+            isLoading={isLoading}
+          />,
+        );
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+
+      it('is rendered error state', () => {
+        const nearestStore = '';
+        const nearestStoreMapUrl = '';
+        const price = 0;
+        const addToCartUrl = '';
+        const isLoading = false;
+
+        const component = renderer.create(
+          <App
+            nearestStore={nearestStore}
+            nearestStoreMapUrl={nearestStoreMapUrl}
+            price={price}
+            addToCartUrl={addToCartUrl}
+            isLoading={isLoading}
+          />,
+        );
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
       });
     });
   });

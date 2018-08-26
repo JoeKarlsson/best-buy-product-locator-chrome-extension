@@ -1,27 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App rendering initial state is rendered error state 1`] = `
-<div
-  className="sc-bdVaJa khUSez"
->
-  Error
-</div>
-`;
-
-exports[`App rendering initial state is rendered heathy state 1`] = `
+exports[`Body rendering initial state is rendered 1`] = `
 <div>
   <div
-    className="sc-htpNat dxdePn"
+    className="sc-bdVaJa jZTfEh"
     onClick={[Function]}
   >
     <div
-      className="sc-bxivhb iTcpiP"
+      className="sc-bwzfXH ljmoGr"
     >
       ×
     </div>
   </div>
   <div
-    className="sc-ifAKCX fVKAHz"
+    className="sc-htpNat dEQUjC"
   >
     <svg
       height="90px"
@@ -111,7 +103,7 @@ exports[`App rendering initial state is rendered heathy state 1`] = `
   </div>
   <div>
     <h1
-      className="sc-EHOje hgbWeb"
+      className="sc-bxivhb xcQwg"
     >
       Want it faster? 
     </h1>
@@ -144,18 +136,10 @@ exports[`App rendering initial state is rendered heathy state 1`] = `
     target="_blank"
   >
     <button
-      className="sc-bZQynM juMaaP"
+      className="sc-ifAKCX liipKQ"
     >
       Buy on BestBuy.com
     </button>
   </a>
-</div>
-`;
-
-exports[`App rendering initial state is rendered loading state 1`] = `
-<div
-  className="sc-bwzfXH gJIwTT"
->
-  Loading
 </div>
 `;

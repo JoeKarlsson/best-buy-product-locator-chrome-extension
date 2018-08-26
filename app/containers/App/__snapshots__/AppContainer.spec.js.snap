@@ -1,13 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App rendering initial state is rendered error state 1`] = `
-<div
-  className="sc-bdVaJa khUSez"
->
-  Error
-</div>
-`;
-
 exports[`App rendering initial state is rendered heathy state 1`] = `
 <div>
   <div
@@ -149,13 +141,5 @@ exports[`App rendering initial state is rendered heathy state 1`] = `
       Buy on BestBuy.com
     </button>
   </a>
-</div>
-`;
-
-exports[`App rendering initial state is rendered loading state 1`] = `
-<div
-  className="sc-bwzfXH gJIwTT"
->
-  Loading
 </div>
 `;
