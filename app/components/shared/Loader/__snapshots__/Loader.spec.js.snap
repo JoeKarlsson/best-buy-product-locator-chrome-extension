@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader rendering initial state is rendered 1`] = `
+<div
+  className="sc-bdVaJa khUSez"
+>
+  Loading
+</div>
+`;

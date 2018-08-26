@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { injectGlobal } from 'styled-components';
-import App from './App/App';
+import AppContainer from './App/AppContainer';
 import { COLORS, STYLES } from '../constants/styles';
 
 // eslint-disable-next-line no-unused-expressions
@@ -21,6 +21,6 @@ injectGlobal`
 
 export default class Root extends Component {
   render() {
-    return <App />;
+    return <AppContainer />;
   }
 }
