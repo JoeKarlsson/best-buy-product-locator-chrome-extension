@@ -4,6 +4,7 @@ const isNotHappyStatus = status => status >= 400;
 
 const handleError = (err) => {
   const errMsg = err.toString();
+  // eslint-disable-next-line no-console
   console.error(errMsg);
   return {
     errMsg,
