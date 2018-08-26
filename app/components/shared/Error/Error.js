@@ -5,6 +5,10 @@ const ImageContainer = styled.div`
   text-align: center;
 `;
 
-const Error = () => <ImageContainer>Error</ImageContainer>;
+const Error = () => (
+  <ImageContainer>
+    <p>Im sorry! Please try again.</p>
+  </ImageContainer>
+);
 
 export default Error;

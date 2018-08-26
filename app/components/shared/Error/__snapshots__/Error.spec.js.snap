@@ -4,6 +4,8 @@ exports[`Error rendering initial state is rendered 1`] = `
 <div
   className="sc-bdVaJa khUSez"
 >
-  Error
+  <p>
+    Im sorry! Please try again.
+  </p>
 </div>
 `;

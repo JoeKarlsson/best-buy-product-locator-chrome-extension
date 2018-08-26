@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import App from './App';
+import ErrorBoundary from '../../components/shared/ErrorBoundary/ErrorBoundary';
 import {
   constructProductURL,
   constructStoreURL,
@@ -24,7 +25,6 @@ class AppContainer extends Component {
       nearestStore: '',
       nearestStoreMapUrl: '',
       price: 0,
-      isError: false,
       isLoading: true,
     };
   }
@@ -75,7 +75,6 @@ class AppContainer extends Component {
       }
     } else {
       this.setState({
-        isError: true,
         isLoading: false,
       });
     }
@@ -83,23 +82,19 @@ class AppContainer extends Component {
 
   render() {
     const {
-      nearestStore,
-      nearestStoreMapUrl,
-      price,
-      addToCartUrl,
-      isLoading,
-      isError,
+      nearestStore, nearestStoreMapUrl, price, addToCartUrl, isLoading
     } = this.state;
 
     return (
-      <App
-        nearestStore={nearestStore}
-        nearestStoreMapUrl={nearestStoreMapUrl}
-        price={price}
-        addToCartUrl={addToCartUrl}
-        isLoading={isLoading}
-        isError={isError}
-      />
+      <ErrorBoundary>
+        <App
+          nearestStore={nearestStore}
+          nearestStoreMapUrl={nearestStoreMapUrl}
+          price={price}
+          addToCartUrl={addToCartUrl}
+          isLoading={isLoading}
+        />
+      </ErrorBoundary>
     );
   }
 }
