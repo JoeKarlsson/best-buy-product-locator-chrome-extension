@@ -12,6 +12,3 @@ Before you submit a pull request, please make sure you have to following:
 - [ ] A description of the problem you're trying to solve
 - [ ] An overview of the suggested solution
 - [ ] If the feature changes current behavior, reasons why your solution is better.
-
-
-- [ ] Webapp CI runs clean against this branch 
