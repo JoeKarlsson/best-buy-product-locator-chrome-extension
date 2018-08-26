@@ -84,7 +84,6 @@ class AppContainer extends Component {
     const {
       nearestStore, nearestStoreMapUrl, price, addToCartUrl, isLoading
     } = this.state;
-    console.log(this.state, 'state');
 
     return (
       <ErrorBoundary>
