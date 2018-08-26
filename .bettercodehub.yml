@@ -5,7 +5,7 @@ exclude:
 - node_modules
 - .*/__mocks__/.*
 - /__mocks__/.*
-- /dev/.*
-- /build/.*
-- /webpack/.*
-- /coverage/.*
+- dev/.*
+- build/.*
+- webpack/.*
+- coverage/.*

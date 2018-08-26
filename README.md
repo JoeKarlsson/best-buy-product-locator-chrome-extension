@@ -25,6 +25,8 @@ $ npm install
 
 You will also need a Best Buy Developer API Key in order to get this project up and running locally. Please see the developer portal for details on how to get an API Key.
 
+Once you get the API KEY, be sure to update the .env file. See the sample file for an example of how to do this.
+
 https://developer.bestbuy.com/
 
 ## Development
