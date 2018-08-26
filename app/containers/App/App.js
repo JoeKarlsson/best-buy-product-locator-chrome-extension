@@ -36,13 +36,19 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  nearestStore: PropTypes.string.isRequired,
-  nearestStoreMapUrl: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  addToCartUrl: PropTypes.string.isRequired,
-  isLoading: PropTypes.bool.isRequired,
+  nearestStore: PropTypes.string,
+  nearestStoreMapUrl: PropTypes.string,
+  price: PropTypes.number,
+  addToCartUrl: PropTypes.string,
+  isLoading: PropTypes.bool,
 };
 
-App.defaultProps = {};
+App.defaultProps = {
+  addToCartUrl: '',
+  nearestStore: '',
+  nearestStoreMapUrl: '',
+  price: 0,
+  isLoading: true,
+};
 
 export default App;

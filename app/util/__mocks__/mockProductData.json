@@ -1,0 +1,22 @@
+{
+  "from": 1,
+  "to": 1,
+  "currentPage": 1,
+  "total": 1,
+  "totalPages": 1,
+  "queryTime": "0.175",
+  "totalTime": "0.182",
+  "partial": false,
+  "canonicalUrl": "/v1/products(modelNumber=\"UN55NU7100FXZA\")?show=inStoreAvailability,name,sku,regularPrice,salePrice,addToCartUrl,condition&sort=inStoreAvailability&format=json&apiKey=ew0faCm5P5CuVBVGbtsI6byM",
+  "products": [
+    {
+      "inStoreAvailability": true,
+      "name": "Samsung - 55\" Class - LED - NU7100 Series - 2160p - Smart - 4K UHD TV with HDR",
+      "sku": 6200125,
+      "regularPrice": 649.99,
+      "salePrice": 599.99,
+      "addToCartUrl": "https://api.bestbuy.com/click/-/6200125/cart",
+      "condition": "New"
+    }
+  ]
+}
