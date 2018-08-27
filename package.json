@@ -15,7 +15,7 @@
     "compress-keygen": "crx keygen",
     "clean": "rimraf build/ dev/ *.zip *.crx",
     "lint": "eslint app chrome scripts webpack/*.js",
-    "healthcheck": "npm run lint && npm run test:coverage",
+    "healthcheck": "npm run lint && npm run test",
     "prepublish": "npm run build",
     "precommit": "npm run lint",
     "prepush": "npm prune && npm run healthcheck",
