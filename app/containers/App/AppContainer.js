@@ -38,6 +38,7 @@ class AppContainer extends Component {
         });
       }
     });
+
     // set up listener for model number DOM scraper
     chrome.runtime.onMessage.addListener((modelNumbers) => {
       modelNumbers.forEach(async (modelNumber) => {
