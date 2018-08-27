@@ -22,4 +22,5 @@ promisifyAll(chrome, ['tabs', 'windows', 'browserAction', 'contextMenus']);
 promisifyAll(chrome.storage, ['local']);
 
 require('./background/inject');
-require('./background/badge');
+require('./background/inject');
+// require('./background/badge');

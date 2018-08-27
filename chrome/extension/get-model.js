@@ -1,42 +1,13 @@
-const walkDOM = (node, callback) => {
-  callback(node);
-  // eslint-disable-next-line no-param-reassign
-  node = node.firstChild;
-  while (node) {
-    walkDOM(node, callback);
-    // eslint-disable-next-line no-param-reassign
-    node = node.nextSibling;
-  }
-};
+import getAmazonModelNumbers from './util/get-amazon-model';
+import getTargetModelNumbers from './util/get-target-model';
 
-let selector;
 switch (window.location.host) {
   case 'www.amazon.com':
-    selector = 'prodDetails';
+    getAmazonModelNumbers();
     break;
   case 'www.target.com':
-    selector = 'tabContent-tab-Details';
+    getTargetModelNumbers();
     break;
   default:
     break;
 }
-
-const modelRegex = new RegExp(/\b((?=[A-Za-z/ -]{0,19}\d)[A-Za-z0-9/ -]{4,20})\b/);
-const modelNumbers = [];
-
-walkDOM(document.getElementById(selector), (node) => {
-  if (node.nodeType === 3) {
-    const text = node.data.trim();
-    const modelNumber = text.match(modelRegex);
-    if (modelNumber !== null) {
-      modelNumbers.push(modelNumber[0]);
-    }
-  }
-});
-
-const TEST_SKUS = ['UN55NU7100FXZA'];
-
-chrome.extension.sendMessage(TEST_SKUS);
-chrome.storage.local.set({
-  modelNumbers: TEST_SKUS,
-});
