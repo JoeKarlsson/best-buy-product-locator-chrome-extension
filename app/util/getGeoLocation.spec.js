@@ -11,10 +11,8 @@ describe('getGeoLocation', () => {
 
     global.navigator = {
       geolocation: {
-        getCurrentPosition() {
-          return new Promise((ok) => {
-            ok(position);
-          });
+        getCurrentPosition(ok) {
+          return ok(position);
         },
       },
     };
@@ -26,20 +24,36 @@ describe('getGeoLocation', () => {
   });
 
   it('should handle errors', async () => {
+    const errMsg = 'TEST ERROR';
+
+    global.navigator = {
+      geolocation: {
+        getCurrentPosition(ok, err) {
+          return err(errMsg);
+        },
+      },
+    };
+
+    getGeoLocation().catch((err) => {
+      expect(err).toBe(errMsg);
+    });
+  });
+
+  it('should handle incorrect formattted position data', async () => {
     const position = {
       foo: 'bar',
     };
 
     global.navigator = {
       geolocation: {
-        getCurrentPosition() {
-          return new Promise((ok) => {
-            ok(position);
-          });
+        getCurrentPosition(ok) {
+          return ok(position);
         },
       },
     };
 
-    getGeoLocation().catch(() => {});
+    getGeoLocation().catch((err) => {
+      expect(err).toMatchObject(position);
+    });
   });
 });

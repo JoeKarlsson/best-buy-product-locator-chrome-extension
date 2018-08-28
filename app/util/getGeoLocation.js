@@ -11,9 +11,10 @@ const getGeoLocation = () => {
         if (position.coords) {
           ok(position);
         }
+        err(position);
       },
       (errMsg) => {
-        err(errMsg.toString);
+        err(errMsg);
       },
       options,
     );
