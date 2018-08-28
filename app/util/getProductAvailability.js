@@ -21,7 +21,6 @@ const getProductAvailability = async (modelNumber) => {
 
       const postion = await getGeoLocation();
       const { latitude, longitude } = postion.coords;
-      console.log('postion.coords', postion.coords);
 
       const distance = 15;
       const storeURL = constructStoreURLNoProducts(latitude, longitude, distance);
