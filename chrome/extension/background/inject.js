@@ -1,3 +1,5 @@
+console.log('background injected');
+
 function isInjected(tabId) {
   return chrome.tabs.executeScriptAsync(tabId, {
     code: `var injected = window.reactExampleInjected;

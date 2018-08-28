@@ -13,7 +13,7 @@ const getGeoLocation = () => {
         }
       },
       (errMsg) => {
-        err(errMsg);
+        err(errMsg.toString);
       },
       options,
     );
