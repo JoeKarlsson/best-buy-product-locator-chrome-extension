@@ -18,7 +18,7 @@
     "healthcheck": "npm run lint && npm run test",
     "prepublish": "npm run build",
     "precommit": "npm run lint",
-    "prepush": "npm prune && npm run healthcheck",
+    "prepush": "npm run healthcheck",
     "postcommit": "git status && pretty-quick --staged",
     "postmerge": "npm install && npm audit"
   },

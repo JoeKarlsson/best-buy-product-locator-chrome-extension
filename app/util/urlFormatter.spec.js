@@ -1,6 +1,7 @@
 import {
   constructProductURL,
   constructStoreURL,
+  constructUpcURL,
   constructNearestStoreMapUrl,
 } from './urlFormatter';
 
@@ -21,7 +22,7 @@ describe('urlFormatter', () => {
       const skuId = '55126';
       const result = constructStoreURL(skuId, zipCode, miles);
 
-      const expectedResult = `https://api.bestbuy.com/v1/stores((area(${zipCode},${miles})))+products(sku%20in%20(${skuId}))?apiKey=undefined&show=products.sku,products.name,products.shortDescription,products.salePrice,products.regularPrice,products.addToCartURL,products.url,products.image,products.customerReviewCount,products.customerReviewAverage,address,address2,city,country,detailedHours,lat,location,lng,name,longName,phone,fullPostalCode,region,storeId&pageSize=5&format=json`;
+      const expectedResult = 'https://api.bestbuy.com/v1/stores((area(55126,5)))?apiKey=undefined&format=json';
       expect(result).toBe(expectedResult);
     });
   });
@@ -36,6 +37,17 @@ describe('urlFormatter', () => {
       const result = constructNearestStoreMapUrl(city, region, lat, lng);
 
       const expectedResult = `https://www.google.com/maps/search/Best+Buy+${city}+${region}/@${lat},${lng}`;
+      expect(result).toBe(expectedResult);
+    });
+  });
+
+  describe('constructUpcURL', () => {
+    it('should return the Best Buy API UPC endpoint', () => {
+      const upc = 1234;
+
+      const result = constructUpcURL(upc);
+
+      const expectedResult = 'https://api.bestbuy.com/v1/products(upc=1234)?apiKey=undefined&sort=inStoreAvailability.asc';
       expect(result).toBe(expectedResult);
     });
   });
