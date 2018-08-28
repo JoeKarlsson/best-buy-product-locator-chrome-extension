@@ -8,7 +8,6 @@ const getTargetModelNumbers = () => {
 
   walkDOM(document.getElementById(selector), (node) => {
     if (node.nodeType === 1) {
-      // console.log('node.innerText', node.innerText);
       if (node.innerText === 'UPC') {
         const upcNum = node.nextSibling.nextSibling.nextSibling.data.trim();
         UPCNumbers.push(upcNum);
