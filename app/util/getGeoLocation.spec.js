@@ -1,5 +1,3 @@
-// import geolocate from 'mock-geolocation';
-// import WindowMock from 'window-mock';
 import getGeoLocation from './getGeoLocation';
 
 describe('getGeoLocation', () => {
