@@ -18,7 +18,7 @@ function promisifyAll(obj, list) {
 }
 
 // let chrome extension api support Promise
-promisifyAll(chrome, ['tabs', 'windows', 'browserAction', 'contextMenus']);
+promisifyAll(chrome, ['tabs', 'windows', 'browserAction', 'contextMenus', 'geolocation']);
 promisifyAll(chrome.storage, ['local']);
 
 require('./inject');
