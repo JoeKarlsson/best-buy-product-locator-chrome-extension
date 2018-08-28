@@ -25,8 +25,15 @@ class AppContainer extends Component {
     chrome.runtime.onMessage.addListener((modelNumbers) => {
       modelNumbers.forEach(async (modelNumber) => {
         const productData = await getProductAvailability(modelNumber);
-        console.log('productData', productData);
+        const {
+          addToCartUrl, nearestStore, nearestStoreMapUrl, price
+        } = productData;
+
         this.setState({
+          addToCartUrl,
+          nearestStore,
+          nearestStoreMapUrl,
+          price,
           isLoading: false,
         });
       });
@@ -36,13 +43,18 @@ class AppContainer extends Component {
   async handleModelNumbers() {
     // check local storage for existing model numbers on page
     chrome.storage.local.get(['modelNumbers'], (result) => {
-      console.log('result', result);
-      if (result.modelNumbers && result.modelNumbers.length > 0) {
+      if (result.modelNumbers.length > 0) {
         result.modelNumbers.forEach(async (modelNumber) => {
           const productData = await getProductAvailability(modelNumber);
-          console.log('productData', productData);
+          const {
+            addToCartUrl, nearestStore, nearestStoreMapUrl, price
+          } = productData;
 
           this.setState({
+            addToCartUrl,
+            nearestStore,
+            nearestStoreMapUrl,
+            price,
             isLoading: false,
           });
         });

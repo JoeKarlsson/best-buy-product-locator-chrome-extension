@@ -33,18 +33,25 @@ const getProductAvailability = async (modelNumber) => {
 
         const data = {
           addToCartUrl: product.addToCartUrl,
-          nearestStore: `${city}, ${region}`,
-          nearestStoreMapUrl: constructNearestStoreMapUrl(city, region, lat, lng),
+          nearestStore: `${city}, ${region}` || undefined,
+          nearestStoreMapUrl: constructNearestStoreMapUrl(city, region, lat, lng) || undefined,
           price: product.salePrice || product.regularPrice,
         };
-        console.log('data', data);
 
         return data;
       }
+
+      const data = {
+        addToCartUrl: product.addToCartUrl,
+        nearestStore: undefined,
+        nearestStoreMapUrl: undefined,
+        price: product.salePrice || product.regularPrice,
+      };
+
+      return data;
     }
   } catch (err) {
-    console.log('err', err);
-    handleError(err);
+    return handleError(err);
   }
 };
 
