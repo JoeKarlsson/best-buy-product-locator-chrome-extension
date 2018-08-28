@@ -22,7 +22,7 @@ describe('urlFormatter', () => {
       const skuId = '55126';
       const result = constructStoreURL(skuId, zipCode, miles);
 
-      const expectedResult = 'https://api.bestbuy.com/v1/stores((area(55126,5)))?apiKey=undefined&format=json';
+      const expectedResult = 'https://api.bestbuy.com/v1/stores((area(55126, 5,undefined)))+products(sku%20in%20(55126))?apiKey=undefined&show=products.sku,products.name,products.shortDescription,products.salePrice,products.regularPrice,products.addToCartURL,products.url,products.image,products.customerReviewCount,products.customerReviewAverage&format=json';
       expect(result).toBe(expectedResult);
     });
   });
