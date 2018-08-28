@@ -1,10 +1,10 @@
 import {
   constructProductURL,
-  // constructUpcURL,
-  constructStoreURL,
+  constructStoreURLNoProducts,
   constructNearestStoreMapUrl,
 } from './urlFormatter';
 import api from './api';
+import getGeoLocation from './getGeoLocation';
 import handleError from './handleError';
 
 const isValidProductData = productData => productData.products && productData.products.length > 0;
@@ -18,10 +18,12 @@ const getProductAvailability = async (modelNumber) => {
   try {
     if (isValidProductData(productData)) {
       const product = productData.products[0];
-      const skuId = product.sku;
 
-      // TODO: figure out how to get zipcode or geolocation coordinates
-      const storeURL = constructStoreURL(skuId, '55423', '15');
+      const postion = await getGeoLocation();
+      const { latitude, longitude } = postion.coords;
+
+      const distance = 15;
+      const storeURL = constructStoreURLNoProducts(latitude, longitude, distance);
       const storeData = await api(storeURL);
 
       if (isValidStoreData(storeData)) {
