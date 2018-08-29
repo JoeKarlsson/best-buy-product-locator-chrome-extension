@@ -8,8 +8,11 @@ describe('urlFormatter', () => {
   describe('constructProductURL', () => {
     it('should return the Best Buy Product API URL', () => {
       const productCode = 'UN55NU7100FXZA';
-      const result = constructProductURL(productCode);
-      const expectedResult = 'https://api.bestbuy.com/v1/products(productCode=UN55NU7100FXZA)?apiKey=undefined&sort=inStoreAvailability.asc&show=inStoreAvailability,name,sku,regularPrice,salePrice,addToCartUrl,condition&format=json';
+      const codeType = 'modelNumber';
+
+      const result = constructProductURL(productCode, codeType);
+
+      const expectedResult = 'https://api.bestbuy.com/v1/products(modelNumber=UN55NU7100FXZA)?apiKey=undefined&sort=inStoreAvailability.asc&show=inStoreAvailability,name,sku,regularPrice,salePrice,addToCartUrl,condition&format=json';
       expect(result).toBe(expectedResult);
     });
   });
@@ -19,6 +22,7 @@ describe('urlFormatter', () => {
       const zipCode = '55126';
       const miles = 5;
       const skuId = '55126';
+
       const result = constructStoreURL(skuId, zipCode, miles);
 
       const expectedResult = 'https://api.bestbuy.com/v1/stores((area(55126,5)))?apiKey=undefined&format=json';

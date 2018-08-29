@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Body rendering initial state is rendered 1`] = `
-<div>
+<div
+  className="sc-EHOje hYxYUT"
+>
   <div
     className="sc-bdVaJa jZTfEh"
     onClick={[Function]}
@@ -102,11 +104,11 @@ exports[`Body rendering initial state is rendered 1`] = `
     </svg>
   </div>
   <div>
-    <h1
+    <h2
       className="sc-bxivhb xcQwg"
     >
       Want it faster? 
-    </h1>
+    </h2>
     <p>
       This same product is available right now at the
        

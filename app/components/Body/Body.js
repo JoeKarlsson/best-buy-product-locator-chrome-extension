@@ -70,9 +70,11 @@ Body.propTypes = {
   nearestStoreMapUrl: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   addToCartUrl: PropTypes.string.isRequired,
-  isPopup: PropTypes.bool.isRequired,
+  isPopup: PropTypes.bool,
 };
 
-Body.defaultProps = {};
+Body.defaultProps = {
+  isPopup: false,
+};
 
 export default Body;

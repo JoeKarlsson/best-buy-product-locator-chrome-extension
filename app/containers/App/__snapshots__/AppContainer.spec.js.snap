@@ -1,9 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AppContainer rendering initial state is rendered heathy state 1`] = `
-<div
-  className="sc-bwzfXH gJIwTT"
->
-  Loading
-</div>
-`;
+exports[`AppContainer rendering initial state is rendered heathy state 1`] = `null`;
