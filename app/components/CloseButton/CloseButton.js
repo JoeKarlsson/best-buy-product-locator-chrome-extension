@@ -31,7 +31,11 @@ const CloseButton = ({ isPopup }) => (
 );
 
 CloseButton.propTypes = {
-  isPopup: PropTypes.bool.isRequired,
+  isPopup: PropTypes.bool,
+};
+
+CloseButton.defaultProps = {
+  isPopup: false,
 };
 
 export default CloseButton;
