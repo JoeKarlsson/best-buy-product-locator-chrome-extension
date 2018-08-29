@@ -21,6 +21,7 @@
     "contextMenus",
     "tabs",
     "storage",
+    "geolocation",
     "https://api.bestbuy.com/*",
     "https://github.com/*",
     "https://www.amazon.com/*"
