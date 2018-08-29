@@ -16,10 +16,10 @@ const isValidProductData = (data) => {
 
 const App = (props) => {
   const {
-    nearestStore, nearestStoreMapUrl, price, addToCartUrl, isLoading
+    nearestStore, nearestStoreMapUrl, price, addToCartUrl, isLoading, isPopup
   } = props;
 
-  if (isLoading) {
+  if (isLoading && isPopup) {
     return <Loader />;
   }
   if (isValidProductData(props)) {
@@ -29,10 +29,14 @@ const App = (props) => {
         nearestStoreMapUrl={nearestStoreMapUrl}
         price={price}
         addToCartUrl={addToCartUrl}
+        isPopup={isPopup}
       />
     );
   }
-  return <Error />;
+  if (isPopup) {
+    return <Error />;
+  }
+  return null;
 };
 
 App.propTypes = {
@@ -41,6 +45,7 @@ App.propTypes = {
   price: PropTypes.number,
   addToCartUrl: PropTypes.string,
   isLoading: PropTypes.bool,
+  isPopup: PropTypes.bool,
 };
 
 App.defaultProps = {
@@ -49,6 +54,7 @@ App.defaultProps = {
   nearestStoreMapUrl: '',
   price: 0,
   isLoading: true,
+  isPopup: false,
 };
 
 export default App;

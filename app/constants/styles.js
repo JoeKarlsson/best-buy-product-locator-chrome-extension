@@ -6,10 +6,10 @@ export const COLORS = {
   red: '#bb0628',
   white: '#fff',
   yellow: '#ffe000',
-  lightYellow: '#fff200'
+  lightYellow: '#fff200',
 };
 
 export const STYLES = {
   fontFamily: '"Human BBY Web",Arial,Helvetica,sans-serif',
-  fontSize: '15px'
+  fontSize: '15px',
 };

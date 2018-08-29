@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLORS } from '../../constants/styles';
 
@@ -15,10 +16,22 @@ const X = styled.div`
   font-weight: 700;
 `;
 
-const CloseButton = () => (
-  <Container onClick={() => window.close()}>
+const CloseButton = ({ isPopup }) => (
+  <Container
+    onClick={() => {
+      if (isPopup) {
+        window.close();
+        return;
+      }
+      document.getElementById('bby-product-locator').style.display = 'none';
+    }}
+  >
     <X>×</X>
   </Container>
 );
+
+CloseButton.propTypes = {
+  isPopup: PropTypes.bool.isRequired,
+};
 
 export default CloseButton;

@@ -1,16 +1,15 @@
 import {
   constructProductURL,
   constructStoreURL,
-  constructUpcURL,
   constructNearestStoreMapUrl,
 } from './urlFormatter';
 
 describe('urlFormatter', () => {
   describe('constructProductURL', () => {
     it('should return the Best Buy Product API URL', () => {
-      const modelNumber = 'UN55NU7100FXZA';
-      const result = constructProductURL(modelNumber);
-      const expectedResult = 'https://api.bestbuy.com/v1/products(modelNumber=UN55NU7100FXZA)?apiKey=undefined&sort=inStoreAvailability.asc&show=inStoreAvailability,name,sku,regularPrice,salePrice,addToCartUrl,condition&format=json';
+      const productCode = 'UN55NU7100FXZA';
+      const result = constructProductURL(productCode);
+      const expectedResult = 'https://api.bestbuy.com/v1/products(productCode=UN55NU7100FXZA)?apiKey=undefined&sort=inStoreAvailability.asc&show=inStoreAvailability,name,sku,regularPrice,salePrice,addToCartUrl,condition&format=json';
       expect(result).toBe(expectedResult);
     });
   });
@@ -37,17 +36,6 @@ describe('urlFormatter', () => {
       const result = constructNearestStoreMapUrl(city, region, lat, lng);
 
       const expectedResult = `https://www.google.com/maps/search/Best+Buy+${city}+${region}/@${lat},${lng}`;
-      expect(result).toBe(expectedResult);
-    });
-  });
-
-  describe('constructUpcURL', () => {
-    it('should return the Best Buy API UPC endpoint', () => {
-      const upc = 1234;
-
-      const result = constructUpcURL(upc);
-
-      const expectedResult = 'https://api.bestbuy.com/v1/products(upc=1234)?apiKey=undefined&sort=inStoreAvailability.asc';
       expect(result).toBe(expectedResult);
     });
   });

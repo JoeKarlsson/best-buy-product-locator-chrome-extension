@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { COLORS } from '../../constants/styles';
 
-const H1 = styled.h1`
+const H2 = styled.h2`
   color: ${COLORS.darkBlue};
 `;
 
@@ -11,7 +11,7 @@ const CallToAction = (props) => {
   const { nearestStoreMapUrl, nearestStore, price } = props;
   return (
     <div>
-      <H1>Want it faster? </H1>
+      <H2>Want it faster? </H2>
       <p>
         This same product is available right now at the{' '}
         <a target="_blank" rel="noopener noreferrer" href={nearestStoreMapUrl}>

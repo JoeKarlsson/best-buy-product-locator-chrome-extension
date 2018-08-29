@@ -14,8 +14,8 @@ describe('AppContainer', () => {
   describe('rendering', () => {
     describe('initial state', () => {
       it('is rendered heathy state', () => {
-        const modelNumber = 'UN55NU7100FXZA';
-        const productUrl = constructProductURL(modelNumber);
+        const productCode = 'UN55NU7100FXZA';
+        const productUrl = constructProductURL(productCode);
         fetchMock.once(productUrl, mockProductData);
 
         const zipCode = '55126';
