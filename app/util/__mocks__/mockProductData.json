@@ -7,7 +7,7 @@
   "queryTime": "0.175",
   "totalTime": "0.182",
   "partial": false,
-  "canonicalUrl": "/v1/products(modelNumber=\"UN55NU7100FXZA\")?show=inStoreAvailability,name,sku,regularPrice,salePrice,addToCartUrl,condition&sort=inStoreAvailability&format=json&apiKey=ew0faCm5P5CuVBVGbtsI6byM",
+  "canonicalUrl": "/v1/products(productCode=\"UN55NU7100FXZA\")?show=inStoreAvailability,name,sku,regularPrice,salePrice,addToCartUrl,condition&sort=inStoreAvailability&format=json&apiKey=ew0faCm5P5CuVBVGbtsI6byM",
   "products": [
     {
       "inStoreAvailability": true,

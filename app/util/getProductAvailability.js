@@ -11,8 +11,8 @@ const isValidProductData = productData => productData.products && productData.pr
 
 const isValidStoreData = storeData => storeData.stores && storeData.stores.length > 0;
 
-const getProductAvailability = async (modelNumber) => {
-  const productURL = constructProductURL(modelNumber);
+const getProductAvailability = async (productCode, codeType) => {
+  const productURL = constructProductURL(productCode, codeType);
   const productData = await api(productURL);
 
   try {

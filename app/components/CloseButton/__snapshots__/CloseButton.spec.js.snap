@@ -3,6 +3,7 @@
 exports[`CloseButton rendering initial state is rendered 1`] = `
 <div
   className="sc-bdVaJa jZTfEh"
+  id="bby-close"
   onClick={[Function]}
 >
   <div

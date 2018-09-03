@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import App from './App';
 import ErrorBoundary from '../../components/shared/ErrorBoundary/ErrorBoundary';
 import getProductAvailability from '../../util/getProductAvailability';
@@ -6,6 +7,7 @@ import getProductAvailability from '../../util/getProductAvailability';
 class AppContainer extends Component {
   constructor() {
     super();
+
     this.state = {
       addToCartUrl: '',
       nearestStore: '',
@@ -13,52 +15,31 @@ class AppContainer extends Component {
       price: 0,
       isLoading: true,
     };
+
+    this.getProductCode = this.getProductCode.bind(this);
+    this.getProductData = this.getProductData.bind(this);
   }
 
   componentDidMount() {
-    this.handleModelNumbers();
-    this.handleDomScraperevent();
+    this.getProductCode();
   }
 
-  async handleDomScraperevent() {
-    // set up listener for model number DOM scraper
-    chrome.runtime.onMessage.addListener((modelNumbers) => {
-      modelNumbers.forEach(async (modelNumber) => {
-        const productData = await getProductAvailability(modelNumber);
-        const {
-          addToCartUrl, nearestStore, nearestStoreMapUrl, price
-        } = productData;
-
-        this.setState({
-          addToCartUrl,
-          nearestStore,
-          nearestStoreMapUrl,
-          price,
-          isLoading: false,
-        });
-      });
-    });
+  getProductCode() {
+    chrome.storage.local.get(['productCode', 'codeType'], this.getProductData);
   }
 
-  async handleModelNumbers() {
-    // check local storage for existing model numbers on page
-    chrome.storage.local.get(['modelNumbers'], (result) => {
-      if (result.modelNumbers.length > 0) {
-        result.modelNumbers.forEach(async (modelNumber) => {
-          const productData = await getProductAvailability(modelNumber);
-          const {
-            addToCartUrl, nearestStore, nearestStoreMapUrl, price
-          } = productData;
+  async getProductData({ productCode, codeType }) {
+    const productData = await getProductAvailability(productCode, codeType);
+    const {
+      addToCartUrl, nearestStore, nearestStoreMapUrl, price
+    } = productData;
 
-          this.setState({
-            addToCartUrl,
-            nearestStore,
-            nearestStoreMapUrl,
-            price,
-            isLoading: false,
-          });
-        });
-      }
+    this.setState({
+      addToCartUrl,
+      nearestStore,
+      nearestStoreMapUrl,
+      price,
+      isLoading: false,
     });
   }
 
@@ -66,6 +47,8 @@ class AppContainer extends Component {
     const {
       nearestStore, nearestStoreMapUrl, price, addToCartUrl, isLoading
     } = this.state;
+
+    const { isPopup } = this.props;
 
     return (
       <ErrorBoundary>
@@ -75,10 +58,19 @@ class AppContainer extends Component {
           price={price}
           addToCartUrl={addToCartUrl}
           isLoading={isLoading}
+          isPopup={isPopup}
         />
       </ErrorBoundary>
     );
   }
 }
+
+AppContainer.propTypes = {
+  isPopup: PropTypes.bool,
+};
+
+AppContainer.defaultProps = {
+  isPopup: false,
+};
 
 export default AppContainer;
