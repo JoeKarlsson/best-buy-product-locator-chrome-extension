@@ -49,7 +49,6 @@ class AppContainer extends Component {
     } = this.state;
 
     const { isPopup } = this.props;
-
     return (
       <ErrorBoundary>
         <App
