@@ -7,6 +7,7 @@ import getProductAvailability from '../../util/getProductAvailability';
 class AppContainer extends Component {
   constructor() {
     super();
+
     this.state = {
       addToCartUrl: '',
       nearestStore: '',
@@ -14,46 +15,31 @@ class AppContainer extends Component {
       price: 0,
       isLoading: true,
     };
+
+    this.getProductCode = this.getProductCode.bind(this);
+    this.getProductData = this.getProductData.bind(this);
   }
 
   componentDidMount() {
-    this.handleProductCode();
-    this.handleDOMScraperEvent();
+    this.getProductCode();
   }
 
-  async handleDOMScraperEvent() {
-    chrome.runtime.onMessage.addListener(async (productCode, codeType) => {
-      const productData = await getProductAvailability(productCode, codeType);
-      const {
-        addToCartUrl, nearestStore, nearestStoreMapUrl, price
-      } = productData;
-
-      this.setState({
-        addToCartUrl,
-        nearestStore,
-        nearestStoreMapUrl,
-        price,
-        isLoading: false,
-      });
-    });
+  getProductCode() {
+    chrome.storage.local.get(['productCode', 'codeType'], this.getProductData);
   }
 
-  async handleProductCode() {
-    chrome.storage.local.get(['productCode', 'codeType'], async (result) => {
-      if (result.productCode && result.codeType) {
-        const productData = await getProductAvailability(result.productCode, result.codeType);
-        const {
-          addToCartUrl, nearestStore, nearestStoreMapUrl, price
-        } = productData;
+  async getProductData({ productCode, codeType }) {
+    const productData = await getProductAvailability(productCode, codeType);
+    const {
+      addToCartUrl, nearestStore, nearestStoreMapUrl, price
+    } = productData;
 
-        this.setState({
-          addToCartUrl,
-          nearestStore,
-          nearestStoreMapUrl,
-          price,
-          isLoading: false,
-        });
-      }
+    this.setState({
+      addToCartUrl,
+      nearestStore,
+      nearestStoreMapUrl,
+      price,
+      isLoading: false,
     });
   }
 
@@ -80,7 +66,11 @@ class AppContainer extends Component {
 }
 
 AppContainer.propTypes = {
-  isPopup: PropTypes.bool.isRequired,
+  isPopup: PropTypes.bool,
+};
+
+AppContainer.defaultProps = {
+  isPopup: false,
 };
 
 export default AppContainer;

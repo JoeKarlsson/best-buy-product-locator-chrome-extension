@@ -2,7 +2,7 @@ import walkDOM from './walk-dom';
 import handleProductCode from './handle-product-code';
 import * as constants from '../constants/constants';
 
-const getTargetProductCodes = () => {
+const getTargetProductCode = () => {
   const selector = 'tabContent-tab-Details';
 
   walkDOM(document.getElementById(selector), (node) => {
@@ -15,4 +15,4 @@ const getTargetProductCodes = () => {
   });
 };
 
-export default getTargetProductCodes;
+export default getTargetProductCode;

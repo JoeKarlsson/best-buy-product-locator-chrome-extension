@@ -1,12 +1,12 @@
-import getAmazonProductCodes from './util/get-amazon-code';
-import getTargetProductCodes from './util/get-target-code';
+import getAmazonProductCode from './util/get-amazon-code';
+import getTargetProductCode from './util/get-target-code';
 
 switch (window.location.host) {
   case 'www.amazon.com':
-    getAmazonProductCodes();
+    getAmazonProductCode();
     break;
   case 'www.target.com':
-    getTargetProductCodes();
+    getTargetProductCode();
     break;
   default:
     break;

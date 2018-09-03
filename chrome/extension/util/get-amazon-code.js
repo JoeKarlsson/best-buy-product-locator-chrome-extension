@@ -2,7 +2,7 @@ import walkDOM from './walk-dom';
 import handleProductCode from './handle-product-code';
 import * as constants from '../constants/constants';
 
-const getAmazonProductCodes = () => {
+const getAmazonProductCode = () => {
   const selector = 'prodDetails';
 
   walkDOM(document.getElementById(selector), (node) => {
@@ -15,4 +15,4 @@ const getAmazonProductCodes = () => {
   });
 };
 
-export default getAmazonProductCodes;
+export default getAmazonProductCode;

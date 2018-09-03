@@ -1,5 +1,5 @@
 module.exports = {
-  setupFiles: ['./jestsetup.js'],
+  setupFiles: ['./jestsetup.js', 'jest-webextension-mock'],
   collectCoverageFrom: ['app/**/*.js'],
   coveragePathIgnorePatterns: [
     '<rootDir>/scripts',

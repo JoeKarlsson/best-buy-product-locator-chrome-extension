@@ -4,40 +4,67 @@ import Error from '../../components/shared/Error/Error';
 import Loader from '../../components/shared/Loader/Loader';
 import Body from '../../components/Body/Body';
 
-const isValidProductData = (data) => {
-  const {
-    nearestStore, nearestStoreMapUrl, price, addToCartUrl
-  } = data;
+class App extends React.PureComponent {
+  constructor() {
+    super();
 
-  return (
-    nearestStore.length > 0 && nearestStoreMapUrl.length > 0 && price > 0 && addToCartUrl.length > 0
-  );
-};
+    this.state = {
+      validProduct: false,
+    };
 
-const App = (props) => {
-  const {
-    nearestStore, nearestStoreMapUrl, price, addToCartUrl, isLoading, isPopup
-  } = props;
+    this.isValidProductData = this.isValidProductData.bind(this);
+  }
 
-  if (isLoading && isPopup) {
-    return <Loader />;
+  componentDidUpdate() {
+    this.isValidProductData();
   }
-  if (isValidProductData(props)) {
-    return (
-      <Body
-        nearestStore={nearestStore}
-        nearestStoreMapUrl={nearestStoreMapUrl}
-        price={price}
-        addToCartUrl={addToCartUrl}
-        isPopup={isPopup}
-      />
-    );
+
+  isValidProductData() {
+    const {
+      nearestStore, nearestStoreMapUrl, price, addToCartUrl
+    } = this.props;
+
+    const validProduct = nearestStore.length > 0
+      && nearestStoreMapUrl.length > 0
+      && price > 0
+      && addToCartUrl.length > 0;
+
+    this.setState({
+      validProduct,
+    });
   }
-  if (isPopup) {
-    return <Error />;
+
+  render() {
+    const {
+      isLoading,
+      isPopup,
+      nearestStore,
+      nearestStoreMapUrl,
+      price,
+      addToCartUrl,
+    } = this.props;
+    const { validProduct } = this.state;
+
+    if (isLoading && isPopup) {
+      return <Loader />;
+    }
+    if (validProduct) {
+      return (
+        <Body
+          nearestStore={nearestStore}
+          nearestStoreMapUrl={nearestStoreMapUrl}
+          price={price}
+          addToCartUrl={addToCartUrl}
+          isPopup={isPopup}
+        />
+      );
+    }
+    if (isPopup) {
+      return <Error />;
+    }
+    return null;
   }
-  return null;
-};
+}
 
 App.propTypes = {
   nearestStore: PropTypes.string,

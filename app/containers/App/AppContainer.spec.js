@@ -1,14 +1,53 @@
+import 'jsdom-global/register';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import fetchMock from 'fetch-mock';
-import AppContainer from './App';
+import { shallow } from 'enzyme';
+import AppContainer from './AppContainer';
 import { constructProductURL, constructStoreURL } from '../../util/urlFormatter';
 import mockProductData from '../../util/__mocks__/mockProductData.json';
 import mockStoreData from '../../util/__mocks__/mockStoreData.json';
 
 describe('AppContainer', () => {
+  const props = {
+    nearestStore: 'Richfeild',
+    nearestStoreMapUrl: 'www.testurl.com',
+    price: 1234,
+    addToCartUrl: 'www.testurl.com',
+    isLoading: false,
+    isPopup: true,
+  };
+
   beforeEach(() => {
+    chrome.storage.local.set({
+      productCode: 'UN55NU7100FXZA',
+      codeType: 'modelNumber',
+    });
     fetchMock.reset();
+  });
+
+  describe('getProductCode', () => {
+    it('should be called on mount', () => {
+      const spy = jest.spyOn(AppContainer.prototype, 'getProductCode');
+      shallow(<AppContainer {...props} />);
+      expect(spy).toHaveBeenCalled();
+    });
+
+    it('should get product details from chrome storage', () => {
+      const spy = jest.spyOn(chrome.storage.local, 'get');
+      shallow(<AppContainer {...props} />);
+      expect(spy).toHaveBeenCalled();
+    });
+
+    it('should call getProductData with expected params when product code is found', () => {
+      const spy = jest.spyOn(AppContainer.prototype, 'getProductData');
+      shallow(<AppContainer {...props} />);
+      expect(spy).toHaveBeenCalled();
+      expect(spy).toHaveBeenCalledWith({
+        productCode: 'UN55NU7100FXZA',
+        codeType: 'modelNumber',
+      });
+    });
   });
 
   describe('rendering', () => {

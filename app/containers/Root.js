@@ -36,5 +36,9 @@ export default class Root extends Component {
 }
 
 Root.propTypes = {
-  isPopup: PropTypes.bool.isRequired,
+  isPopup: PropTypes.bool,
+};
+
+Root.defaultProps = {
+  isPopup: false,
 };

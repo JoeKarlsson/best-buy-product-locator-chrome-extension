@@ -19,7 +19,6 @@ const Container = styled.div`
   top: 50px;
   padding: 30px;
   border: 1px solid ${COLORS.grey};
-  // box-shadow: 0px 0px 20px 0px #858585;
 
   h2 {
     display: block;
@@ -54,7 +53,7 @@ const Body = (props) => {
   return (
     <Container>
       <CloseButton isPopup={isPopup} />
-      <Logo />
+      <Logo color={isPopup ? COLORS.black : COLORS.white} />
       <CallToAction
         nearestStore={nearestStore}
         nearestStoreMapUrl={nearestStoreMapUrl}

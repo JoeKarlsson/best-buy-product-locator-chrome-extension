@@ -18,6 +18,7 @@ const X = styled.div`
 
 const CloseButton = ({ isPopup }) => (
   <Container
+    id="bby-close"
     onClick={() => {
       if (isPopup) {
         window.close();
