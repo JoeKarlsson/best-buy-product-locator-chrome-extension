@@ -2,27 +2,27 @@
 
 exports[`Body rendering initial state is rendered 1`] = `
 <div
-  className="sc-EHOje jcDjbR"
+  className="sc-gzVnrw dfLeeY"
 >
   <div
-    className="sc-bdVaJa jZTfEh"
+    className="sc-bdVaJa hCycLF"
     id="bby-close"
     onClick={[Function]}
   >
     <div
-      className="sc-bwzfXH ljmoGr"
+      className="sc-bwzfXH eTtEDr"
     >
       ×
     </div>
   </div>
   <div
-    className="sc-htpNat dEQUjC"
+    className="sc-htpNat bmaSwo"
   >
     <svg
-      height="90px"
+      height="45px"
       version="1.1"
       viewBox="0 0 152 90"
-      width="152px"
+      width="76px"
     >
       <defs />
       <g
@@ -104,9 +104,11 @@ exports[`Body rendering initial state is rendered 1`] = `
       </g>
     </svg>
   </div>
-  <div>
+  <div
+    className="sc-bxivhb bLgGMy"
+  >
     <h2
-      className="sc-bxivhb xcQwg"
+      className="sc-ifAKCX knTyiF"
     >
       Want it faster? 
     </h2>
@@ -123,7 +125,7 @@ exports[`Body rendering initial state is rendered 1`] = `
         .
       </a>
        
-      Order now and pick it up in 1 hour.
+      Order now and pick it up in 1 hour. 
     </p>
     <p>
       Price: 
@@ -133,16 +135,20 @@ exports[`Body rendering initial state is rendered 1`] = `
       </b>
     </p>
   </div>
-  <a
-    href="www.testurl.com"
-    rel="noopener noreferrer"
-    target="_blank"
+  <div
+    className="sc-EHOje eMaVAW"
   >
-    <button
-      className="sc-ifAKCX liipKQ"
+    <a
+      href="www.testurl.com"
+      rel="noopener noreferrer"
+      target="_blank"
     >
-      Buy on BestBuy.com
-    </button>
-  </a>
+      <button
+        className="sc-bZQynM juMaaP"
+      >
+        Buy on BestBuy.com
+      </button>
+    </a>
+  </div>
 </div>
 `;

@@ -11,5 +11,5 @@ window.addEventListener('load', () => {
   const div = document.createElement('div');
   div.id = 'bby-product-locator';
   document.body.appendChild(div);
-  render(<Root />, div);
+  render(<Root isPopup={false} />, div);
 });

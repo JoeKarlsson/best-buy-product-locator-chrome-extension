@@ -1,30 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import CloseButton from '../CloseButton/CloseButton';
 import Logo from '../shared/Logo/Logo';
 import CallToAction from '../CallToAction/CallToAction';
 import AddToCartButton from '../AddToCartButton/AddToCartButton';
 import { COLORS, STYLES } from '../../constants/styles';
 
+const slideDown = keyframes`
+    0% {
+        top: -100px;
+    }
+    100% {
+        top: 0;
+    }
+`;
+
 const Container = styled.div`
   ${(props) => {
     if (!props.isPopup) {
       return css`
-        background: ${COLORS.white};
-        color: ${COLORS.black};
+        background: ${COLORS.blue};
+        color: ${COLORS.white};
         font-size: ${STYLES.fontSize};
         font-family: ${STYLES.fontFamily};
-        width: 350px;
+        width: 100%;
         position: fixed;
         z-index: 9999;
-        right: 50px;
-        top: 50px;
-        padding: 30px;
-        border: 1px solid ${COLORS.grey};
+        top: 0;
+        padding: 10px 20px 10px 20px;
+        animation-name: ${slideDown};
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+        animation-duration: 0.5s;
 
         h2 {
-          display: block;
+          color: ${COLORS.white};
+          display: inline;
           font-size: 1.5em;
           -webkit-margin-before: 0.83em;
           -webkit-margin-after: 0.83em;
@@ -34,7 +46,7 @@ const Container = styled.div`
         }
 
         p {
-          display: block;
+          display: inline;
           -webkit-margin-before: 1em;
           -webkit-margin-after: 1em;
           -webkit-margin-start: 0px;
@@ -43,7 +55,7 @@ const Container = styled.div`
 
         a,
         a:visited {
-          color: ${COLORS.blue};
+          color: ${COLORS.white};
         }
       `;
     }
@@ -59,13 +71,14 @@ const Body = (props) => {
   return (
     <Container isPopup={isPopup}>
       <CloseButton isPopup={isPopup} />
-      <Logo color={isPopup ? COLORS.black : COLORS.white} />
+      <Logo isPopup={isPopup} />
       <CallToAction
         nearestStore={nearestStore}
         nearestStoreMapUrl={nearestStoreMapUrl}
         price={price}
+        isPopup={isPopup}
       />
-      <AddToCartButton addToCartUrl={addToCartUrl} />
+      <AddToCartButton addToCartUrl={addToCartUrl} isPopup={isPopup} />
     </Container>
   );
 };

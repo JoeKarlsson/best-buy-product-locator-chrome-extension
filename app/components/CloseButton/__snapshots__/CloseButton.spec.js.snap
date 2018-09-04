@@ -2,12 +2,12 @@
 
 exports[`CloseButton rendering initial state is rendered 1`] = `
 <div
-  className="sc-bdVaJa jZTfEh"
+  className="sc-bdVaJa hCycLF"
   id="bby-close"
   onClick={[Function]}
 >
   <div
-    className="sc-bwzfXH ljmoGr"
+    className="sc-bwzfXH eTtEDr"
   >
     ×
   </div>
