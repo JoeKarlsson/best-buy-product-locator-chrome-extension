@@ -1,7 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { COLORS, STYLES } from '../../constants/styles';
+
+const Container = styled.div`
+  ${(props) => {
+    if (!props.isPopup) {
+      return css`
+        width: 200px;
+        float: right;
+        margin-right: 50px;
+      `;
+    }
+  }};
+`;
 
 const Button = styled.button`
   background: ${COLORS.yellow};
@@ -23,17 +35,21 @@ const Button = styled.button`
   }
 `;
 
-const AddToCartButton = (props) => {
-  const { addToCartUrl } = props;
-  return (
+const AddToCartButton = ({ addToCartUrl, isPopup }) => (
+  <Container isPopup={isPopup}>
     <a target="_blank" rel="noopener noreferrer" href={addToCartUrl}>
       <Button>Buy on BestBuy.com</Button>
     </a>
-  );
-};
+  </Container>
+);
 
 AddToCartButton.propTypes = {
   addToCartUrl: PropTypes.string.isRequired,
+  isPopup: PropTypes.bool,
+};
+
+AddToCartButton.defaultProps = {
+  isPopup: false,
 };
 
 export default AddToCartButton;

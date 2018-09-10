@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CallToAction rendering initial state is rendered 1`] = `
-<div>
+<div
+  className="sc-bdVaJa blZskO"
+>
   <h2
-    className="sc-bdVaJa jxTgeY"
+    className="sc-bwzfXH gPMGtq"
   >
     Want it faster? 
   </h2>
@@ -20,7 +22,7 @@ exports[`CallToAction rendering initial state is rendered 1`] = `
       .
     </a>
      
-    Order now and pick it up in 1 hour.
+    Order now and pick it up in 1 hour. 
   </p>
   <p>
     Price: 

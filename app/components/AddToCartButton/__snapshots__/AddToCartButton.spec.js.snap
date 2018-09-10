@@ -1,15 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AddToCartButton rendering initial state is rendered 1`] = `
-<a
-  href="www.testurl.com"
-  rel="noopener noreferrer"
-  target="_blank"
+<div
+  className="sc-bdVaJa jiLCGH"
 >
-  <button
-    className="sc-bdVaJa fjaCLe"
+  <a
+    href="www.testurl.com"
+    rel="noopener noreferrer"
+    target="_blank"
   >
-    Buy on BestBuy.com
-  </button>
-</a>
+    <button
+      className="sc-bwzfXH gQLsoL"
+    >
+      Buy on BestBuy.com
+    </button>
+  </a>
+</div>
 `;
