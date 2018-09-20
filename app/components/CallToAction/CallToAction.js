@@ -7,9 +7,23 @@ const Container = styled.div`
   ${(props) => {
     if (!props.isPopup) {
       return css`
-        position: absolute;
         margin-left: 100px;
-        margin-top: 8px;
+        margin-top: -5px;
+
+        p {
+          display: inline;
+        }
+
+        @media (max-width: 1200px) {
+          margin-top: 5px;
+          margin-left: 0px;
+        }
+
+        @media (max-width: 850px) {
+          p {
+            display: block;
+          }
+        }
       `;
     }
   }};
@@ -27,7 +41,7 @@ const CallToAction = (props) => {
     <Container isPopup={isPopup}>
       <H2>Want it faster? </H2>
       <p>
-        This same product is available right now at the{' '}
+        This product is available for pick up at the{' '}
         <a target="_blank" rel="noopener noreferrer" href={nearestStoreMapUrl}>
           Best Buy in {nearestStore}.
         </a>{' '}

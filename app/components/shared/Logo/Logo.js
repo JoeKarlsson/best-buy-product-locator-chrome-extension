@@ -12,6 +12,10 @@ const ImageContainer = styled.div`
     }
     return css`
       position: absolute;
+
+      @media (max-width: 1200px) {
+        position: initial;
+      }
     `;
   }};
 `;

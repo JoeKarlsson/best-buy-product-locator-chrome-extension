@@ -36,25 +36,17 @@ const Container = styled.div`
 
         h2 {
           color: ${COLORS.white};
-          display: inline;
           font-size: 1.5em;
-          -webkit-margin-before: 0.83em;
-          -webkit-margin-after: 0.83em;
+          -webkit-margin-before: 0px;
+          -webkit-margin-after: 0px;
           -webkit-margin-start: 0px;
           -webkit-margin-end: 0px;
           font-weight: bold;
         }
 
-        p {
-          display: inline;
-          -webkit-margin-before: 1em;
-          -webkit-margin-after: 1em;
-          -webkit-margin-start: 0px;
-          -webkit-margin-end: 0px;
-        }
-
         a,
         a:visited {
+          text-decoration: underline;
           color: ${COLORS.white};
         }
       `;
