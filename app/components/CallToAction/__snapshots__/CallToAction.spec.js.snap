@@ -2,7 +2,7 @@
 
 exports[`CallToAction rendering initial state is rendered 1`] = `
 <div
-  className="sc-bdVaJa blZskO"
+  className="sc-bdVaJa kZuZoP"
 >
   <h2
     className="sc-bwzfXH gPMGtq"
@@ -10,7 +10,7 @@ exports[`CallToAction rendering initial state is rendered 1`] = `
     Want it faster? 
   </h2>
   <p>
-    This same product is available right now at the
+    This product is available for pick up at the
      
     <a
       href="www.testurl.com"
