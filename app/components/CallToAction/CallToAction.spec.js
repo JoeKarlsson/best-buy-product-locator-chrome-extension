@@ -59,12 +59,6 @@ describe('CallToAction', () => {
       it('is rendered correctly', () => {
         expect(wrapper).toHaveLength(1);
       });
-
-      // it('should have correct inital instance', () => {
-      //   const initialInstance = wrapper.instance();
-      //   const expectedInstance = null;
-      //   expect(initialInstance).toBe(expectedInstance);
-      // });
     });
   });
 });

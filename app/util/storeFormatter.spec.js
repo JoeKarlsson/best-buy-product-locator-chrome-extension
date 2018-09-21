@@ -65,8 +65,8 @@ describe('storeFormatter', () => {
       storeFormatter.formatStoreHours(mockStoreData.stores[0].detailedHours);
 
       expect(spy).toHaveReturnedWith({
-        closingSoon: true,
-        openNow: true,
+        closingSoon: false,
+        openNow: false,
         today: {
           close: '21:00',
           closeAmPm: '9:00 pm',
