@@ -12,7 +12,7 @@ const Container = styled.div`
         right: 60px;
         top: 10px;
 
-        @media (max-width: 850px) {
+        @media (max-width: 1040px) {
           position: initial;
           float: right;
         }

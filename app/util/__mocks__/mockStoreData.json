@@ -10,6 +10,7 @@
   "canonicalUrl": "/v1/stores((area(\"55423\",15)))+products(sku in(6200125))?show=products.sku,products.name,products.shortDescription,products.salePrice,products.regularPrice,products.addToCartURL,products.url,products.image,products.customerReviewCount,products.customerReviewAverage,address,address2,city,country,detailedHours,lat,location,lng,name,longName,phone,fullPostalCode,region,storeId&pageSize=5&format=json&apiKey=ew0faCm5P5CuVBVGbtsI6byM",
   "stores": [
     {
+      "storeType": "Big Box",
       "products": [
         {
           "sku": 6200125,
@@ -29,20 +30,90 @@
       "city": "Richfield",
       "country": "US",
       "detailedHours": [
-        { "day": "Sunday", "date": "2018-08-26", "open": "10:00", "close": "20:00" },
-        { "day": "Monday", "date": "2018-08-27", "open": "10:00", "close": "21:00" },
-        { "day": "Tuesday", "date": "2018-08-28", "open": "10:00", "close": "21:00" },
-        { "day": "Wednesday", "date": "2018-08-29", "open": "10:00", "close": "21:00" },
-        { "day": "Thursday", "date": "2018-08-30", "open": "10:00", "close": "21:00" },
-        { "day": "Friday", "date": "2018-08-31", "open": "10:00", "close": "21:00" },
-        { "day": "Saturday", "date": "2018-09-01", "open": "10:00", "close": "21:00" },
-        { "day": "Sunday", "date": "2018-09-02", "open": "10:00", "close": "20:00" },
-        { "day": "Monday", "date": "2018-09-03", "open": "10:00", "close": "21:00" },
-        { "day": "Tuesday", "date": "2018-09-04", "open": "10:00", "close": "21:00" },
-        { "day": "Wednesday", "date": "2018-09-05", "open": "10:00", "close": "21:00" },
-        { "day": "Thursday", "date": "2018-09-06", "open": "10:00", "close": "21:00" },
-        { "day": "Friday", "date": "2018-09-07", "open": "10:00", "close": "21:00" },
-        { "day": "Saturday", "date": "2018-09-08", "open": "10:00", "close": "21:00" }
+        {
+          "day": "Sunday",
+          "date": "2018-08-26",
+          "open": "10:00",
+          "close": "20:00"
+        },
+        {
+          "day": "Monday",
+          "date": "2018-08-27",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Tuesday",
+          "date": "2018-08-28",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Wednesday",
+          "date": "2018-08-29",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Thursday",
+          "date": "2018-08-30",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Friday",
+          "date": "2018-08-31",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Saturday",
+          "date": "2018-09-01",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Sunday",
+          "date": "2018-09-02",
+          "open": "10:00",
+          "close": "20:00"
+        },
+        {
+          "day": "Monday",
+          "date": "2018-09-03",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Tuesday",
+          "date": "2018-09-04",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Wednesday",
+          "date": "2018-09-05",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Thursday",
+          "date": "2018-09-06",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Friday",
+          "date": "2018-09-07",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Saturday",
+          "date": "2018-09-08",
+          "open": "10:00",
+          "close": "21:00"
+        }
       ],
       "lat": 44.86321,
       "lng": -93.29274,
@@ -73,20 +144,90 @@
       "city": "Eagan",
       "country": "US",
       "detailedHours": [
-        { "day": "Sunday", "date": "2018-08-26", "open": "10:00", "close": "20:00" },
-        { "day": "Monday", "date": "2018-08-27", "open": "10:00", "close": "21:00" },
-        { "day": "Tuesday", "date": "2018-08-28", "open": "10:00", "close": "21:00" },
-        { "day": "Wednesday", "date": "2018-08-29", "open": "10:00", "close": "21:00" },
-        { "day": "Thursday", "date": "2018-08-30", "open": "10:00", "close": "21:00" },
-        { "day": "Friday", "date": "2018-08-31", "open": "10:00", "close": "21:00" },
-        { "day": "Saturday", "date": "2018-09-01", "open": "10:00", "close": "21:00" },
-        { "day": "Sunday", "date": "2018-09-02", "open": "10:00", "close": "20:00" },
-        { "day": "Monday", "date": "2018-09-03", "open": "10:00", "close": "21:00" },
-        { "day": "Tuesday", "date": "2018-09-04", "open": "10:00", "close": "21:00" },
-        { "day": "Wednesday", "date": "2018-09-05", "open": "10:00", "close": "21:00" },
-        { "day": "Thursday", "date": "2018-09-06", "open": "10:00", "close": "21:00" },
-        { "day": "Friday", "date": "2018-09-07", "open": "10:00", "close": "21:00" },
-        { "day": "Saturday", "date": "2018-09-08", "open": "10:00", "close": "21:00" }
+        {
+          "day": "Sunday",
+          "date": "2018-08-26",
+          "open": "10:00",
+          "close": "20:00"
+        },
+        {
+          "day": "Monday",
+          "date": "2018-08-27",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Tuesday",
+          "date": "2018-08-28",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Wednesday",
+          "date": "2018-08-29",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Thursday",
+          "date": "2018-08-30",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Friday",
+          "date": "2018-08-31",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Saturday",
+          "date": "2018-09-01",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Sunday",
+          "date": "2018-09-02",
+          "open": "10:00",
+          "close": "20:00"
+        },
+        {
+          "day": "Monday",
+          "date": "2018-09-03",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Tuesday",
+          "date": "2018-09-04",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Wednesday",
+          "date": "2018-09-05",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Thursday",
+          "date": "2018-09-06",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Friday",
+          "date": "2018-09-07",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Saturday",
+          "date": "2018-09-08",
+          "open": "10:00",
+          "close": "21:00"
+        }
       ],
       "lat": 44.83303,
       "lng": -93.15589,
@@ -117,20 +258,90 @@
       "city": "Eden Prairie",
       "country": "US",
       "detailedHours": [
-        { "day": "Sunday", "date": "2018-08-26", "open": "10:00", "close": "20:00" },
-        { "day": "Monday", "date": "2018-08-27", "open": "10:00", "close": "21:00" },
-        { "day": "Tuesday", "date": "2018-08-28", "open": "10:00", "close": "21:00" },
-        { "day": "Wednesday", "date": "2018-08-29", "open": "10:00", "close": "21:00" },
-        { "day": "Thursday", "date": "2018-08-30", "open": "10:00", "close": "21:00" },
-        { "day": "Friday", "date": "2018-08-31", "open": "10:00", "close": "21:00" },
-        { "day": "Saturday", "date": "2018-09-01", "open": "10:00", "close": "21:00" },
-        { "day": "Sunday", "date": "2018-09-02", "open": "10:00", "close": "20:00" },
-        { "day": "Monday", "date": "2018-09-03", "open": "10:00", "close": "21:00" },
-        { "day": "Tuesday", "date": "2018-09-04", "open": "10:00", "close": "21:00" },
-        { "day": "Wednesday", "date": "2018-09-05", "open": "10:00", "close": "21:00" },
-        { "day": "Thursday", "date": "2018-09-06", "open": "10:00", "close": "21:00" },
-        { "day": "Friday", "date": "2018-09-07", "open": "10:00", "close": "21:00" },
-        { "day": "Saturday", "date": "2018-09-08", "open": "10:00", "close": "21:00" }
+        {
+          "day": "Sunday",
+          "date": "2018-08-26",
+          "open": "10:00",
+          "close": "20:00"
+        },
+        {
+          "day": "Monday",
+          "date": "2018-08-27",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Tuesday",
+          "date": "2018-08-28",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Wednesday",
+          "date": "2018-08-29",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Thursday",
+          "date": "2018-08-30",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Friday",
+          "date": "2018-08-31",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Saturday",
+          "date": "2018-09-01",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Sunday",
+          "date": "2018-09-02",
+          "open": "10:00",
+          "close": "20:00"
+        },
+        {
+          "day": "Monday",
+          "date": "2018-09-03",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Tuesday",
+          "date": "2018-09-04",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Wednesday",
+          "date": "2018-09-05",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Thursday",
+          "date": "2018-09-06",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Friday",
+          "date": "2018-09-07",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Saturday",
+          "date": "2018-09-08",
+          "open": "10:00",
+          "close": "21:00"
+        }
       ],
       "lat": 44.86091,
       "lng": -93.42473,
@@ -161,20 +372,90 @@
       "city": "Burnsville",
       "country": "US",
       "detailedHours": [
-        { "day": "Sunday", "date": "2018-08-26", "open": "10:00", "close": "20:00" },
-        { "day": "Monday", "date": "2018-08-27", "open": "10:00", "close": "21:00" },
-        { "day": "Tuesday", "date": "2018-08-28", "open": "10:00", "close": "21:00" },
-        { "day": "Wednesday", "date": "2018-08-29", "open": "10:00", "close": "21:00" },
-        { "day": "Thursday", "date": "2018-08-30", "open": "10:00", "close": "21:00" },
-        { "day": "Friday", "date": "2018-08-31", "open": "10:00", "close": "21:00" },
-        { "day": "Saturday", "date": "2018-09-01", "open": "10:00", "close": "21:00" },
-        { "day": "Sunday", "date": "2018-09-02", "open": "10:00", "close": "20:00" },
-        { "day": "Monday", "date": "2018-09-03", "open": "10:00", "close": "21:00" },
-        { "day": "Tuesday", "date": "2018-09-04", "open": "10:00", "close": "21:00" },
-        { "day": "Wednesday", "date": "2018-09-05", "open": "10:00", "close": "21:00" },
-        { "day": "Thursday", "date": "2018-09-06", "open": "10:00", "close": "21:00" },
-        { "day": "Friday", "date": "2018-09-07", "open": "10:00", "close": "21:00" },
-        { "day": "Saturday", "date": "2018-09-08", "open": "10:00", "close": "21:00" }
+        {
+          "day": "Sunday",
+          "date": "2018-08-26",
+          "open": "10:00",
+          "close": "20:00"
+        },
+        {
+          "day": "Monday",
+          "date": "2018-08-27",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Tuesday",
+          "date": "2018-08-28",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Wednesday",
+          "date": "2018-08-29",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Thursday",
+          "date": "2018-08-30",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Friday",
+          "date": "2018-08-31",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Saturday",
+          "date": "2018-09-01",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Sunday",
+          "date": "2018-09-02",
+          "open": "10:00",
+          "close": "20:00"
+        },
+        {
+          "day": "Monday",
+          "date": "2018-09-03",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Tuesday",
+          "date": "2018-09-04",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Wednesday",
+          "date": "2018-09-05",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Thursday",
+          "date": "2018-09-06",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Friday",
+          "date": "2018-09-07",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Saturday",
+          "date": "2018-09-08",
+          "open": "10:00",
+          "close": "21:00"
+        }
       ],
       "lat": 44.74802,
       "lng": -93.28584,
@@ -205,20 +486,90 @@
       "city": "Shakopee",
       "country": "US",
       "detailedHours": [
-        { "day": "Sunday", "date": "2018-08-26", "open": "10:00", "close": "20:00" },
-        { "day": "Monday", "date": "2018-08-27", "open": "10:00", "close": "21:00" },
-        { "day": "Tuesday", "date": "2018-08-28", "open": "10:00", "close": "21:00" },
-        { "day": "Wednesday", "date": "2018-08-29", "open": "10:00", "close": "21:00" },
-        { "day": "Thursday", "date": "2018-08-30", "open": "10:00", "close": "21:00" },
-        { "day": "Friday", "date": "2018-08-31", "open": "10:00", "close": "21:00" },
-        { "day": "Saturday", "date": "2018-09-01", "open": "10:00", "close": "21:00" },
-        { "day": "Sunday", "date": "2018-09-02", "open": "10:00", "close": "20:00" },
-        { "day": "Monday", "date": "2018-09-03", "open": "10:00", "close": "21:00" },
-        { "day": "Tuesday", "date": "2018-09-04", "open": "10:00", "close": "21:00" },
-        { "day": "Wednesday", "date": "2018-09-05", "open": "10:00", "close": "21:00" },
-        { "day": "Thursday", "date": "2018-09-06", "open": "10:00", "close": "21:00" },
-        { "day": "Friday", "date": "2018-09-07", "open": "10:00", "close": "21:00" },
-        { "day": "Saturday", "date": "2018-09-08", "open": "10:00", "close": "21:00" }
+        {
+          "day": "Sunday",
+          "date": "2018-08-26",
+          "open": "10:00",
+          "close": "20:00"
+        },
+        {
+          "day": "Monday",
+          "date": "2018-08-27",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Tuesday",
+          "date": "2018-08-28",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Wednesday",
+          "date": "2018-08-29",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Thursday",
+          "date": "2018-08-30",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Friday",
+          "date": "2018-08-31",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Saturday",
+          "date": "2018-09-01",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Sunday",
+          "date": "2018-09-02",
+          "open": "10:00",
+          "close": "20:00"
+        },
+        {
+          "day": "Monday",
+          "date": "2018-09-03",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Tuesday",
+          "date": "2018-09-04",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Wednesday",
+          "date": "2018-09-05",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Thursday",
+          "date": "2018-09-06",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Friday",
+          "date": "2018-09-07",
+          "open": "10:00",
+          "close": "21:00"
+        },
+        {
+          "day": "Saturday",
+          "date": "2018-09-08",
+          "open": "10:00",
+          "close": "21:00"
+        }
       ],
       "lat": 44.77825,
       "lng": -93.41347,

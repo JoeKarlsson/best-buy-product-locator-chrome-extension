@@ -32,14 +32,13 @@ describe('urlFormatter', () => {
 
   describe('constructNearestStoreMapUrl', () => {
     it('should return the Best Buy Store nearest store URL', () => {
-      const city = 'Richfeild';
-      const region = 'FooBar';
+      const address = '123 Flavortown Rd';
       const lat = '123';
       const lng = '5678';
 
-      const result = constructNearestStoreMapUrl(city, region, lat, lng);
+      const result = constructNearestStoreMapUrl(address, lat, lng);
 
-      const expectedResult = `https://www.google.com/maps/search/Best+Buy+${city}+${region}/@${lat},${lng}`;
+      const expectedResult = `https://www.google.com/maps/search/123+Flavortown+Rd+Best+Buy/@${lat},${lng}`;
       expect(result).toBe(expectedResult);
     });
   });

@@ -3,6 +3,7 @@ import {
   constructStoreURLNoProducts,
   constructNearestStoreMapUrl,
 } from './urlFormatter';
+import { getNearestStore, formatStoreHours } from './storeFormatter';
 import api from './api';
 import getGeoLocation from './getGeoLocation';
 import handleError from './handleError';
@@ -18,7 +19,6 @@ const getProductAvailability = async (productCode, codeType) => {
   try {
     if (isValidProductData(productData)) {
       const product = productData.products[0];
-
       const postion = await getGeoLocation();
       const { latitude, longitude } = postion.coords;
 
@@ -27,16 +27,17 @@ const getProductAvailability = async (productCode, codeType) => {
       const storeData = await api(storeURL);
 
       if (isValidStoreData(storeData)) {
-        const nearestStore = storeData.stores[0];
+        const nearestStore = getNearestStore(storeData.stores);
 
         const {
-          city, region, lat, lng
+          address, city, region, lat, lng
         } = nearestStore;
 
         const data = {
           addToCartUrl: product.addToCartUrl,
+          hours: formatStoreHours(nearestStore.detailedHours) || undefined,
           nearestStore: `${city}, ${region}` || undefined,
-          nearestStoreMapUrl: constructNearestStoreMapUrl(city, region, lat, lng) || undefined,
+          nearestStoreMapUrl: constructNearestStoreMapUrl(address, lat, lng) || undefined,
           price: product.salePrice || product.regularPrice,
         };
 

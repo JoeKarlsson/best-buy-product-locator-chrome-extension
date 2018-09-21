@@ -30,34 +30,37 @@ class AppContainer extends Component {
 
   async getProductData({ productCode, codeType }) {
     const productData = await getProductAvailability(productCode, codeType);
+
     const {
-      addToCartUrl, nearestStore, nearestStoreMapUrl, price
+      addToCartUrl, hours, nearestStore, nearestStoreMapUrl, price
     } = productData;
 
     this.setState({
       addToCartUrl,
+      hours,
+      isLoading: false,
       nearestStore,
       nearestStoreMapUrl,
       price,
-      isLoading: false,
     });
   }
 
   render() {
     const {
-      nearestStore, nearestStoreMapUrl, price, addToCartUrl, isLoading
+      addToCartUrl, hours, isLoading, nearestStore, nearestStoreMapUrl, price
     } = this.state;
 
     const { isPopup } = this.props;
     return (
       <ErrorBoundary>
         <App
+          addToCartUrl={addToCartUrl}
+          hours={hours}
+          isLoading={isLoading}
+          isPopup={isPopup}
           nearestStore={nearestStore}
           nearestStoreMapUrl={nearestStoreMapUrl}
           price={price}
-          addToCartUrl={addToCartUrl}
-          isLoading={isLoading}
-          isPopup={isPopup}
         />
       </ErrorBoundary>
     );

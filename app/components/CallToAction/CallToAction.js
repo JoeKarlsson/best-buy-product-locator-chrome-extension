@@ -14,12 +14,12 @@ const Container = styled.div`
           display: inline;
         }
 
-        @media (max-width: 1200px) {
+        @media (max-width: 1390px) {
           margin-top: 5px;
           margin-left: 0px;
         }
 
-        @media (max-width: 850px) {
+        @media (max-width: 1040px) {
           p {
             display: block;
           }
@@ -33,10 +33,25 @@ const H2 = styled.h2`
   color: ${COLORS.darkBlue};
 `;
 
+const formatMessage = (hours) => {
+  const pickItUp = 'Pick it up';
+
+  if (hours.openNow && hours.closingSoon) {
+    return `${pickItUp} today before ${hours.today.closeAmPm} or tomorrow as early as ${
+      hours.tomorrow.openAmPm
+    }`;
+  }
+  if (!hours.openNow) {
+    return `${pickItUp} as early as ${hours.tomorrow.openAmPm}`;
+  }
+  return `${pickItUp} in 1 hour. Open today until ${hours.today.closeAmPm}`;
+};
+
 const CallToAction = (props) => {
   const {
-    isPopup, nearestStoreMapUrl, nearestStore, price
+    hours, isPopup, nearestStoreMapUrl, nearestStore, price
   } = props;
+
   return (
     <Container isPopup={isPopup}>
       <H2>Want it faster? </H2>
@@ -45,7 +60,8 @@ const CallToAction = (props) => {
         <a target="_blank" rel="noopener noreferrer" href={nearestStoreMapUrl}>
           Best Buy in {nearestStore}.
         </a>{' '}
-        Order now and pick it up in 1 hour.&nbsp;
+        {formatMessage(hours)}
+        .&nbsp;
       </p>
       <p>
         Price: <b>${price}</b>
@@ -55,6 +71,7 @@ const CallToAction = (props) => {
 };
 
 CallToAction.propTypes = {
+  hours: PropTypes.object.isRequired,
   isPopup: PropTypes.bool,
   nearestStore: PropTypes.string.isRequired,
   nearestStoreMapUrl: PropTypes.string.isRequired,

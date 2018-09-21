@@ -10,6 +10,6 @@ export const constructStoreURL = (skuId, latitude, longitude, distance) => `${BA
 
 export const constructStoreURLNoProducts = (latitude, longitude, distance) => `${BASE_URL}stores((area(${latitude}, ${longitude},${distance})))?apiKey=${
   process.env.BBY_API_KEY
-}&format=json`;
+}&format=json&show=all`;
 
-export const constructNearestStoreMapUrl = (city, region, lat, lng) => `https://www.google.com/maps/search/Best+Buy+${city}+${region}/@${lat},${lng}`;
+export const constructNearestStoreMapUrl = (address, lat, lng) => `https://www.google.com/maps/search/${address.replace(/ /g, '+')}+Best+Buy/@${lat},${lng}`;
