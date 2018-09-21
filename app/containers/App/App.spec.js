@@ -5,6 +5,26 @@ import { mount } from 'enzyme';
 import App from './App';
 
 describe('App', () => {
+  const hours = {
+    closingSoon: true,
+    openNow: true,
+    today: {
+      close: '21:00',
+      closeAmPm: '9:00 pm',
+      date: '2018-08-27',
+      day: 'Today',
+      open: '10:00',
+      openAmPm: '10:00 am',
+    },
+    tomorrow: {
+      close: '21:00',
+      closeAmPm: '9:00 pm',
+      date: '2018-08-28',
+      day: 'Tomorrow',
+      open: '10:00',
+      openAmPm: '10:00 am',
+    },
+  };
   describe('isValidProduct', () => {
     it('should be called when component receives props', () => {
       const nearestStore = 'Richfeild';
@@ -15,6 +35,7 @@ describe('App', () => {
 
       const wrapper = mount(
         <App
+          hours={hours}
           nearestStore={nearestStore}
           nearestStoreMapUrl={nearestStoreMapUrl}
           price={price}
@@ -37,6 +58,7 @@ describe('App', () => {
 
       const wrapper = mount(
         <App
+          hours={hours}
           nearestStore={nearestStore}
           nearestStoreMapUrl={nearestStoreMapUrl}
           price={price}
@@ -59,6 +81,7 @@ describe('App', () => {
 
       const wrapper = mount(
         <App
+          hours={hours}
           nearestStore={nearestStore}
           nearestStoreMapUrl={nearestStoreMapUrl}
           price={price}
@@ -84,6 +107,7 @@ describe('App', () => {
 
         const component = renderer.create(
           <App
+            hours={hours}
             nearestStore={nearestStore}
             nearestStoreMapUrl={nearestStoreMapUrl}
             price={price}
@@ -105,6 +129,7 @@ describe('App', () => {
 
         const component = renderer.create(
           <App
+            hours={hours}
             nearestStore={nearestStore}
             nearestStoreMapUrl={nearestStoreMapUrl}
             price={price}
@@ -126,6 +151,7 @@ describe('App', () => {
 
         const component = renderer.create(
           <App
+            hours={hours}
             nearestStore={nearestStore}
             nearestStoreMapUrl={nearestStoreMapUrl}
             price={price}

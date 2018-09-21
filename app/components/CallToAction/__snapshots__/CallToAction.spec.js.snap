@@ -2,7 +2,7 @@
 
 exports[`CallToAction rendering initial state is rendered 1`] = `
 <div
-  className="sc-bdVaJa kZuZoP"
+  className="sc-bdVaJa gALOlk"
 >
   <h2
     className="sc-bwzfXH gPMGtq"
@@ -22,7 +22,8 @@ exports[`CallToAction rendering initial state is rendered 1`] = `
       .
     </a>
      
-    Order now and pick it up in 1 hour. 
+    Pick it up today before 9:00 pm or tomorrow as early as 10:00 am
+    . 
   </p>
   <p>
     Price: 

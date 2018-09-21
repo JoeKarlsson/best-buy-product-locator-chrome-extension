@@ -33,42 +33,44 @@ const H2 = styled.h2`
   color: ${COLORS.darkBlue};
 `;
 
-const formatMessage = (hours) => {
-  const pickItUp = 'Pick it up';
+class CallToAction extends React.PureComponent {
+  formatMessage = (hours) => {
+    const pickItUp = 'Pick it up';
 
-  if (hours.openNow && hours.closingSoon) {
-    return `${pickItUp} today before ${hours.today.closeAmPm} or tomorrow as early as ${
-      hours.tomorrow.openAmPm
-    }`;
+    if (hours.openNow && hours.closingSoon) {
+      return `${pickItUp} today before ${hours.today.closeAmPm} or tomorrow as early as ${
+        hours.tomorrow.openAmPm
+      }`;
+    }
+    if (!hours.openNow) {
+      return `${pickItUp} as early as ${hours.tomorrow.openAmPm}`;
+    }
+    return `${pickItUp} in 1 hour. Open today until ${hours.today.closeAmPm}`;
+  };
+
+  render() {
+    const {
+      hours, isPopup, nearestStoreMapUrl, nearestStore, price
+    } = this.props;
+
+    return (
+      <Container isPopup={isPopup}>
+        <H2>Want it faster? </H2>
+        <p>
+          This product is available for pick up at the{' '}
+          <a target="_blank" rel="noopener noreferrer" href={nearestStoreMapUrl}>
+            Best Buy in {nearestStore}.
+          </a>{' '}
+          {this.formatMessage(hours)}
+          .&nbsp;
+        </p>
+        <p>
+          Price: <b>${price}</b>
+        </p>
+      </Container>
+    );
   }
-  if (!hours.openNow) {
-    return `${pickItUp} as early as ${hours.tomorrow.openAmPm}`;
-  }
-  return `${pickItUp} in 1 hour. Open today until ${hours.today.closeAmPm}`;
-};
-
-const CallToAction = (props) => {
-  const {
-    hours, isPopup, nearestStoreMapUrl, nearestStore, price
-  } = props;
-
-  return (
-    <Container isPopup={isPopup}>
-      <H2>Want it faster? </H2>
-      <p>
-        This product is available for pick up at the{' '}
-        <a target="_blank" rel="noopener noreferrer" href={nearestStoreMapUrl}>
-          Best Buy in {nearestStore}.
-        </a>{' '}
-        {formatMessage(hours)}
-        .&nbsp;
-      </p>
-      <p>
-        Price: <b>${price}</b>
-      </p>
-    </Container>
-  );
-};
+}
 
 CallToAction.propTypes = {
   hours: PropTypes.object.isRequired,

@@ -16,7 +16,7 @@ exports[`Body rendering initial state is rendered 1`] = `
     </div>
   </div>
   <div
-    className="sc-htpNat uQLyd"
+    className="sc-htpNat dENRRf"
   >
     <svg
       height="45px"
@@ -105,7 +105,7 @@ exports[`Body rendering initial state is rendered 1`] = `
     </svg>
   </div>
   <div
-    className="sc-bxivhb eAINaF"
+    className="sc-bxivhb hcozPg"
   >
     <h2
       className="sc-ifAKCX knTyiF"
@@ -125,7 +125,8 @@ exports[`Body rendering initial state is rendered 1`] = `
         .
       </a>
        
-      Order now and pick it up in 1 hour. 
+      Pick it up today before 9:00 pm or tomorrow as early as 10:00 am
+      . 
     </p>
     <p>
       Price: 
@@ -136,7 +137,7 @@ exports[`Body rendering initial state is rendered 1`] = `
     </p>
   </div>
   <div
-    className="sc-EHOje gtWsUa"
+    className="sc-EHOje cRTrvv"
   >
     <a
       href="www.testurl.com"
