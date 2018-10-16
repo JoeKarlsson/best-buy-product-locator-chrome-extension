@@ -21,7 +21,13 @@ class AppContainer extends Component {
   }
 
   componentDidMount() {
-    this.getProductCode();
+    // console.log('hit', isValidHost());
+    // if (isValidHost()) {
+    //   this.setState({
+    //     isNotValidSite: false,
+    //   });
+    // }
+    return this.getProductCode();
   }
 
   getProductCode() {
