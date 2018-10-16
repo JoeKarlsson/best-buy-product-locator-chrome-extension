@@ -7,9 +7,15 @@ const Container = styled.div`
   ${(props) => {
     if (!props.isPopup) {
       return css`
+        position: absolute;
         width: 200px;
-        float: right;
-        margin-right: 50px;
+        right: 60px;
+        top: 10px;
+
+        @media (max-width: 850px) {
+          position: initial;
+          float: right;
+        }
       `;
     }
   }};
