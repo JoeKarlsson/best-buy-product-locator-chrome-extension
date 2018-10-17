@@ -36,12 +36,13 @@ class App extends PureComponent {
 
   render() {
     const {
+      addToCartUrl,
+      hours,
       isLoading,
       isPopup,
       nearestStore,
       nearestStoreMapUrl,
       price,
-      addToCartUrl,
     } = this.props;
 
     const { validProduct } = this.state;
@@ -53,11 +54,12 @@ class App extends PureComponent {
     if (validProduct) {
       return (
         <Body
+          addToCartUrl={addToCartUrl}
+          hours={hours}
+          isPopup={isPopup}
           nearestStore={nearestStore}
           nearestStoreMapUrl={nearestStoreMapUrl}
           price={price}
-          addToCartUrl={addToCartUrl}
-          isPopup={isPopup}
         />
       );
     }
@@ -69,21 +71,23 @@ class App extends PureComponent {
 }
 
 App.propTypes = {
+  addToCartUrl: PropTypes.string,
+  hours: PropTypes.object,
+  isLoading: PropTypes.bool,
+  isPopup: PropTypes.bool,
   nearestStore: PropTypes.string,
   nearestStoreMapUrl: PropTypes.string,
   price: PropTypes.number,
-  addToCartUrl: PropTypes.string,
-  isLoading: PropTypes.bool,
-  isPopup: PropTypes.bool,
 };
 
 App.defaultProps = {
   addToCartUrl: '',
+  hours: {},
+  isLoading: true,
+  isPopup: false,
   nearestStore: '',
   nearestStoreMapUrl: '',
   price: 0,
-  isLoading: true,
-  isPopup: false,
 };
 
 export default App;

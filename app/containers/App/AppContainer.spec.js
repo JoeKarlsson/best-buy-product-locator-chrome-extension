@@ -16,6 +16,26 @@ describe('AppContainer', () => {
     addToCartUrl: 'www.testurl.com',
     isLoading: false,
     isPopup: true,
+    hours: {
+      closingSoon: true,
+      openNow: true,
+      today: {
+        close: '21:00',
+        closeAmPm: '9:00 pm',
+        date: '2018-08-27',
+        day: 'Today',
+        open: '10:00',
+        openAmPm: '10:00 am',
+      },
+      tomorrow: {
+        close: '21:00',
+        closeAmPm: '9:00 pm',
+        date: '2018-08-28',
+        day: 'Tomorrow',
+        open: '10:00',
+        openAmPm: '10:00 am',
+      },
+    },
   };
 
   beforeEach(() => {

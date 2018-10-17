@@ -8,6 +8,26 @@ configure({ adapter: new Adapter() });
 
 describe('Body', () => {
   let wrapper;
+  const hours = {
+    closingSoon: true,
+    openNow: true,
+    today: {
+      close: '21:00',
+      closeAmPm: '9:00 pm',
+      date: '2018-08-27',
+      day: 'Today',
+      open: '10:00',
+      openAmPm: '10:00 am',
+    },
+    tomorrow: {
+      close: '21:00',
+      closeAmPm: '9:00 pm',
+      date: '2018-08-28',
+      day: 'Tomorrow',
+      open: '10:00',
+      openAmPm: '10:00 am',
+    },
+  };
 
   beforeEach(() => {
     const nearestStore = 'Richfeild';
@@ -18,6 +38,7 @@ describe('Body', () => {
 
     wrapper = shallow(
       <Body
+        hours={hours}
         nearestStore={nearestStore}
         nearestStoreMapUrl={nearestStoreMapUrl}
         price={price}
@@ -38,6 +59,7 @@ describe('Body', () => {
 
         const component = renderer.create(
           <Body
+            hours={hours}
             nearestStore={nearestStore}
             nearestStoreMapUrl={nearestStoreMapUrl}
             price={price}

@@ -13,7 +13,7 @@ const ImageContainer = styled.div`
     return css`
       position: absolute;
 
-      @media (max-width: 1200px) {
+      @media (max-width: 1390px) {
         position: initial;
       }
     `;

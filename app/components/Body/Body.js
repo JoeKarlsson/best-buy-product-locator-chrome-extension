@@ -57,7 +57,7 @@ const Container = styled.div`
 
 const Body = (props) => {
   const {
-    nearestStore, nearestStoreMapUrl, price, addToCartUrl, isPopup
+    addToCartUrl, hours, isPopup, nearestStore, nearestStoreMapUrl, price
   } = props;
 
   return (
@@ -65,10 +65,11 @@ const Body = (props) => {
       <CloseButton isPopup={isPopup} />
       <Logo isPopup={isPopup} />
       <CallToAction
+        hours={hours}
+        isPopup={isPopup}
         nearestStore={nearestStore}
         nearestStoreMapUrl={nearestStoreMapUrl}
         price={price}
-        isPopup={isPopup}
       />
       <AddToCartButton addToCartUrl={addToCartUrl} isPopup={isPopup} />
     </Container>
@@ -76,11 +77,12 @@ const Body = (props) => {
 };
 
 Body.propTypes = {
+  addToCartUrl: PropTypes.string.isRequired,
+  hours: PropTypes.object.isRequired,
+  isPopup: PropTypes.bool,
   nearestStore: PropTypes.string.isRequired,
   nearestStoreMapUrl: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  addToCartUrl: PropTypes.string.isRequired,
-  isPopup: PropTypes.bool,
 };
 
 Body.defaultProps = {

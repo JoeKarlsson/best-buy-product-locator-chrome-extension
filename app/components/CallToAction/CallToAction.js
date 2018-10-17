@@ -14,12 +14,12 @@ const Container = styled.div`
           display: inline;
         }
 
-        @media (max-width: 1200px) {
+        @media (max-width: 1390px) {
           margin-top: 5px;
           margin-left: 0px;
         }
 
-        @media (max-width: 850px) {
+        @media (max-width: 1040px) {
           p {
             display: block;
           }
@@ -33,28 +33,47 @@ const H2 = styled.h2`
   color: ${COLORS.darkBlue};
 `;
 
-const CallToAction = (props) => {
-  const {
-    isPopup, nearestStoreMapUrl, nearestStore, price
-  } = props;
-  return (
-    <Container isPopup={isPopup}>
-      <H2>Want it faster? </H2>
-      <p>
-        This product is available for pick up at the{' '}
-        <a target="_blank" rel="noopener noreferrer" href={nearestStoreMapUrl}>
-          Best Buy in {nearestStore}.
-        </a>{' '}
-        Order now and pick it up in 1 hour.&nbsp;
-      </p>
-      <p>
-        Price: <b>${price}</b>
-      </p>
-    </Container>
-  );
-};
+class CallToAction extends React.PureComponent {
+  formatMessage = (hours) => {
+    const pickItUp = 'Pick it up';
+
+    if (hours.openNow && hours.closingSoon) {
+      return `${pickItUp} today before ${hours.today.closeAmPm} or tomorrow as early as ${
+        hours.tomorrow.openAmPm
+      }`;
+    }
+    if (!hours.openNow) {
+      return `${pickItUp} as early as ${hours.tomorrow.openAmPm}`;
+    }
+    return `${pickItUp} in 1 hour. Open today until ${hours.today.closeAmPm}`;
+  };
+
+  render() {
+    const {
+      hours, isPopup, nearestStoreMapUrl, nearestStore, price
+    } = this.props;
+
+    return (
+      <Container isPopup={isPopup}>
+        <H2>Want it faster? </H2>
+        <p>
+          This product is available for pick up at the{' '}
+          <a target="_blank" rel="noopener noreferrer" href={nearestStoreMapUrl}>
+            Best Buy in {nearestStore}.
+          </a>{' '}
+          {this.formatMessage(hours)}
+          .&nbsp;
+        </p>
+        <p>
+          Price: <b>${price}</b>
+        </p>
+      </Container>
+    );
+  }
+}
 
 CallToAction.propTypes = {
+  hours: PropTypes.object.isRequired,
   isPopup: PropTypes.bool,
   nearestStore: PropTypes.string.isRequired,
   nearestStoreMapUrl: PropTypes.string.isRequired,

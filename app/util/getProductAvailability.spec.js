@@ -1,6 +1,7 @@
 import fetchMock from 'fetch-mock';
 import getProductAvailability from './getProductAvailability';
 import { constructProductURL, constructStoreURLNoProducts } from './urlFormatter';
+import * as storeFormatter from './storeFormatter';
 import mockProductData from './__mocks__/mockProductData.json';
 import mockStoreData from './__mocks__/mockStoreData.json';
 
@@ -20,7 +21,8 @@ describe('getProductAvailability', () => {
     };
 
     const modelNumber = 'UN55NU7100FXZA';
-    const productUrl = constructProductURL(modelNumber);
+    const codeType = 'modelNumber';
+    const productUrl = constructProductURL(modelNumber, codeType);
     fetchMock.once(productUrl, mockProductData);
 
     const distance = 15;
@@ -31,13 +33,21 @@ describe('getProductAvailability', () => {
     );
     fetchMock.once(storeUrl, mockStoreData);
 
-    const response = await getProductAvailability(modelNumber);
+    storeFormatter.getNearestStore = jest.fn().mockReturnValue(mockStoreData.stores[0]);
+
+    const response = await getProductAvailability(modelNumber, codeType);
     const expectedResponse = {
       addToCartUrl: 'https://api.bestbuy.com/click/-/6200125/cart',
       nearestStore: 'Richfield, MN',
       nearestStoreMapUrl:
-        'https://www.google.com/maps/search/Best+Buy+Richfield+MN/@44.86321,-93.29274',
+        'https://www.google.com/maps/search/1000+West+78th+St+Best+Buy/@44.86321,-93.29274',
       price: 599.99,
+      hours: {
+        closingSoon: false,
+        openNow: false,
+        today: undefined,
+        tomorrow: undefined,
+      },
     };
 
     expect(response).toMatchObject(expectedResponse);

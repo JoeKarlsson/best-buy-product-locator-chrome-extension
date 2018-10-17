@@ -9,9 +9,31 @@ configure({ adapter: new Adapter() });
 describe('CallToAction', () => {
   let wrapper;
 
+  const hours = {
+    closingSoon: true,
+    openNow: true,
+    today: {
+      close: '21:00',
+      closeAmPm: '9:00 pm',
+      date: '2018-08-27',
+      day: 'Today',
+      open: '10:00',
+      openAmPm: '10:00 am',
+    },
+    tomorrow: {
+      close: '21:00',
+      closeAmPm: '9:00 pm',
+      date: '2018-08-28',
+      day: 'Tomorrow',
+      open: '10:00',
+      openAmPm: '10:00 am',
+    },
+  };
+
   beforeEach(() => {
     wrapper = shallow(
       <CallToAction
+        hours={hours}
         nearestStore="Richfeild, MN"
         nearestStoreMapUrl="www.testurl.com"
         price={1234}
@@ -24,6 +46,7 @@ describe('CallToAction', () => {
       it('is rendered', () => {
         const component = renderer.create(
           <CallToAction
+            hours={hours}
             nearestStore="Richfeild, MN"
             nearestStoreMapUrl="www.testurl.com"
             price={1234}
@@ -35,12 +58,6 @@ describe('CallToAction', () => {
 
       it('is rendered correctly', () => {
         expect(wrapper).toHaveLength(1);
-      });
-
-      it('should have correct inital instance', () => {
-        const initialInstance = wrapper.instance();
-        const expectedInstance = null;
-        expect(initialInstance).toBe(expectedInstance);
       });
     });
   });
