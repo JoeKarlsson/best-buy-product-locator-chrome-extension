@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import App from './App';
 import ErrorBoundary from '../../components/shared/ErrorBoundary/ErrorBoundary';
 import getProductAvailability from '../../util/getProductAvailability';
+import handleError from '../../util/handleError';
 
 class AppContainer extends Component {
   constructor() {
@@ -21,7 +22,7 @@ class AppContainer extends Component {
   }
 
   componentDidMount() {
-    this.getProductCode();
+    return this.getProductCode();
   }
 
   getProductCode() {
@@ -29,20 +30,24 @@ class AppContainer extends Component {
   }
 
   async getProductData({ productCode, codeType }) {
-    const productData = await getProductAvailability(productCode, codeType);
+    try {
+      const productData = await getProductAvailability(productCode, codeType);
 
-    const {
-      addToCartUrl, hours, nearestStore, nearestStoreMapUrl, price
-    } = productData;
+      const {
+        addToCartUrl, hours, nearestStore, nearestStoreMapUrl, price
+      } = productData;
 
-    this.setState({
-      addToCartUrl,
-      hours,
-      isLoading: false,
-      nearestStore,
-      nearestStoreMapUrl,
-      price,
-    });
+      this.setState({
+        addToCartUrl,
+        hours,
+        isLoading: false,
+        nearestStore,
+        nearestStoreMapUrl,
+        price,
+      });
+    } catch (err) {
+      handleError(err);
+    }
   }
 
   render() {

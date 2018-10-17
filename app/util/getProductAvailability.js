@@ -14,9 +14,9 @@ const isValidStoreData = storeData => storeData.stores && storeData.stores.lengt
 
 const getProductAvailability = async (productCode, codeType) => {
   const productURL = constructProductURL(productCode, codeType);
-  const productData = await api(productURL);
 
   try {
+    const productData = await api(productURL);
     if (isValidProductData(productData)) {
       const product = productData.products[0];
       const postion = await getGeoLocation();
@@ -53,6 +53,14 @@ const getProductAvailability = async (productCode, codeType) => {
 
       return data;
     }
+    // No product found
+    const data = {
+      addToCartUrl: '',
+      nearestStore: undefined,
+      nearestStoreMapUrl: undefined,
+      price: undefined,
+    };
+    return data;
   } catch (err) {
     return handleError(err);
   }
