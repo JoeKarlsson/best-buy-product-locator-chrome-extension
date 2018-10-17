@@ -5,7 +5,7 @@ exports[`ZeroState rendering initial state is rendered 1`] = `
   className="sc-bdVaJa khUSez"
 >
   <p>
-    Im sorry! Please try again.
+    Zero State
   </p>
 </div>
 `;
