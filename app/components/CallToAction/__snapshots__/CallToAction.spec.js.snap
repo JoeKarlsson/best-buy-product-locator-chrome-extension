@@ -5,7 +5,7 @@ exports[`CallToAction rendering initial state is rendered 1`] = `
   className="sc-bdVaJa kZuZoP"
 >
   <h2
-    className="foobar sc-bwzfXH gPMGtq"
+    className="sc-bwzfXH gPMGtq"
   >
     Want it faster? 
   </h2>

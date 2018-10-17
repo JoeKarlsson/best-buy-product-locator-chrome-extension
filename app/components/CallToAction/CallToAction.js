@@ -39,7 +39,7 @@ const CallToAction = (props) => {
   } = props;
   return (
     <Container isPopup={isPopup}>
-      <H2 className="foobar">Want it faster? </H2>
+      <H2>Want it faster? </H2>
       <p>
         This product is available for pick up at the{' '}
         <a target="_blank" rel="noopener noreferrer" href={nearestStoreMapUrl}>
