@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Error from '../../components/shared/Error/Error';
 import Loader from '../../components/shared/Loader/Loader';
 import Body from '../../components/Body/Body';
 
-class App extends React.PureComponent {
+class App extends PureComponent {
   constructor() {
     super();
 
@@ -43,11 +43,13 @@ class App extends React.PureComponent {
       price,
       addToCartUrl,
     } = this.props;
+
     const { validProduct } = this.state;
 
     if (isLoading && isPopup) {
       return <Loader />;
     }
+
     if (validProduct) {
       return (
         <Body

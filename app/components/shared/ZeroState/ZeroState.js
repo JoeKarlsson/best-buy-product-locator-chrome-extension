@@ -7,7 +7,7 @@ const ImageContainer = styled.div`
 
 const ZeroState = () => (
   <ImageContainer>
-    <p>Im sorry! Please try again.</p>
+    <p>Zero State</p>
   </ImageContainer>
 );
 
