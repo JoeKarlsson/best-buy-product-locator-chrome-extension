@@ -110,24 +110,8 @@ exports[`Body rendering initial state is rendered 1`] = `
     <h2
       className="sc-ifAKCX knTyiF"
     >
-      Want it faster? 
+      Order now on BestBuy.com
     </h2>
-    <p>
-      This product is available for pick up at the
-       
-      <a
-        href="www.testurl.com"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        Best Buy in 
-        Richfeild
-        .
-      </a>
-       
-      Pick it up today before 9:00 pm or tomorrow as early as 10:00 am
-      . 
-    </p>
     <p>
       Price: 
       <b>
