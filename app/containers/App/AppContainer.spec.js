@@ -43,6 +43,7 @@ describe('AppContainer', () => {
       productCode: 'UN55NU7100FXZA',
       codeType: 'modelNumber',
     });
+
     fetchMock.reset();
   });
 

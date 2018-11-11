@@ -10,27 +10,33 @@ class App extends PureComponent {
 
     this.state = {
       validProduct: false,
+      validStore: false,
     };
 
     this.isValidProductData = this.isValidProductData.bind(this);
   }
 
   componentDidUpdate() {
-    this.isValidProductData();
-  }
-
-  isValidProductData() {
     const {
       nearestStore, nearestStoreMapUrl, price, addToCartUrl
     } = this.props;
+    this.isValidProductData(price, addToCartUrl);
+    this.isValidStoreData(nearestStore, nearestStoreMapUrl);
+  }
 
-    const validProduct = nearestStore.length > 0
-      && nearestStoreMapUrl.length > 0
-      && price > 0
-      && addToCartUrl.length > 0;
+  isValidProductData(price, addToCartUrl) {
+    const validProduct = price > 0 && addToCartUrl.length > 0;
 
     this.setState({
       validProduct,
+    });
+  }
+
+  isValidStoreData(nearestStore, nearestStoreMapUrl) {
+    const validStore = nearestStore.length > 0 && nearestStoreMapUrl.length > 0;
+
+    this.setState({
+      validStore,
     });
   }
 
@@ -45,7 +51,7 @@ class App extends PureComponent {
       price,
     } = this.props;
 
-    const { validProduct } = this.state;
+    const { validProduct, validStore } = this.state;
 
     if (isLoading && isPopup) {
       return <Loader />;
@@ -60,6 +66,7 @@ class App extends PureComponent {
           nearestStore={nearestStore}
           nearestStoreMapUrl={nearestStoreMapUrl}
           price={price}
+          validStore={validStore}
         />
       );
     }

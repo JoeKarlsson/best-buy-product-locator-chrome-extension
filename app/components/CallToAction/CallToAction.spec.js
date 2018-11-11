@@ -50,6 +50,7 @@ describe('CallToAction', () => {
             nearestStore="Richfeild, MN"
             nearestStoreMapUrl="www.testurl.com"
             price={1234}
+            validStore={false}
           />,
         );
         const tree = component.toJSON();

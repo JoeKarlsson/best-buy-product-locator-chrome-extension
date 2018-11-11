@@ -57,7 +57,13 @@ const Container = styled.div`
 
 const Body = (props) => {
   const {
-    addToCartUrl, hours, isPopup, nearestStore, nearestStoreMapUrl, price
+    addToCartUrl,
+    hours,
+    isPopup,
+    nearestStore,
+    nearestStoreMapUrl,
+    price,
+    validStore,
   } = props;
 
   return (
@@ -70,6 +76,7 @@ const Body = (props) => {
         nearestStore={nearestStore}
         nearestStoreMapUrl={nearestStoreMapUrl}
         price={price}
+        validStore={validStore}
       />
       <AddToCartButton addToCartUrl={addToCartUrl} isPopup={isPopup} />
     </Container>
@@ -83,6 +90,7 @@ Body.propTypes = {
   nearestStore: PropTypes.string.isRequired,
   nearestStoreMapUrl: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
+  validStore: PropTypes.bool.isRequired,
 };
 
 Body.defaultProps = {
