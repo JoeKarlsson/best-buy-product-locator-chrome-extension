@@ -66,7 +66,7 @@ describe('storeFormatter', () => {
 
       expect(spy).toHaveReturnedWith({
         closingSoon: false,
-        openNow: false,
+        openNow: true,
         today: {
           close: '21:00',
           closeAmPm: '9:00 pm',
