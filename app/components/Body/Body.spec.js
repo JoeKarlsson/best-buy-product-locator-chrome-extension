@@ -35,6 +35,7 @@ describe('Body', () => {
     const price = 1234;
     const addToCartUrl = 'www.testurl.com';
     const isLoading = false;
+    const validStore = true;
 
     wrapper = shallow(
       <Body
@@ -44,6 +45,7 @@ describe('Body', () => {
         price={price}
         addToCartUrl={addToCartUrl}
         isLoading={isLoading}
+        validStore={validStore}
       />,
     );
   });
@@ -56,6 +58,7 @@ describe('Body', () => {
         const price = 1234;
         const addToCartUrl = 'www.testurl.com';
         const isLoading = false;
+        const validStore = true;
 
         const component = renderer.create(
           <Body
@@ -65,6 +68,7 @@ describe('Body', () => {
             price={price}
             addToCartUrl={addToCartUrl}
             isLoading={isLoading}
+            validStore={validStore}
           />,
         );
         const tree = component.toJSON();
