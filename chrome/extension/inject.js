@@ -5,6 +5,7 @@ import getProductCode from './get-product-code';
 
 window.addEventListener('load', () => {
   const script = document.createElement('script');
+  script.id = 'bby-product-locator';
   script.innerHTML = getProductCode;
   document.body.appendChild(script);
 

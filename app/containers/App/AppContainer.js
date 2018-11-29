@@ -34,10 +34,18 @@ class AppContainer extends Component {
       const productData = await getProductAvailability(productCode, codeType);
 
       const {
-        addToCartUrl, hours, nearestStore, nearestStoreMapUrl, price
+        name,
+        image,
+        addToCartUrl,
+        hours,
+        nearestStore,
+        nearestStoreMapUrl,
+        price,
       } = productData;
 
       this.setState({
+        name,
+        image,
         addToCartUrl,
         hours,
         isLoading: false,
@@ -52,13 +60,22 @@ class AppContainer extends Component {
 
   render() {
     const {
-      addToCartUrl, hours, isLoading, nearestStore, nearestStoreMapUrl, price
+      name,
+      image,
+      addToCartUrl,
+      hours,
+      isLoading,
+      nearestStore,
+      nearestStoreMapUrl,
+      price,
     } = this.state;
 
     const { isPopup } = this.props;
     return (
       <ErrorBoundary>
         <App
+          name={name}
+          image={image}
           addToCartUrl={addToCartUrl}
           hours={hours}
           isLoading={isLoading}

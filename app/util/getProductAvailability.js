@@ -19,6 +19,7 @@ const getProductAvailability = async (productCode, codeType) => {
     const productData = await api(productURL);
     if (isValidProductData(productData)) {
       const product = productData.products[0];
+      console.log('product', product);
       const postion = await getGeoLocation();
       const { latitude, longitude } = postion.coords;
 
@@ -35,6 +36,7 @@ const getProductAvailability = async (productCode, codeType) => {
 
         const data = {
           addToCartUrl: product.addToCartUrl,
+          product,
           hours: formatStoreHours(nearestStore.detailedHours) || undefined,
           nearestStore: `${city}, ${region}` || undefined,
           nearestStoreMapUrl: constructNearestStoreMapUrl(address, lat, lng) || undefined,
