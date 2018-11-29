@@ -4,6 +4,7 @@ import Root from '../../app/containers/Root';
 import getProductCode from './get-product-code';
 
 window.addEventListener('load', () => {
+  console.log('inject');
   const script = document.createElement('script');
   script.id = 'bby-product-locator';
   script.innerHTML = getProductCode;

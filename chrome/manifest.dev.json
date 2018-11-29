@@ -16,17 +16,20 @@
   "background": {
     "page": "background.html"
   },
+  "main": "http://localhost:3000",
   "permissions": [
-    "webRequest",
     "contextMenus",
     "tabs",
     "storage",
     "management",
     "geolocation",
     "https://api.bestbuy.com/*",
+    "https://img.bbystatic.com/*",
     "https://github.com/*",
     "https://www.amazon.com/*",
+    "https://intl.target.com/*",
+    "https://www.target.com/*",
     "https://*.com/*"
   ],
-  "content_security_policy": "default-src 'self'; script-src 'self' http://localhost:3000 https://localhost:3000 https://api.bestbuy.com 'unsafe-eval'; connect-src http://localhost:3000 https://localhost:3000 https://api.bestbuy.com; style-src * 'unsafe-inline' 'self' blob:; img-src 'self' data:;"
+  "content_security_policy": "default-src 'self'; script-src 'self' http://localhost:3000 https://localhost:3000 https://api.bestbuy.com 'unsafe-eval'; connect-src http://localhost:3000 https://localhost:3000 https://api.bestbuy.com; style-src * 'unsafe-inline' 'self' blob:; img-src * 'self' data:;"
 }

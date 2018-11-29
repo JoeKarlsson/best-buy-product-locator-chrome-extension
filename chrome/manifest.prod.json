@@ -17,14 +17,18 @@
     "page": "background.html"
   },
   "permissions": [
+    "webview",
     "webRequest",
     "contextMenus",
     "tabs",
     "storage",
     "geolocation",
     "https://api.bestbuy.com/*",
+    "https://img.bbystatic.com/*",
     "https://github.com/*",
-    "https://www.amazon.com/*"
+    "https://www.amazon.com/*",
+    "https://intl.target.com/*",
+    "https://www.target.com/*"
   ],
-  "content_security_policy": "default-src 'self'; script-src 'self' https://api.bestbuy.com; style-src * 'unsafe-inline'; connect-src https://api.bestbuy.com; img-src 'self' data:;"
+  "content_security_policy": "default-src 'self'; script-src 'script-src-elem' https://api.bestbuy.com; style-src * 'unsafe-inline'; connect-src https://api.bestbuy.com; img-src * data:;"
 }
