@@ -57,6 +57,8 @@ const Container = styled.div`
 
 const Body = (props) => {
   const {
+    name,
+    image,
     addToCartUrl,
     hours,
     isPopup,
@@ -70,7 +72,11 @@ const Body = (props) => {
     <Container isPopup={isPopup}>
       <CloseButton isPopup={isPopup} />
       <Logo isPopup={isPopup} />
+      <img alt={name} src={image} />
+      <h3>{name}</h3>
       <CallToAction
+        name={name}
+        image={image}
         hours={hours}
         isPopup={isPopup}
         nearestStore={nearestStore}
@@ -84,6 +90,8 @@ const Body = (props) => {
 };
 
 Body.propTypes = {
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
   addToCartUrl: PropTypes.string.isRequired,
   hours: PropTypes.object.isRequired,
   isPopup: PropTypes.bool,

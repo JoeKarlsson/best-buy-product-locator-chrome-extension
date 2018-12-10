@@ -42,6 +42,8 @@ class App extends PureComponent {
 
   render() {
     const {
+      name,
+      image,
       addToCartUrl,
       hours,
       isLoading,
@@ -60,6 +62,8 @@ class App extends PureComponent {
     if (validProduct) {
       return (
         <Body
+          name={name}
+          image={image}
           addToCartUrl={addToCartUrl}
           hours={hours}
           isPopup={isPopup}
@@ -78,6 +82,8 @@ class App extends PureComponent {
 }
 
 App.propTypes = {
+  name: PropTypes.string,
+  image: PropTypes.string,
   addToCartUrl: PropTypes.string,
   hours: PropTypes.object,
   isLoading: PropTypes.bool,
@@ -88,6 +94,8 @@ App.propTypes = {
 };
 
 App.defaultProps = {
+  name: '',
+  image: '',
   addToCartUrl: '',
   hours: {},
   isLoading: true,

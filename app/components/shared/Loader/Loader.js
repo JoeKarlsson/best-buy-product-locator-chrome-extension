@@ -5,7 +5,7 @@ import { COLORS } from '../../../constants/styles';
 
 const ImageContainer = styled.div`
   text-align: center;
-  background: ${COLORS.yellow};
+  background: ${COLORS.white};
   height: 200px;
   padding: 0;
   margin: 0;

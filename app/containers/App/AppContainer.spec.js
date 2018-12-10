@@ -49,7 +49,7 @@ describe('AppContainer', () => {
 
   describe('getProductCode', () => {
     it('should be called on mount', () => {
-      const url = 'https://api.bestbuy.com/v1/products(modelNumber=UN55NU7100FXZA)?apiKey=undefined&sort=inStoreAvailability.asc&show=inStoreAvailability,name,sku,regularPrice,salePrice,addToCartUrl,condition&format=json';
+      const url = 'https://api.bestbuy.com/v1/products(modelNumber=UN55NU7100FXZA)?apiKey=undefined&sort=inStoreAvailability.asc&show=inStoreAvailability,name,sku,regularPrice,salePrice,addToCartUrl,condition,image&format=json';
       const mockResponse = {
         test: 'data',
       };

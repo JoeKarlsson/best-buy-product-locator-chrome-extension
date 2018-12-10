@@ -18,7 +18,6 @@ const getProductAvailability = async (productCode, codeType) => {
   try {
     const productData = await api(productURL);
     if (isValidProductData(productData)) {
-      console.log('isValidProductData', isValidProductData);
       const product = productData.products[0];
       const postion = await getGeoLocation();
       const { latitude, longitude } = postion.coords;
@@ -35,7 +34,10 @@ const getProductAvailability = async (productCode, codeType) => {
         } = nearestStore;
 
         const data = {
+          name: product.name,
+          image: product.image,
           addToCartUrl: product.addToCartUrl,
+          product,
           hours: formatStoreHours(nearestStore.detailedHours) || undefined,
           nearestStore: `${city}, ${region}` || undefined,
           nearestStoreMapUrl: constructNearestStoreMapUrl(address, lat, lng) || undefined,
@@ -46,6 +48,8 @@ const getProductAvailability = async (productCode, codeType) => {
       }
 
       const data = {
+        name: product.name,
+        image: product.image,
         addToCartUrl: product.addToCartUrl,
         nearestStore: undefined,
         nearestStoreMapUrl: undefined,
@@ -56,6 +60,8 @@ const getProductAvailability = async (productCode, codeType) => {
     }
     // No product found
     const data = {
+      name: '',
+      image: '',
       addToCartUrl: '',
       nearestStore: undefined,
       nearestStoreMapUrl: undefined,
