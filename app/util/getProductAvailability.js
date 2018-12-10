@@ -18,6 +18,7 @@ const getProductAvailability = async (productCode, codeType) => {
   try {
     const productData = await api(productURL);
     if (isValidProductData(productData)) {
+      console.log('isValidProductData', isValidProductData);
       const product = productData.products[0];
       const postion = await getGeoLocation();
       const { latitude, longitude } = postion.coords;
