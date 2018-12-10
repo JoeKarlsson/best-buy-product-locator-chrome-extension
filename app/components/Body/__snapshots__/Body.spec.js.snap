@@ -104,7 +104,9 @@ exports[`Body rendering initial state is rendered 1`] = `
       </g>
     </svg>
   </div>
-  <img />
+  <img
+    src="www.testurl.com"
+  />
   <h3 />
   <div
     className="sc-bxivhb hcozPg"
