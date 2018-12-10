@@ -16,7 +16,6 @@
   "background": {
     "page": "background.html"
   },
-  "main": "http://localhost:3000",
   "permissions": [
     "contextMenus",
     "tabs",

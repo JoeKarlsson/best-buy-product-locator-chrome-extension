@@ -13,12 +13,12 @@ const isValidProductData = productData => productData.products && productData.pr
 const isValidStoreData = storeData => storeData.stores && storeData.stores.length > 0;
 
 const getProductAvailability = async (productCode, codeType) => {
-  console.log('productCode', productCode);
   const productURL = constructProductURL(productCode, codeType);
   console.log('productURL', productURL);
 
   try {
     const productData = await api(productURL);
+    console.log('productData', productData);
     if (isValidProductData(productData)) {
       const product = productData.products[0];
       const postion = await getGeoLocation();

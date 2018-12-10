@@ -31,7 +31,6 @@ class AppContainer extends Component {
 
   async getProductData({ productCode, codeType }) {
     try {
-      console.log('productCode', productCode);
       const productData = await getProductAvailability(productCode, codeType);
 
       const {
@@ -60,7 +59,6 @@ class AppContainer extends Component {
   }
 
   render() {
-    console.log('this.state', this.state);
     const {
       name,
       image,
