@@ -47,9 +47,12 @@ const CloseButton = ({ isPopup }) => (
     onClick={() => {
       if (isPopup) {
         window.close();
-        return;
+      } else {
+        const extension = document.getElementById('bby-product-locator');
+        if (extension && extension.style) {
+          extension.style.display = 'none';
+        }
       }
-      document.getElementById('bby-product-locator').style.display = 'none';
     }}
   >
     <X isPopup={isPopup}>×</X>

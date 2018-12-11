@@ -72,8 +72,8 @@ const Body = (props) => {
     <Container isPopup={isPopup}>
       <CloseButton isPopup={isPopup} />
       <Logo isPopup={isPopup} />
-      <img alt={name} src={image} />
-      <h3>{name}</h3>
+      {isPopup && <img alt={name} src={image} />}
+      {isPopup && <h3>{name}</h3>}
       <CallToAction
         name={name}
         image={image}
