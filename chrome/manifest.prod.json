@@ -29,6 +29,7 @@
     "https://www.amazon.com/*",
     "https://intl.target.com/*",
     "https://www.target.com/*",
+    "https://www.walmart.com/*",
     "<all_urls>"
   ],
   "content_security_policy": "default-src 'self'; script-src 'script-src-elem' https://api.bestbuy.com; style-src * 'unsafe-inline'; connect-src https://api.bestbuy.com; img-src * data:;"

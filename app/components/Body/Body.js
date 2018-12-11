@@ -51,8 +51,7 @@ const Container = styled.div`
         }
       `;
     }
-  }}
-}
+  }};
 `;
 
 const Body = (props) => {
