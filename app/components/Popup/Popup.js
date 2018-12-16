@@ -69,8 +69,11 @@ const Body = styled.span`
 `;
 
 const ProductImage = styled.img`
-  display: flex;
-  width: 100%;
+  display: block;
+  max-width: 300px;
+  max-height: 170px;
+  width: auto;
+  height: auto;
 `;
 
 const PopupHeader = styled.h3`

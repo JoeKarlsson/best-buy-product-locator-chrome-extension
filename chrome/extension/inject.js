@@ -8,7 +8,6 @@ window.addEventListener('load', () => {
   script.id = 'bby-product-locator';
   script.innerHTML = getProductCode;
   document.body.appendChild(script);
-  console.log('hit');
 
   const div = document.createElement('div');
   div.id = 'bby-product-locator';
