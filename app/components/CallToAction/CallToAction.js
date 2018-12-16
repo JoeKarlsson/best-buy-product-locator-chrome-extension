@@ -26,11 +26,21 @@ const Container = styled.div`
         }
       `;
     }
+    return css`
+      text-align: left;
+    `;
   }};
 `;
 
 const H2 = styled.h2`
   color: ${COLORS.darkBlue};
+  ${(props) => {
+    if (!props.isPopup) {
+      return css`
+        margin-top: 0;
+      `;
+    }
+  }};
 `;
 
 class CallToAction extends React.PureComponent {

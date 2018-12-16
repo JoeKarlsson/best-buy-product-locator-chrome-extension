@@ -7,7 +7,8 @@ const ImageContainer = styled.div`
   ${(props) => {
     if (props.isPopup) {
       return css`
-        text-align: center;
+        flex-grow: 1;
+        flex-basis: 100%;
       `;
     }
     return css`
@@ -25,12 +26,7 @@ const height = 90;
 
 const Logo = ({ isPopup }) => (
   <ImageContainer isPopup={isPopup}>
-    <svg
-      width={isPopup ? `${width}px` : `${width / 2}px`}
-      height={isPopup ? `${height}px` : `${height / 2}px`}
-      viewBox="0 0 152 90"
-      version="1.1"
-    >
+    <svg width={`${width / 2}px`} height={`${height / 2}px`} viewBox="0 0 152 90" version="1.1">
       <defs />
       <g id="Sticker-Sheets" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="Logos" transform="translate(-147.000000, -501.000000)">
