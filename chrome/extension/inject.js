@@ -2,10 +2,16 @@ import React from 'react';
 import { render } from 'react-dom';
 import Root from '../../app/containers/Root';
 import getProductCode from './get-product-code';
+// import css from './styles';
 
 window.addEventListener('load', () => {
+  // const style = document.createElement('style');
+  // style.type = 'text/css';
+  // style.textContent = css;
+  // document.head.appendChild(style);
+
   const script = document.createElement('script');
-  script.id = 'bby-product-locator';
+  script.type = 'text/javascript';
   script.innerHTML = getProductCode;
   document.body.appendChild(script);
 

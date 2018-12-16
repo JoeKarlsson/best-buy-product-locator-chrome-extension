@@ -19,10 +19,8 @@
     "consistent-return": 0,
     "comma-dangle": 0,
     "spaced-comment": 0,
-    "global-require": 0
+    "global-require": 0,
+    "class-methods-use-this": 0
   },
-  "plugins": [
-    "react",
-    "prettier"
-  ]
+  "plugins": ["react", "prettier"]
 }

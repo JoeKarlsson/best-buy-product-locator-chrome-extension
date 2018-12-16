@@ -2,7 +2,7 @@
 
 exports[`Body rendering initial state is rendered 1`] = `
 <div
-  className="sc-gzVnrw jFNRjf"
+  className="sc-gzVnrw eMlKBN"
 >
   <div
     className="sc-bdVaJa hCycLF"
@@ -104,10 +104,6 @@ exports[`Body rendering initial state is rendered 1`] = `
       </g>
     </svg>
   </div>
-  <img
-    src="www.testurl.com"
-  />
-  <h3 />
   <div
     className="sc-bxivhb hcozPg"
   >

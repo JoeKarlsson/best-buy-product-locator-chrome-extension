@@ -19,6 +19,7 @@ class AppContainer extends Component {
 
     this.getProductCode = this.getProductCode.bind(this);
     this.getProductData = this.getProductData.bind(this);
+    this.removeProductCode = this.removeProductCode.bind(this);
   }
 
   componentDidMount() {
@@ -53,9 +54,15 @@ class AppContainer extends Component {
         nearestStoreMapUrl,
         price,
       });
+
+      this.removeProductCode();
     } catch (err) {
       handleError(err);
     }
+  }
+
+  removeProductCode() {
+    chrome.storage.local.remove(['productCode', 'codeType']);
   }
 
   render() {
