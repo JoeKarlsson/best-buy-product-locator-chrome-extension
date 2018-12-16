@@ -20,7 +20,7 @@ function loadScript(name, tabId, cb) {
         const request = new XMLHttpRequest();
         request.open(
           'GET',
-          'chrome-extension://lmhkpmbekcpmknklioeibfkpmmfibljd/js/redux-devtools-extension.js',
+          `chrome-extension://${chrome.runtime.id}/js/redux-devtools-extension.js`,
         ); // sync
         request.send();
         request.onload = () => {
