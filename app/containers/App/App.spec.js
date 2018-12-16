@@ -32,9 +32,11 @@ describe('App', () => {
       const price = 1234;
       const addToCartUrl = 'www.testurl.com';
       const isLoading = false;
+      const name = 'Testing';
 
       const wrapper = mount(
         <App
+          name={name}
           hours={hours}
           nearestStore={nearestStore}
           nearestStoreMapUrl={nearestStoreMapUrl}

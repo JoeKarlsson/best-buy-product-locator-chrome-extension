@@ -74,7 +74,6 @@ const Body = (props) => {
       {isPopup && <img alt={name} src={image} />}
       {isPopup && <h3>{name}</h3>}
       <CallToAction
-        name={name}
         image={image}
         hours={hours}
         isPopup={isPopup}
