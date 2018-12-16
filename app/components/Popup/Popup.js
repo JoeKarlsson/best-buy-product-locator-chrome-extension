@@ -55,6 +55,28 @@ const Container = styled.div`
 }
 `;
 
+const TopBar = styled.div`
+  margin-top: 15px;
+  display: flex;
+`;
+
+const Body = styled.span`
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  text-align: center;
+  justify-content: center;
+`;
+
+const ProductImage = styled.img`
+  display: flex;
+  width: 100%;
+`;
+
+const PopupHeader = styled.h3`
+  text-align: left;
+`;
+
 const Popup = (props) => {
   const {
     name,
@@ -70,21 +92,25 @@ const Popup = (props) => {
 
   return (
     <Container isPopup={isPopup}>
-      <CloseButton isPopup={isPopup} />
-      <Logo isPopup={isPopup} />
-      <img alt={name} src={image} />
-      <h3>{name}</h3>
-      <CallToAction
-        name={name}
-        image={image}
-        hours={hours}
-        isPopup={isPopup}
-        nearestStore={nearestStore}
-        nearestStoreMapUrl={nearestStoreMapUrl}
-        price={price}
-        validStore={validStore}
-      />
-      <AddToCartButton addToCartUrl={addToCartUrl} isPopup={isPopup} />
+      <TopBar>
+        <Logo isPopup={isPopup} />
+        <CloseButton isPopup={isPopup} />
+      </TopBar>
+      <Body>
+        <ProductImage alt={name} src={image} />
+        <PopupHeader>{name}</PopupHeader>
+        <CallToAction
+          name={name}
+          image={image}
+          hours={hours}
+          isPopup={isPopup}
+          nearestStore={nearestStore}
+          nearestStoreMapUrl={nearestStoreMapUrl}
+          price={price}
+          validStore={validStore}
+        />
+        <AddToCartButton addToCartUrl={addToCartUrl} isPopup={isPopup} />
+      </Body>
     </Container>
   );
 };

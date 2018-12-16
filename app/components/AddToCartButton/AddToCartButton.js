@@ -18,6 +18,10 @@ const Container = styled.div`
         }
       `;
     }
+    return css`
+      width: 100%;
+      top: 10px;
+    `;
   }};
 `;
 
