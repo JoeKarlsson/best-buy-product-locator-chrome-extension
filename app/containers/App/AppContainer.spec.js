@@ -16,6 +16,7 @@ describe('AppContainer', () => {
     addToCartUrl: 'www.testurl.com',
     isLoading: false,
     isPopup: true,
+    name: 'Testing',
     hours: {
       closingSoon: true,
       openNow: true,

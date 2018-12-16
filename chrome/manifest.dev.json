@@ -12,7 +12,14 @@
     "48": "img/bby-icon-48.png",
     "128": "img/bby-icon-128.png"
   },
-  "web_accessible_resources": ["inject.html"],
+  "web_accessible_resources": [
+    "inject.html",
+    "fonts/*.*",
+    "*.eot",
+    "*.svg",
+    "*.woff",
+    "*.woff2"
+  ],
   "background": {
     "page": "background.html"
   },
@@ -28,6 +35,7 @@
     "https://www.amazon.com/*",
     "https://intl.target.com/*",
     "https://www.target.com/*",
+    "https://www.walmart.com/*",
     "https://*.com/*"
   ],
   "content_security_policy": "default-src 'self'; script-src 'self' http://localhost:3000 https://localhost:3000 https://api.bestbuy.com 'unsafe-eval'; connect-src http://localhost:3000 https://localhost:3000 https://api.bestbuy.com; style-src * 'unsafe-inline' 'self' blob:; img-src * 'self' data:;"

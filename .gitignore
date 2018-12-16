@@ -52,3 +52,8 @@ Temporary Items
 .idea/
 node
 .vscode
+
+*.woff
+*.woff2
+*.svg
+*.eot

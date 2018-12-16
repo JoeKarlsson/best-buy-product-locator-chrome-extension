@@ -45,6 +45,15 @@ module.exports = {
           presets: ['react-optimize'],
         },
       },
+      {
+        test: /\.(ttf|eot|woff|woff2|svg)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: 'fonts/[name].[ext]',
+          },
+        },
+      },
     ],
   },
 };
