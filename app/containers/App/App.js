@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Error from '../../components/shared/Error/Error';
 import Loader from '../../components/shared/Loader/Loader';
 import Body from '../../components/Body/Body';
+import Popup from '../../components/Popup/Popup';
 
 class App extends PureComponent {
   constructor() {
@@ -60,6 +61,21 @@ class App extends PureComponent {
     }
 
     if (validProduct) {
+      if (isPopup) {
+        return (
+          <Popup
+            name={name}
+            image={image}
+            addToCartUrl={addToCartUrl}
+            hours={hours}
+            isPopup={isPopup}
+            nearestStore={nearestStore}
+            nearestStoreMapUrl={nearestStoreMapUrl}
+            price={price}
+            validStore={validStore}
+          />
+        );
+      }
       return (
         <Body
           name={name}
