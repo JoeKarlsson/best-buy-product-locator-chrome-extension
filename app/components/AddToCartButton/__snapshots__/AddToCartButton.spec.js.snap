@@ -2,7 +2,7 @@
 
 exports[`AddToCartButton rendering initial state is rendered 1`] = `
 <div
-  className="sc-bdVaJa fAMsKT"
+  className="sc-bdVaJa hsEDCd"
 >
   <a
     href="www.testurl.com"

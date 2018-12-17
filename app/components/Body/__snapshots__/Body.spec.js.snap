@@ -2,7 +2,7 @@
 
 exports[`Body rendering initial state is rendered 1`] = `
 <div
-  className="sc-gzVnrw dblLxY"
+  className="sc-gzVnrw diabQd"
 >
   <div
     className="sc-bdVaJa hCycLF"
@@ -16,7 +16,7 @@ exports[`Body rendering initial state is rendered 1`] = `
     </div>
   </div>
   <div
-    className="sc-htpNat blsSMZ"
+    className="sc-htpNat cGiyVo"
   >
     <svg
       height="45px"
@@ -105,10 +105,10 @@ exports[`Body rendering initial state is rendered 1`] = `
     </svg>
   </div>
   <div
-    className="sc-bxivhb hYKOpj"
+    className="sc-bxivhb vMVmE"
   >
     <h2
-      className="sc-ifAKCX knTyiF"
+      className="sc-ifAKCX cigatZ"
     >
       Want it faster? Pick it up 
       now 
@@ -136,7 +136,7 @@ exports[`Body rendering initial state is rendered 1`] = `
     </p>
   </div>
   <div
-    className="sc-EHOje hPXLpJ"
+    className="sc-EHOje kILBgX"
   >
     <a
       href="www.testurl.com"

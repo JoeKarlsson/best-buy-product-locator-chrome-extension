@@ -2,10 +2,10 @@
 
 exports[`CallToAction rendering initial state is rendered 1`] = `
 <div
-  className="sc-bdVaJa gxmLCy"
+  className="sc-bdVaJa eqlPvj"
 >
   <h2
-    className="sc-bwzfXH gPMGtq"
+    className="sc-bwzfXH dfMkRG"
   >
     Order now on BestBuy.com
   </h2>
