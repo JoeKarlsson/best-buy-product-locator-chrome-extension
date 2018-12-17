@@ -12,7 +12,7 @@ const Container = styled.div`
         right: 60px;
         top: 10px;
 
-        @media (max-width: 1060px) {
+        @media (max-width: 1110px) {
           margin-top: 10px;
           position: initial;
           float: left;
@@ -21,7 +21,6 @@ const Container = styled.div`
         @media (max-width: 710px) {
           margin-top: 15px;
           width: 100%;
-          text-align: center;
         }
       `;
     }

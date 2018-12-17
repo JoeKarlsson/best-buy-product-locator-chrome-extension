@@ -13,7 +13,7 @@ const Container = styled.div`
           display: inline;
         }
 
-        @media (max-width: 1060px) {
+        @media (max-width: 1110px) {
           margin-top: 5px;
           margin-left: 0px;
         }
@@ -24,7 +24,25 @@ const Container = styled.div`
 
 const H2 = styled.h2`
   color: ${COLORS.darkBlue};
+
+  ${(props) => {
+    if (!props.isPopup) {
+      return css`
+        color: ${COLORS.white};
+        font-size: 15px;
+        font-weight: bold;
+        padding-bottom: 4px;
+        margin: 0;
+        letter-spacing: 0px;
+        @media (max-width: 1110px) {
+          font-size: 17px;
+          margin-bottom: 5px;
+        }
+      `;
+    }
+  }};
 `;
+
 class CallToAction extends React.PureComponent {
   formatMessage = (hours) => {
     const pickItUp = 'Pick it up';

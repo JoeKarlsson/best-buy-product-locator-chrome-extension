@@ -39,15 +39,6 @@ const Container = styled.div`
         -webkit-margin-start: 0px;
         -webkit-margin-end: 0px;
 
-        h2 {
-          color: ${COLORS.white};
-          font-size: 15px;
-          font-weight: bold;
-          padding-bottom: 4px;
-          margin: 0;
-          letter-spacing: 0px;
-        }
-
         a,
         a:visited {
           text-decoration: underline;
