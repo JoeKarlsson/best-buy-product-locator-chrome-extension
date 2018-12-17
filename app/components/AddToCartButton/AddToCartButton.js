@@ -12,9 +12,15 @@ const Container = styled.div`
         right: 60px;
         top: 10px;
 
-        @media (max-width: 1040px) {
+        @media (max-width: 1110px) {
+          margin-top: 10px;
           position: initial;
-          float: right;
+          float: left;
+        }
+
+        @media (max-width: 710px) {
+          margin-top: 15px;
+          width: 100%;
         }
       `;
     }
@@ -26,7 +32,9 @@ const Container = styled.div`
 `;
 
 const Button = styled.button`
+  color: ${COLORS.black};
   background: ${COLORS.yellow};
+  font-family: ${STYLES.fontFamily};
   font-size: ${STYLES.fontSize};
   width: 100%;
   border: 0;

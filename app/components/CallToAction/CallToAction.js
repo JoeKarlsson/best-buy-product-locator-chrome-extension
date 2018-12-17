@@ -8,21 +8,14 @@ const Container = styled.div`
     if (!props.isPopup) {
       return css`
         margin-left: 100px;
-        margin-top: -5px;
 
         p {
           display: inline;
         }
 
-        @media (max-width: 1390px) {
+        @media (max-width: 1110px) {
           margin-top: 5px;
           margin-left: 0px;
-        }
-
-        @media (max-width: 1040px) {
-          p {
-            display: block;
-          }
         }
       `;
     }
@@ -34,10 +27,22 @@ const Container = styled.div`
 
 const H2 = styled.h2`
   color: ${COLORS.darkBlue};
+
   ${(props) => {
     if (!props.isPopup) {
       return css`
-        margin-top: 0;
+        color: ${COLORS.white};
+        font-size: 15px;
+        font-weight: bold;
+        padding-bottom: 4px;
+        margin: 0;
+        letter-spacing: 0px;
+        line-height: 19px;
+
+        @media (max-width: 1110px) {
+          font-size: 17px;
+          margin-bottom: 5px;
+        }
       `;
     }
   }};
@@ -66,17 +71,16 @@ class CallToAction extends React.PureComponent {
     if (validStore) {
       return (
         <Container isPopup={isPopup}>
-          <H2>Want it faster? </H2>
+          <H2>
+            Want it faster? Pick it up {hours.openNow ? 'now ' : 'tomorrow '}
+            for <b>${price}</b>
+          </H2>
           <p>
             This product is available for pick up at the{' '}
             <a target="_blank" rel="noopener noreferrer" href={nearestStoreMapUrl}>
               Best Buy in {nearestStore}.
             </a>{' '}
-            {this.formatMessage(hours, validStore)}
-            .&nbsp;
-          </p>
-          <p>
-            Price: <b>${price}</b>
+            {this.formatMessage(hours)}.
           </p>
         </Container>
       );

@@ -122,9 +122,15 @@ exports[`Popup rendering initial state is rendered 1`] = `
       className="sc-bxivhb jIMeHO"
     >
       <h2
-        className="sc-ifAKCX bOzjgJ"
+        className="sc-ifAKCX kfbfOD"
       >
-        Want it faster? 
+        Want it faster? Pick it up 
+        now 
+        for 
+        <b>
+          $
+          1234
+        </b>
       </h2>
       <p>
         This product is available for pick up at the
@@ -140,14 +146,7 @@ exports[`Popup rendering initial state is rendered 1`] = `
         </a>
          
         Pick it up today before 9:00 pm or tomorrow as early as 10:00 am
-        . 
-      </p>
-      <p>
-        Price: 
-        <b>
-          $
-          1234
-        </b>
+        .
       </p>
     </div>
     <div
@@ -159,7 +158,7 @@ exports[`Popup rendering initial state is rendered 1`] = `
         target="_blank"
       >
         <button
-          className="sc-bZQynM juMaaP"
+          className="sc-bZQynM bzXIaL"
         >
           Buy on BestBuy.com
         </button>

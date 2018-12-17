@@ -2,7 +2,7 @@
 
 exports[`Body rendering initial state is rendered 1`] = `
 <div
-  className="sc-gzVnrw eMlKBN"
+  className="sc-gzVnrw diabQd"
 >
   <div
     className="sc-bdVaJa hCycLF"
@@ -16,7 +16,7 @@ exports[`Body rendering initial state is rendered 1`] = `
     </div>
   </div>
   <div
-    className="sc-htpNat dENRRf"
+    className="sc-htpNat cGiyVo"
   >
     <svg
       height="45px"
@@ -105,12 +105,18 @@ exports[`Body rendering initial state is rendered 1`] = `
     </svg>
   </div>
   <div
-    className="sc-bxivhb hcozPg"
+    className="sc-bxivhb vMVmE"
   >
     <h2
-      className="sc-ifAKCX bOzjgJ"
+      className="sc-ifAKCX kfbfOD"
     >
-      Want it faster? 
+      Want it faster? Pick it up 
+      now 
+      for 
+      <b>
+        $
+        1234
+      </b>
     </h2>
     <p>
       This product is available for pick up at the
@@ -126,18 +132,11 @@ exports[`Body rendering initial state is rendered 1`] = `
       </a>
        
       Pick it up today before 9:00 pm or tomorrow as early as 10:00 am
-      . 
-    </p>
-    <p>
-      Price: 
-      <b>
-        $
-        1234
-      </b>
+      .
     </p>
   </div>
   <div
-    className="sc-EHOje cRTrvv"
+    className="sc-EHOje kILBgX"
   >
     <a
       href="www.testurl.com"
@@ -145,7 +144,7 @@ exports[`Body rendering initial state is rendered 1`] = `
       target="_blank"
     >
       <button
-        className="sc-bZQynM juMaaP"
+        className="sc-bZQynM bzXIaL"
       >
         Buy on BestBuy.com
       </button>

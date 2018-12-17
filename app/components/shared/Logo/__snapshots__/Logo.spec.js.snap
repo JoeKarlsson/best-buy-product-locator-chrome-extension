@@ -2,7 +2,7 @@
 
 exports[`Logo rendering initial state is rendered 1`] = `
 <div
-  className="sc-bdVaJa iGbyCx"
+  className="sc-bdVaJa gZSPzR"
 >
   <svg
     height="45px"

@@ -22,10 +22,11 @@ const Container = styled.div`
       return css`
         background: ${COLORS.blue};
         color: ${COLORS.white};
-        font-size: ${STYLES.fontSize};
+        font-size: 12px;
         font-family: ${STYLES.fontFamily};
         width: 100%;
         position: fixed;
+        line-height: 19px;
         z-index: 9999;
         top: 0;
         padding: 10px 20px 10px 20px;
@@ -33,16 +34,10 @@ const Container = styled.div`
         animation-iteration-count: 1;
         animation-timing-function: ease-in;
         animation-duration: 0.5s;
-
-        h2 {
-          color: ${COLORS.white};
-          font-size: 1.5em;
-          -webkit-margin-before: 0px;
-          -webkit-margin-after: 0px;
-          -webkit-margin-start: 0px;
-          -webkit-margin-end: 0px;
-          font-weight: bold;
-        }
+        -webkit-margin-before: 0px;
+        -webkit-margin-after: 0px;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
 
         a,
         a:visited {
