@@ -55,7 +55,7 @@ class AppContainer extends Component {
         price,
       });
 
-      this.removeProductCode();
+      // this.removeProductCode();
     } catch (err) {
       handleError(err);
     }

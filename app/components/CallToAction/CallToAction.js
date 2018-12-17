@@ -27,6 +27,8 @@ const Container = styled.div`
 
 const H2 = styled.h2`
   color: ${COLORS.darkBlue};
+  margin: 0;
+  font-size: 17px;
 
   ${(props) => {
     if (!props.isPopup) {
@@ -35,7 +37,6 @@ const H2 = styled.h2`
         font-size: 15px;
         font-weight: bold;
         padding-bottom: 4px;
-        margin: 0;
         letter-spacing: 0px;
         line-height: 19px;
 
@@ -71,7 +72,7 @@ class CallToAction extends React.PureComponent {
     if (validStore) {
       return (
         <Container isPopup={isPopup}>
-          <H2>
+          <H2 isPopup={isPopup}>
             Want it faster? Pick it up {hours.openNow ? 'now ' : 'tomorrow '}
             for <b>${price}</b>
           </H2>
