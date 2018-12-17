@@ -76,7 +76,9 @@ const ProductImage = styled.img`
   height: auto;
 `;
 
-const PopupHeader = styled.h3`
+const PopupHeader = styled.a`
+  margin: 10px 0 10px auto;
+  text-decoration: none;
   text-align: left;
 `;
 
@@ -90,6 +92,7 @@ const Popup = (props) => {
     nearestStore,
     nearestStoreMapUrl,
     price,
+    url,
     validStore,
   } = props;
 
@@ -101,7 +104,9 @@ const Popup = (props) => {
       </TopBar>
       <Body>
         <ProductImage alt={name} src={image} />
-        <PopupHeader>{name}</PopupHeader>
+        <PopupHeader href={url} target="_blank" rel="noopener noreferrer">
+          {name}
+        </PopupHeader>
         <CallToAction
           name={name}
           image={image}
@@ -110,6 +115,7 @@ const Popup = (props) => {
           nearestStore={nearestStore}
           nearestStoreMapUrl={nearestStoreMapUrl}
           price={price}
+          url={url}
           validStore={validStore}
         />
         <AddToCartButton addToCartUrl={addToCartUrl} isPopup={isPopup} />
@@ -127,6 +133,7 @@ Popup.propTypes = {
   nearestStore: PropTypes.string.isRequired,
   nearestStoreMapUrl: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
+  url: PropTypes.string.isRequired,
   validStore: PropTypes.bool.isRequired,
 };
 
