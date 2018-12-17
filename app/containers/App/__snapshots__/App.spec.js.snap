@@ -6,7 +6,7 @@ exports[`App rendering initial state is rendered heathy state 1`] = `null`;
 
 exports[`App rendering initial state is rendered loading state when in popup mode 1`] = `
 <div
-  className="sc-bwzfXH jzApzP"
+  className="sc-htoDjs fftfAF"
 >
   <svg
     fill="blue"
