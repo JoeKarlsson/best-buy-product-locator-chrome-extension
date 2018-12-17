@@ -34,6 +34,8 @@ const H2 = styled.h2`
         padding-bottom: 4px;
         margin: 0;
         letter-spacing: 0px;
+        line-height: 19px;
+
         @media (max-width: 1110px) {
           font-size: 17px;
           margin-bottom: 5px;
