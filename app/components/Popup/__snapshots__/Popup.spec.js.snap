@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Error rendering initial state is rendered 1`] = `
-<div>
+exports[`Popup rendering initial state is rendered 1`] = `
+<div
+  className="sc-gzVnrw eLlMKT"
+>
   <div
-    className="sc-bxivhb fEMJCl"
+    className="sc-htoDjs ietGaK"
   >
     <div
       className="sc-htpNat bGPuod"
@@ -107,25 +109,61 @@ exports[`Error rendering initial state is rendered 1`] = `
     </div>
   </div>
   <span
-    className="sc-ifAKCX dUcCww"
+    className="sc-dnqmqq cPhbDW"
   >
+    <img
+      className="sc-iwsKbI dtueAM"
+      src="www.testurl.com"
+    />
     <h3
-      className="sc-EHOje kLbaUi"
+      className="sc-gZMcBi jQoPgt"
+    />
+    <div
+      className="sc-bxivhb jIMeHO"
     >
-      We are sorry that we could not locate that product at this time. Please try again later
-    </h3>
-    <a
-      className="sc-gzVnrw jOaRMN"
-      href="https://www.bestbuy.com/"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <button
-        className="sc-bZQynM kCmfYt"
+      <h2
+        className="sc-ifAKCX kfbfOD"
       >
-        Shop BestBuy.com
-      </button>
-    </a>
+        Want it faster? Pick it up 
+        now 
+        for 
+        <b>
+          $
+          1234
+        </b>
+      </h2>
+      <p>
+        This product is available for pick up at the
+         
+        <a
+          href="www.testurl.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Best Buy in 
+          Richfeild
+          .
+        </a>
+         
+        Pick it up today before 9:00 pm or tomorrow as early as 10:00 am
+        .
+      </p>
+    </div>
+    <div
+      className="sc-EHOje fpkvZc"
+    >
+      <a
+        href="www.testurl.com"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <button
+          className="sc-bZQynM bzXIaL"
+        >
+          Buy on BestBuy.com
+        </button>
+      </a>
+    </div>
   </span>
 </div>
 `;

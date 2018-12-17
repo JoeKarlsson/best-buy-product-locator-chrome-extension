@@ -19,6 +19,9 @@ const Container = styled.div`
         }
       `;
     }
+    return css`
+      text-align: left;
+    `;
   }};
 `;
 
