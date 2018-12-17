@@ -55,6 +55,7 @@ const getProductAvailability = async (productCode, codeType) => {
         nearestStore: undefined,
         nearestStoreMapUrl: undefined,
         price: product.salePrice || product.regularPrice,
+        url: product.url,
       };
 
       return data;

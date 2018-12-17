@@ -123,6 +123,7 @@ App.defaultProps = {
   nearestStore: '',
   nearestStoreMapUrl: '',
   price: 0,
+  url: '',
 };
 
 export default App;
