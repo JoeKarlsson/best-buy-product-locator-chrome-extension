@@ -2,7 +2,7 @@
   "version": "0.0.0",
   "name": "best-buy-product-locator",
   "manifest_version": 2,
-  "description": "Example for react-chrome-extension-boilerplate",
+  "description": "Two day shipping to slow for you? This chrome extension will tell you if the Amazon product you are browsing is available at a Best Buy store for immediate in store pickup.",
   "browser_action": {
     "default_title": "Best Buy Product Locator",
     "default_popup": "popup.html"
@@ -12,14 +12,7 @@
     "48": "img/bby-icon-48.png",
     "128": "img/bby-icon-128.png"
   },
-  "web_accessible_resources": [
-    "inject.html",
-    "fonts/*.*",
-    "*.eot",
-    "*.svg",
-    "*.woff",
-    "*.woff2"
-  ],
+  "web_accessible_resources": ["inject.html", "fonts/*.*", "*.eot", "*.svg", "*.woff", "*.woff2"],
   "background": {
     "page": "background.html"
   },
