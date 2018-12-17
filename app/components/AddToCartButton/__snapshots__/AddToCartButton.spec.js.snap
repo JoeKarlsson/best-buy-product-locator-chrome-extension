@@ -2,7 +2,7 @@
 
 exports[`AddToCartButton rendering initial state is rendered 1`] = `
 <div
-  className="sc-bdVaJa gqlfNZ"
+  className="sc-bdVaJa fAMsKT"
 >
   <a
     href="www.testurl.com"
@@ -10,7 +10,7 @@ exports[`AddToCartButton rendering initial state is rendered 1`] = `
     target="_blank"
   >
     <button
-      className="sc-bwzfXH gQLsoL"
+      className="sc-bwzfXH eixrEa"
     >
       Buy on BestBuy.com
     </button>

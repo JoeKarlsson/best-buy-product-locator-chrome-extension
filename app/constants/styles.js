@@ -10,7 +10,6 @@ export const COLORS = {
 };
 
 export const STYLES = {
-  // fontFamily: '"Human BBY Web",Arial,Helvetica,sans-serif',
   fontFamily: '"Human BBY Web",Arial,Helvetica,sans-serif',
   fontSize: '15px',
 };
