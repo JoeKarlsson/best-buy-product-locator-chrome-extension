@@ -18,7 +18,7 @@ function waitUntilVisible(selector, attr, cb) {
   }, 10);
 
   setTimeout(() => {
-    clearTimeout(interval);
+    clearInterval(interval);
   }, 5000);
 }
 

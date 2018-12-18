@@ -42,6 +42,7 @@ class AppContainer extends Component {
         nearestStore,
         nearestStoreMapUrl,
         price,
+        url,
       } = productData;
 
       this.setState({
@@ -53,9 +54,10 @@ class AppContainer extends Component {
         nearestStore,
         nearestStoreMapUrl,
         price,
+        url,
       });
 
-      // this.removeProductCode();
+      this.removeProductCode();
     } catch (err) {
       handleError(err);
     }
@@ -75,6 +77,7 @@ class AppContainer extends Component {
       nearestStore,
       nearestStoreMapUrl,
       price,
+      url,
     } = this.state;
 
     const { isPopup } = this.props;
@@ -90,6 +93,7 @@ class AppContainer extends Component {
           nearestStore={nearestStore}
           nearestStoreMapUrl={nearestStoreMapUrl}
           price={price}
+          url={url}
         />
       </ErrorBoundary>
     );

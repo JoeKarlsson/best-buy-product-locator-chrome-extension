@@ -59,6 +59,7 @@ const Body = (props) => {
     nearestStore,
     nearestStoreMapUrl,
     price,
+    url,
     validStore,
   } = props;
 
@@ -75,6 +76,7 @@ const Body = (props) => {
         nearestStore={nearestStore}
         nearestStoreMapUrl={nearestStoreMapUrl}
         price={price}
+        url={url}
         validStore={validStore}
       />
       <AddToCartButton addToCartUrl={addToCartUrl} isPopup={isPopup} />
@@ -91,6 +93,7 @@ Body.propTypes = {
   nearestStore: PropTypes.string.isRequired,
   nearestStoreMapUrl: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
+  url: PropTypes.string.isRequired,
   validStore: PropTypes.bool.isRequired,
 };
 

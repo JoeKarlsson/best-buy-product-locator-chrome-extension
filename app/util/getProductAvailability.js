@@ -42,6 +42,7 @@ const getProductAvailability = async (productCode, codeType) => {
           nearestStore: `${city}, ${region}` || undefined,
           nearestStoreMapUrl: constructNearestStoreMapUrl(address, lat, lng) || undefined,
           price: product.salePrice || product.regularPrice,
+          url: product.url,
         };
 
         return data;
@@ -54,6 +55,7 @@ const getProductAvailability = async (productCode, codeType) => {
         nearestStore: undefined,
         nearestStoreMapUrl: undefined,
         price: product.salePrice || product.regularPrice,
+        url: product.url,
       };
 
       return data;

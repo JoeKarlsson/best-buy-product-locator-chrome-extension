@@ -115,8 +115,10 @@ exports[`Popup rendering initial state is rendered 1`] = `
       className="sc-iwsKbI dtueAM"
       src="www.testurl.com"
     />
-    <h3
-      className="sc-gZMcBi jQoPgt"
+    <a
+      className="sc-gZMcBi jLSbUG"
+      rel="noopener noreferrer"
+      target="_blank"
     />
     <div
       className="sc-bxivhb jIMeHO"

@@ -48,6 +48,7 @@ describe('getProductAvailability', () => {
         today: undefined,
         tomorrow: undefined,
       },
+      url: undefined,
     };
 
     expect(response).toMatchObject(expectedResponse);

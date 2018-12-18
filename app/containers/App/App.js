@@ -52,6 +52,7 @@ class App extends PureComponent {
       nearestStore,
       nearestStoreMapUrl,
       price,
+      url,
     } = this.props;
 
     const { validProduct, validStore } = this.state;
@@ -72,6 +73,7 @@ class App extends PureComponent {
             nearestStore={nearestStore}
             nearestStoreMapUrl={nearestStoreMapUrl}
             price={price}
+            url={url}
             validStore={validStore}
           />
         );
@@ -86,6 +88,7 @@ class App extends PureComponent {
           nearestStore={nearestStore}
           nearestStoreMapUrl={nearestStoreMapUrl}
           price={price}
+          url={url}
           validStore={validStore}
         />
       );
@@ -107,6 +110,7 @@ App.propTypes = {
   nearestStore: PropTypes.string,
   nearestStoreMapUrl: PropTypes.string,
   price: PropTypes.number,
+  url: PropTypes.string,
 };
 
 App.defaultProps = {
@@ -119,6 +123,7 @@ App.defaultProps = {
   nearestStore: '',
   nearestStoreMapUrl: '',
   price: 0,
+  url: '',
 };
 
 export default App;
