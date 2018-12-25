@@ -13,7 +13,7 @@
     "build": "node scripts/build",
     "upload": "npm run clean && npm run build && npm run compress && webstore upload --source extension.zip --extension-id $EXTENSION_ID --client-id $CLIENT_ID --client-secret $CLIENT_SECRET --refresh-token $REFRESH_TOKEN",
     "publish": "webstore publish --extension-id $EXTENSION_ID",
-    "compress": "node scripts/compress",
+    "compress": "node scripts/compress --app-id $EXTENSION_ID",
     "compress-keygen": "crx keygen",
     "clean": "rimraf build/ dev/ *.zip *.crx",
     "lint": "eslint app chrome scripts webpack/*.js",

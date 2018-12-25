@@ -106,6 +106,13 @@ $ npm test
 $ npm test -- --watch  # watch files
 ```
 
+## Deploying
+
+1. Update version number
+1. Run `npm run build`
+1. Compress build file as a .zip file.
+1. Upload compressed build file to Google Chrome WebStore.
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/best-buy-product-locator-chrome-extension/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.

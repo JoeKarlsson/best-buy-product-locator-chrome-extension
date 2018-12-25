@@ -2,7 +2,7 @@
   "version": "0.0.2",
   "name": "Best Buy Product Locator",
   "manifest_version": 2,
-  "description": "The Best Buy browser extension helps make shopping online faster, easier and more secure online: * Compare products while browsing with Amazon, Walmart and Target. * Show you if a product can be picked up at a Best Buy store near you. We automatically find the store that nearest to you. * Two day shipping to slow for you? This chrome extension will tell you if the  product you are browsing is available at a Best Buy store for immediate in store pickup. * Best Buy guarentees that your product will be authentic, no more counterfeit products! * Add your product to your Best Buy cart with just one click!",
+  "description": "The Best Buy browser extension helps make shopping online faster, easier and more secure online.",
   "homepage_url": "https://www.joekarlsson.com/portfolio/best-buy-chrome-extension",
   "browser_action": {
     "default_title": "Best Buy Product Locator",
@@ -30,8 +30,7 @@
     "https://www.amazon.com/*",
     "https://intl.target.com/*",
     "https://www.target.com/*",
-    "https://www.walmart.com/*",
-    "<all_urls>"
+    "https://www.walmart.com/*"
   ],
   "content_security_policy": "default-src 'self'; script-src 'script-src-elem' https://api.bestbuy.com; style-src * 'unsafe-inline'; connect-src https://api.bestbuy.com; img-src * data:;"
 }
