@@ -1,8 +1,9 @@
 {
-  "version": "0.0.0",
-  "name": "best-buy-product-locator",
+  "version": "0.0.2",
+  "name": "Best Buy Product Locator",
   "manifest_version": 2,
-  "description": "Example for react-chrome-extension-boilerplate",
+  "description": "The Best Buy browser extension helps make shopping online faster, easier and more secure online.",
+  "homepage_url": "https://www.joekarlsson.com/portfolio/best-buy-chrome-extension",
   "browser_action": {
     "default_title": "Best Buy Product Locator",
     "default_popup": "popup.html"
@@ -12,14 +13,7 @@
     "48": "img/bby-icon-48.png",
     "128": "img/bby-icon-128.png"
   },
-  "web_accessible_resources": [
-    "inject.html",
-    "fonts/*.*",
-    "*.eot",
-    "*.svg",
-    "*.woff",
-    "*.woff2"
-  ],
+  "web_accessible_resources": ["inject.html", "fonts/*.*", "*.eot", "*.svg", "*.woff", "*.woff2"],
   "background": {
     "page": "background.html"
   },
@@ -36,8 +30,7 @@
     "https://www.amazon.com/*",
     "https://intl.target.com/*",
     "https://www.target.com/*",
-    "https://www.walmart.com/*",
-    "<all_urls>"
+    "https://www.walmart.com/*"
   ],
   "content_security_policy": "default-src 'self'; script-src 'script-src-elem' https://api.bestbuy.com; style-src * 'unsafe-inline'; connect-src https://api.bestbuy.com; img-src * data:;"
 }
