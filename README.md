@@ -17,7 +17,19 @@
 [![twitter][twitter]][twitter-url]
 [![first-timers-only](http://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](http://www.firsttimersonly.com/)
 
-You can install this extension here: [Best Buy Product Locator - Chrome Web Store](https://chrome.google.com/webstore/detail/best-buy-product-locator/apclbiandcinebnmlkibkbiehlmlmifp)
+The Best Buy browser extension helps make shopping online faster, easier and more secure online:
+
+- Compare products while browsing with Amazon, Walmart and Target.
+- Show you if a product can be picked up at a Best Buy store near you. We automatically find the store that nearest to you.
+- Two day shipping to slow for you? This chrome extension will tell you if the product you are browsing is available at a Best Buy store for immediate in store pickup.
+- Best Buy guarantees that your product will be authentic, no more counterfeit products!
+- Add your product to your Best Buy cart with just one click!
+
+We offer support for Amazon, Target and Walmart.
+
+Note: This extension is not affiliated with Best Buy.
+
+Learn more at www.joekarlsson.com
 
 Note: This extension is not affiliated with Best Buy in any way, shape or form.
 
