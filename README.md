@@ -1,8 +1,8 @@
 # Best Buy Product Locator Chrome Extension
 
-> Two day shipping to slow for you? This chrome extension will tell you if the product you are browsing is available at a Best Buy store near you for immediate in-store pickup.
+![chrome extension  logo](https://user-images.githubusercontent.com/4650739/50406736-b5017480-078f-11e9-9279-104216b4588a.png)
 
-![Best Buy Chrome Extension Screenshot](https://user-images.githubusercontent.com/4650739/50406618-81bde600-078d-11e9-8547-e166327ca64f.jpg)
+> Two day shipping to slow for you? This chrome extension will tell you if the product you are browsing is available at a Best Buy store near you for immediate in-store pickup.
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/5c4528a150a453a05d2e/maintainability)](https://codeclimate.com/github/JoeKarlsson/best-buy-product-locator-chrome-extension/maintainability)
 [![BCH compliance](https://bettercodehub.com/edge/badge/JoeKarlsson/best-buy-product-locator-chrome-extension?branch=master)](https://bettercodehub.com/)
@@ -15,7 +15,23 @@
 [![twitter][twitter]][twitter-url]
 [![first-timers-only](http://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](http://www.firsttimersonly.com/)
 
-You can install this extension here: [Best Buy Product Locator - Chrome Web Store](https://chrome.google.com/webstore/detail/best-buy-product-locator/apclbiandcinebnmlkibkbiehlmlmifp)
+![Best Buy Chrome Extension Screenshot](https://user-images.githubusercontent.com/4650739/50406618-81bde600-078d-11e9-8547-e166327ca64f.jpg)
+
+The Best Buy browser extension helps make shopping online faster, easier and more secure online:
+
+- Compare products while browsing with Amazon, Walmart and Target.
+- Show you if a product can be picked up at a Best Buy store near you. We automatically find the store that nearest to you.
+- Two day shipping to slow for you? This chrome extension will tell you if the product you are browsing is available at a Best Buy store for immediate in store pickup.
+- Best Buy guarantees that your product will be authentic, no more counterfeit products!
+- Add your product to your Best Buy cart with just one click!
+
+We offer support for Amazon, Target and Walmart.
+
+Note: This extension is not affiliated with Best Buy.
+
+Learn more at www.joekarlsson.com
+
+Note: This extension is not affiliated with Best Buy in any way, shape or form.
 
 ## Installation
 
@@ -89,6 +105,13 @@ $ npm run lint
 $ npm test
 $ npm test -- --watch  # watch files
 ```
+
+## Deploying
+
+1. Update version number
+1. Run `npm run build`
+1. Compress build file as a .zip file.
+1. Upload compressed build file to Google Chrome WebStore.
 
 ## Contributing
 
