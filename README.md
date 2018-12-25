@@ -1,6 +1,8 @@
-# Best Buy Product Locator Chrome Extension
+<p align="center">
+	<img width=100% src="https://user-images.githubusercontent.com/4650739/50406736-b5017480-078f-11e9-9279-104216b4588a.png" />
+</p>
 
-![chrome extension  logo](https://user-images.githubusercontent.com/4650739/50406736-b5017480-078f-11e9-9279-104216b4588a.png)
+<h1 align="center">Best Buy Product Locator Chrome Extension</h1>
 
 > Two day shipping to slow for you? This chrome extension will tell you if the product you are browsing is available at a Best Buy store near you for immediate in-store pickup.
 
@@ -15,7 +17,9 @@
 [![twitter][twitter]][twitter-url]
 [![first-timers-only](http://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](http://www.firsttimersonly.com/)
 
-![Best Buy Chrome Extension Screenshot](https://user-images.githubusercontent.com/4650739/50406618-81bde600-078d-11e9-8547-e166327ca64f.jpg)
+<p align="center">
+	<img width=100% src="https://user-images.githubusercontent.com/4650739/50406618-81bde600-078d-11e9-8547-e166327ca64f.jpg" />
+</p>
 
 The Best Buy browser extension helps make shopping online faster, easier and more secure online:
 
