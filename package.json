@@ -38,8 +38,7 @@
     "react",
     "redux",
     "hot reload",
-    "webpack",
-    "boilerplate"
+    "webpack"
   ],
   "author": "Joe Karlsson <joekarlsson1@gmail.com> & Eric Moore <moore.ericc@gmail.com >",
   "license": "MIT",
@@ -58,6 +57,7 @@
     "babel-preset-react-optimize": "^1.0.1",
     "babel-preset-stage-0": "^6.3.13",
     "babel-runtime": "^6.3.19",
+    "chrome-webstore-upload-cli": "^1.2.0",
     "chromedriver": "^2.33.2",
     "coveralls": "^3.0.2",
     "cross-env": "^5.2.0",
@@ -74,7 +74,7 @@
     "fetch-mock": "^6.5.2",
     "file-loader": "^2.0.0",
     "husky": "^0.14.3",
-    "image-webpack-loader": "^4.3.1",
+    "image-webpack-loader": "^4.6.0",
     "jest": "^23.5.0",
     "jest-webextension-mock": "^3.4.0",
     "jsdom": "^12.0.0",
