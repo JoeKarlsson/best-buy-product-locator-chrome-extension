@@ -12,6 +12,33 @@ const isValidProductData = productData => productData.products && productData.pr
 
 const isValidStoreData = storeData => storeData.stores && storeData.stores.length > 0;
 
+const defaultNearestStore = {
+  address: undefined,
+  city: undefined,
+  region: undefined,
+  lat: undefined,
+  lng: undefined,
+};
+
+const buildDataProductAvailabilityResult = (product = null, nearestStore = defaultNearestStore) => {
+  const {
+    address, city, region, lat, lng
+  } = nearestStore;
+
+  const data = {
+    name: product.name || '',
+    image: product.image,
+    addToCartUrl: product.addToCartUrl || '',
+    product,
+    hours: formatStoreHours(nearestStore.detailedHours) || undefined,
+    nearestStore: `${city}, ${region}` || undefined,
+    nearestStoreMapUrl: constructNearestStoreMapUrl(address, lat, lng) || undefined,
+    price: product.salePrice || product.regularPrice || '',
+    url: product.url || undefined,
+  };
+  return data;
+};
+
 const getProductAvailability = async (productCode, codeType) => {
   const productURL = constructProductURL(productCode, codeType);
 
@@ -29,47 +56,13 @@ const getProductAvailability = async (productCode, codeType) => {
       if (isValidStoreData(storeData)) {
         const nearestStore = getNearestStore(storeData.stores);
 
-        const {
-          address, city, region, lat, lng
-        } = nearestStore;
-
-        const data = {
-          name: product.name,
-          image: product.image,
-          addToCartUrl: product.addToCartUrl,
-          product,
-          hours: formatStoreHours(nearestStore.detailedHours) || undefined,
-          nearestStore: `${city}, ${region}` || undefined,
-          nearestStoreMapUrl: constructNearestStoreMapUrl(address, lat, lng) || undefined,
-          price: product.salePrice || product.regularPrice,
-          url: product.url,
-        };
-
-        return data;
+        return buildDataProductAvailabilityResult(product, nearestStore);
       }
 
-      const data = {
-        name: product.name,
-        image: product.image,
-        addToCartUrl: product.addToCartUrl,
-        nearestStore: undefined,
-        nearestStoreMapUrl: undefined,
-        price: product.salePrice || product.regularPrice,
-        url: product.url,
-      };
-
-      return data;
+      return buildDataProductAvailabilityResult(product);
     }
     // No product found
-    const data = {
-      name: '',
-      image: '',
-      addToCartUrl: '',
-      nearestStore: undefined,
-      nearestStoreMapUrl: undefined,
-      price: undefined,
-    };
-    return data;
+    return buildDataProductAvailabilityResult();
   } catch (err) {
     return handleError(err);
   }
