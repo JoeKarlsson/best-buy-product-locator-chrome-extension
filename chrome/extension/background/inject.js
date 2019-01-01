@@ -51,4 +51,5 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
 
   // eslint-disable-next-line no-console
   loadScript('inject', tabId, () => console.log('load inject bundle success!'));
+  loadScript('badge', tabId, () => console.log('load inject bundle success!'));
 });

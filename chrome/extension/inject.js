@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import Root from '../../app/containers/Root';
 import getProductCode from './get-product-code';
+import { DIV_ID } from './constants/constants';
 // import css from './styles';
 
 window.addEventListener('load', () => {
@@ -16,7 +17,7 @@ window.addEventListener('load', () => {
   document.body.appendChild(script);
 
   const div = document.createElement('div');
-  div.id = 'bby-product-locator';
+  div.id = DIV_ID;
   document.body.appendChild(div);
   render(<Root isPopup={false} />, div);
 });
