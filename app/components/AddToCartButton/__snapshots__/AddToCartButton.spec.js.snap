@@ -10,7 +10,7 @@ exports[`AddToCartButton rendering initial state is rendered 1`] = `
     target="_blank"
   >
     <button
-      className="sc-bwzfXH gCYPFn"
+      className="sc-bwzfXH eixrEa"
     >
       Buy on BestBuy.com
     </button>
