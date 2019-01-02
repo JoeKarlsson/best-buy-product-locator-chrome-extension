@@ -39,6 +39,7 @@ const Button = styled.button`
   width: 100%;
   border: 0;
   height: 45px;
+  padding-top: 4px;
   line-height: normal;
   cursor: pointer;
   border-radius: 4px;

@@ -1,14 +1,13 @@
 import { COLORS } from '../../../app/constants/styles';
 
-chrome.storage.local.get('productCode', (productCode) => {
-  if (productCode) {
+chrome.runtime.onMessage.addListener((message) => {
+  if (message.productFound) {
     chrome.browserAction.setBadgeText({ text: '1' });
     chrome.browserAction.setBadgeBackgroundColor({
       color: COLORS.red,
     });
   }
-});
-
-chrome.browserAction.onClicked.addListener(() => {
-  chrome.browserAction.setBadgeText({ text: '' });
+  if (message.popupOpen) {
+    chrome.browserAction.setBadgeText({ text: '' });
+  }
 });

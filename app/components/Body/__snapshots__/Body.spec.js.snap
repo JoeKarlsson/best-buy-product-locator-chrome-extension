@@ -2,7 +2,7 @@
 
 exports[`Body rendering initial state is rendered 1`] = `
 <div
-  className="sc-gzVnrw diabQd"
+  className="sc-gzVnrw hFnMv"
 >
   <div
     className="sc-bdVaJa hCycLF"
@@ -144,7 +144,7 @@ exports[`Body rendering initial state is rendered 1`] = `
       target="_blank"
     >
       <button
-        className="sc-bZQynM bzXIaL"
+        className="sc-bZQynM heJsQE"
       >
         Buy on BestBuy.com
       </button>

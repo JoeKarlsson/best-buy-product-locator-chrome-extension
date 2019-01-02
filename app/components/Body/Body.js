@@ -29,7 +29,7 @@ const Container = styled.div`
         line-height: 19px;
         z-index: 9999;
         top: 0;
-        padding: 10px 20px 10px 20px;
+        padding: 10px 20px 12px 20px;
         animation-name: ${slideDown};
         animation-iteration-count: 1;
         animation-timing-function: ease-in;

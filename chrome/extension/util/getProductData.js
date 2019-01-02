@@ -20,7 +20,7 @@ const defaultNearestStore = {
   lng: undefined,
 };
 
-const buildDataProductAvailabilityResult = (product = null, nearestStore = defaultNearestStore) => {
+const buildDataProductDataResult = (product = null, nearestStore = defaultNearestStore) => {
   const {
     address, city, region, lat, lng
   } = nearestStore;
@@ -39,7 +39,7 @@ const buildDataProductAvailabilityResult = (product = null, nearestStore = defau
   return data;
 };
 
-const getProductAvailability = async (productCode, codeType) => {
+const getProductData = async (productCode, codeType) => {
   const productURL = constructProductURL(productCode, codeType);
 
   try {
@@ -56,16 +56,16 @@ const getProductAvailability = async (productCode, codeType) => {
       if (isValidStoreData(storeData)) {
         const nearestStore = getNearestStore(storeData.stores);
 
-        return buildDataProductAvailabilityResult(product, nearestStore);
+        return buildDataProductDataResult(product, nearestStore);
       }
 
-      return buildDataProductAvailabilityResult(product);
+      return buildDataProductDataResult(product);
     }
     // No product found
-    return buildDataProductAvailabilityResult();
+    return buildDataProductDataResult();
   } catch (err) {
     return handleError(err);
   }
 };
 
-export default getProductAvailability;
+export default getProductData;
