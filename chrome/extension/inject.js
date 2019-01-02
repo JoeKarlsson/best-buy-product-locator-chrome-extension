@@ -14,7 +14,6 @@ import { DIV_ID } from './constants/constants';
 window.addEventListener('load', async () => {
   const productCode = await getProductCode();
   const productData = await getProductData(productCode.code, productCode.type);
-
   if (productData) {
     chrome.runtime.sendMessage({ productFound: true });
     chrome.storage.local.set({

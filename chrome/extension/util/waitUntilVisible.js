@@ -1,4 +1,7 @@
-function waitUntilVisible(selector, attr, cb) {
+function waitUntilVisible(sel, cb) {
+  const attr = sel.charAt(0) === '.' ? 'class' : 'id';
+  const selector = sel.substring(1, sel.length);
+
   const interval = setInterval(() => {
     if (attr === 'id') {
       const element = document.getElementById(selector);

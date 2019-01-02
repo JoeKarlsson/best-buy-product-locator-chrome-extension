@@ -1,8 +1,9 @@
 import walkDOM from './walkDOM';
 import waitUntilVisible from './waitUntilVisible';
+import { WALMART_SELECTOR } from '../constants/constants';
 
 const getWalmartProduct = () => new Promise((resolve) => {
-  waitUntilVisible('Specification-container', 'class', (element) => {
+  waitUntilVisible(WALMART_SELECTOR, (element) => {
     walkDOM(element, (node) => {
       if (node.nodeType === 1) {
         if (node.innerHTML.trim() === 'Model') {

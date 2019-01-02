@@ -3,3 +3,7 @@ export const DEFAULT_ERROR_MESSAGE = 'Sorry, something went wrong. Please try ag
 export const DIV_ID = 'bby-product-locator';
 export const MODEL_NUMBER = 'modelNumber';
 export const UPC = 'upc';
+
+export const AMAZON_SELECTOR = '#prodDetails';
+export const TARGET_SELECTOR = '#tabContent-tab-Details';
+export const WALMART_SELECTOR = '.Specification-container';
