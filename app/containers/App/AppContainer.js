@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import App from './App';
 import ErrorBoundary from '../../components/shared/ErrorBoundary/ErrorBoundary';
-import getProductAvailability from '../../util/getProductAvailability';
-import handleError from '../../util/handleError';
 
 class AppContainer extends Component {
   constructor() {
     super();
 
     this.state = {
+      activeUrl: '',
       addToCartUrl: '',
       nearestStore: '',
       nearestStoreMapUrl: '',
@@ -17,54 +16,76 @@ class AppContainer extends Component {
       isLoading: true,
     };
 
-    this.getProductCode = this.getProductCode.bind(this);
+    this.getActiveUrl = this.getActiveUrl.bind(this);
     this.getProductData = this.getProductData.bind(this);
-    this.removeProductCode = this.removeProductCode.bind(this);
+    this.isValidPage = this.isValidPage.bind(this);
   }
 
   componentDidMount() {
-    return this.getProductCode();
-  }
-
-  getProductCode() {
-    chrome.storage.local.get(['productCode', 'codeType'], this.getProductData);
-  }
-
-  async getProductData({ productCode, codeType }) {
-    try {
-      const productData = await getProductAvailability(productCode, codeType);
-
-      const {
-        name,
-        image,
-        addToCartUrl,
-        hours,
-        nearestStore,
-        nearestStoreMapUrl,
-        price,
-        url,
-      } = productData;
-
-      this.setState({
-        name,
-        image,
-        addToCartUrl,
-        hours,
-        isLoading: false,
-        nearestStore,
-        nearestStoreMapUrl,
-        price,
-        url,
-      });
-
-      this.removeProductCode();
-    } catch (err) {
-      handleError(err);
+    const { isPopup } = this.props;
+    if (isPopup) {
+      chrome.runtime.sendMessage({ popupOpen: true });
+      this.getActiveUrl();
+    } else {
+      this.getProductData();
     }
   }
 
-  removeProductCode() {
-    chrome.storage.local.remove(['productCode', 'codeType']);
+  getActiveUrl() {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      const activeUrl = tabs[0].url;
+      this.setState(
+        {
+          activeUrl,
+        },
+        this.getProductData,
+      );
+    });
+  }
+
+  getProductData() {
+    chrome.storage.local.get(['productData', 'productUrl'], ({ productData, productUrl }) => {
+      if (productData && this.isValidPage(productUrl)) {
+        const {
+          name,
+          image,
+          addToCartUrl,
+          hours,
+          nearestStore,
+          nearestStoreMapUrl,
+          price,
+          url,
+        } = productData;
+
+        this.setState({
+          name,
+          image,
+          addToCartUrl,
+          hours,
+          isLoading: false,
+          nearestStore,
+          nearestStoreMapUrl,
+          price,
+          url,
+        });
+      } else {
+        this.setState({
+          isLoading: false,
+        });
+      }
+    });
+  }
+
+  isValidPage(productUrl) {
+    const { isPopup } = this.props;
+    const { activeUrl } = this.state;
+    if (isPopup && productUrl === activeUrl) {
+      return true;
+    }
+    if (!isPopup && productUrl === window.location.href) {
+      return true;
+    }
+    return false;
   }
 
   render() {

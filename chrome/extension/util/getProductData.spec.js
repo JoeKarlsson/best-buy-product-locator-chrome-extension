@@ -1,5 +1,5 @@
 import fetchMock from 'fetch-mock';
-import getProductAvailability from './getProductAvailability';
+import getProductData from './getProductData';
 import { constructProductURL, constructStoreURLNoProducts } from './urlFormatter';
 import * as storeFormatter from './storeFormatter';
 import mockProductData from './__mocks__/mockProductData.json';
@@ -7,7 +7,7 @@ import mockStoreData from './__mocks__/mockStoreData.json';
 
 jest.mock('./getGeoLocation');
 
-describe('getProductAvailability', () => {
+describe('getProductData', () => {
   beforeEach(() => {
     fetchMock.reset();
   });
@@ -35,7 +35,7 @@ describe('getProductAvailability', () => {
 
     storeFormatter.getNearestStore = jest.fn().mockReturnValue(mockStoreData.stores[0]);
 
-    const response = await getProductAvailability(modelNumber, codeType);
+    const response = await getProductData(modelNumber, codeType);
     const expectedResponse = {
       addToCartUrl: 'https://api.bestbuy.com/click/-/6200125/cart',
       nearestStore: 'Richfield, MN',

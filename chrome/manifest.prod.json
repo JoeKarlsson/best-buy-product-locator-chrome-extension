@@ -24,6 +24,7 @@
     "tabs",
     "storage",
     "geolocation",
+    "browserAction",
     "https://api.bestbuy.com/*",
     "https://img.bbystatic.com/*",
     "https://github.com/*",

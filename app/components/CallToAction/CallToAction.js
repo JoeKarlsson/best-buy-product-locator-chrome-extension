@@ -59,7 +59,7 @@ class CallToAction extends React.PureComponent {
       }`;
     }
     if (!hours.openNow) {
-      return `${pickItUp} as early as ${hours.tomorrow.openAmPm}`;
+      return `${pickItUp} as early as ${hours.tomorrow.openAmPm} tomorrow`;
     }
     return `${pickItUp} in 1 hour. Open today until ${hours.today.closeAmPm}`;
   };

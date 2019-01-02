@@ -52,6 +52,7 @@ Temporary Items
 .idea/
 node
 .vscode
+wallaby.js
 
 *.woff
 *.woff2

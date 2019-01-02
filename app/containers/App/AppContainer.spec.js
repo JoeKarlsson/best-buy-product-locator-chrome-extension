@@ -4,9 +4,12 @@ import renderer from 'react-test-renderer';
 import fetchMock from 'fetch-mock';
 import { shallow } from 'enzyme';
 import AppContainer from './AppContainer';
-import { constructProductURL, constructStoreURL } from '../../util/urlFormatter';
-import mockProductData from '../../util/__mocks__/mockProductData.json';
-import mockStoreData from '../../util/__mocks__/mockStoreData.json';
+import {
+  constructProductURL,
+  constructStoreURL,
+} from '../../../chrome/extension/util/urlFormatter';
+import mockProductData from '../../../chrome/extension/util/__mocks__/mockProductData.json';
+import mockStoreData from '../../../chrome/extension/util/__mocks__/mockStoreData.json';
 
 describe('AppContainer', () => {
   const props = {
@@ -49,14 +52,22 @@ describe('AppContainer', () => {
     fetchMock.reset();
   });
 
-  describe('getProductCode', () => {
+  describe('getActiveUrl', () => {
+    it('should be called on mount', () => {
+      const spy = jest.spyOn(AppContainer.prototype, 'getActiveUrl');
+      shallow(<AppContainer {...props} />);
+      expect(spy).toHaveBeenCalled();
+    });
+  });
+
+  describe('getProductData', () => {
     it('should be called on mount', () => {
       const url = 'https://api.bestbuy.com/v1/products(modelNumber=UN55NU7100FXZA)?apiKey=undefined&sort=inStoreAvailability.asc&show=inStoreAvailability,name,sku,regularPrice,salePrice,addToCartUrl,condition,image,url&format=json';
       const mockResponse = {
         test: 'data',
       };
       fetchMock.once(url, mockResponse);
-      const spy = jest.spyOn(AppContainer.prototype, 'getProductCode');
+      const spy = jest.spyOn(AppContainer.prototype, 'getProductData');
       shallow(<AppContainer {...props} />);
       expect(spy).toHaveBeenCalled();
     });
@@ -65,16 +76,6 @@ describe('AppContainer', () => {
       const spy = jest.spyOn(chrome.storage.local, 'get');
       shallow(<AppContainer {...props} />);
       expect(spy).toHaveBeenCalled();
-    });
-
-    it('should call getProductData with expected params when product code is found', () => {
-      const spy = jest.spyOn(AppContainer.prototype, 'getProductData');
-      shallow(<AppContainer {...props} />);
-      expect(spy).toHaveBeenCalled();
-      expect(spy).toHaveBeenCalledWith({
-        productCode: 'UN55NU7100FXZA',
-        codeType: 'modelNumber',
-      });
     });
   });
 

@@ -1,3 +1,4 @@
+import { DIV_ID } from './constants/constants';
 // import HumanBBYWoff from '../assets/fonts/HumanBBY-55Regular-Web.woff';
 // import HumanBBYWoff2 from '../assets/fonts/HumanBBY-55Regular-Web.woff2';
 // import HumanBBYEot from '../assets/fonts/HumanBBY-55Regular-Web.eot';
@@ -20,7 +21,7 @@ export default `
     src: url('${fontPath}') format('${ext}');
   }
 
-  #bby-product-locator {
+  #${DIV_ID} {
     font-family: "Human BBY Web" !important;
   }
 `;
