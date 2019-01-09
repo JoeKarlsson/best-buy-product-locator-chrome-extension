@@ -36,8 +36,6 @@
     "chrome",
     "extension",
     "react",
-    "redux",
-    "hot reload",
     "webpack"
   ],
   "author": "Joe Karlsson <joekarlsson1@gmail.com> & Eric Moore <moore.ericc@gmail.com >",
