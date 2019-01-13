@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import Root from '../../app/containers/Root';
 import getProductCode from './util/getProductCode';
+import getProductTitle from './util/getProductTitle';
 import getProductData from './util/getProductData';
 import { DIV_ID } from './constants/constants';
 // import css from './styles';
@@ -13,6 +14,7 @@ import { DIV_ID } from './constants/constants';
 
 window.addEventListener('load', async () => {
   const productCode = await getProductCode();
+  const title = getProductTitle('');
   const productData = await getProductData(productCode.code, productCode.type);
   if (productData) {
     chrome.runtime.sendMessage({ productFound: true });

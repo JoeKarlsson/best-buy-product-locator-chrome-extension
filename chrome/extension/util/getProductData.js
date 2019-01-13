@@ -1,5 +1,5 @@
 import {
-  constructProductURL,
+  constructProductCodeURL,
   constructStoreURLNoProducts,
   constructNearestStoreMapUrl,
 } from './urlFormatter';
@@ -40,7 +40,7 @@ const buildDataProductDataResult = (product = null, nearestStore = defaultNeares
 };
 
 const getProductData = async (productCode, codeType) => {
-  const productURL = constructProductURL(productCode, codeType);
+  const productURL = constructProductCodeURL(productCode, codeType);
 
   try {
     const productData = await api(productURL);

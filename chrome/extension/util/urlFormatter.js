@@ -1,6 +1,10 @@
 import { BASE_URL } from '../constants/constants';
 
-export const constructProductURL = (productCode, codeType) => `${BASE_URL}products(${codeType}=${productCode})?apiKey=${
+export const constructProductCodeURL = (productCode, codeType) => `${BASE_URL}products(${codeType}=${productCode})?apiKey=${
+  process.env.BBY_API_KEY
+}&sort=inStoreAvailability.asc&show=inStoreAvailability,name,sku,regularPrice,salePrice,addToCartUrl,condition,image,url&format=json`;
+
+export const constructProductSearchURL = searchTerms => `${BASE_URL}products((${searchTerms}))?apiKey=${
   process.env.BBY_API_KEY
 }&sort=inStoreAvailability.asc&show=inStoreAvailability,name,sku,regularPrice,salePrice,addToCartUrl,condition,image,url&format=json`;
 

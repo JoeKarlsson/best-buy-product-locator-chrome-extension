@@ -5,7 +5,7 @@ import fetchMock from 'fetch-mock';
 import { shallow } from 'enzyme';
 import AppContainer from './AppContainer';
 import {
-  constructProductURL,
+  constructProductCodeURL,
   constructStoreURL,
 } from '../../../chrome/extension/util/urlFormatter';
 import mockProductData from '../../../chrome/extension/util/__mocks__/mockProductData.json';
@@ -83,7 +83,7 @@ describe('AppContainer', () => {
     describe('initial state', () => {
       it('is rendered heathy state', () => {
         const productCode = 'UN55NU7100FXZA';
-        const productUrl = constructProductURL(productCode);
+        const productUrl = constructProductCodeURL(productCode);
         fetchMock.once(productUrl, mockProductData);
 
         const zipCode = '55126';

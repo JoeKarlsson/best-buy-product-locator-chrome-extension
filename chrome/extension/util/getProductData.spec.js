@@ -1,6 +1,6 @@
 import fetchMock from 'fetch-mock';
 import getProductData from './getProductData';
-import { constructProductURL, constructStoreURLNoProducts } from './urlFormatter';
+import { constructProductCodeURL, constructStoreURLNoProducts } from './urlFormatter';
 import * as storeFormatter from './storeFormatter';
 import mockProductData from './__mocks__/mockProductData.json';
 import mockStoreData from './__mocks__/mockStoreData.json';
@@ -22,7 +22,7 @@ describe('getProductData', () => {
 
     const modelNumber = 'UN55NU7100FXZA';
     const codeType = 'modelNumber';
-    const productUrl = constructProductURL(modelNumber, codeType);
+    const productUrl = constructProductCodeURL(modelNumber, codeType);
     fetchMock.once(productUrl, mockProductData);
 
     const distance = 15;

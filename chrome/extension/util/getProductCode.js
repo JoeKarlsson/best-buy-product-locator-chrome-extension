@@ -1,29 +1,21 @@
-import getAmazonProductCode from './getAmazonProductCode';
-import getTargetProductCode from './getTargetProductCode';
-import getWalmartProductCode from './getWalmartProductCode';
-import * as constants from '../constants/constants';
+import { PRODUCT_CODE_KEYWORDS } from '../constants/constants';
 
-const handleProduct = async () => {
-  let code = '';
-  let type = constants.MODEL_NUMBER;
-  switch (window.location.host) {
-    case 'www.amazon.com':
-      code = await getAmazonProductCode();
-      break;
-    case 'www.target.com':
-      code = await getTargetProductCode();
-      type = constants.UPC;
-      break;
-    case 'www.walmart.com':
-      code = await getWalmartProductCode();
-      break;
-    default:
-      break;
-  }
-  return {
-    code,
-    type,
-  };
+const getElementsWithText = (text) => {
+  const elements = document.querySelectorAll('*');
+  return Array.prototype.filter.call(elements, element => RegExp(text, 'i').test(element.textContent), );
 };
 
-export default handleProduct;
+const getProductCode = () => new Promise((resolve) => {
+  PRODUCT_CODE_KEYWORDS.forEach(({ text, type }) => {
+    const elements = getElementsWithText(text);
+    if (elements.length) {
+      const lastEl = elements[elements.length - 1];
+      resolve({
+        code: lastEl.nextElementSibling.textContent.trim(),
+        type,
+      });
+    }
+  });
+});
+
+export default getProductCode;

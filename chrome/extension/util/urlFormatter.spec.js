@@ -1,16 +1,16 @@
 import {
-  constructProductURL,
+  constructProductCodeURL,
   constructStoreURL,
   constructNearestStoreMapUrl,
 } from './urlFormatter';
 
 describe('urlFormatter', () => {
-  describe('constructProductURL', () => {
+  describe('constructProductCodeURL', () => {
     it('should return the Best Buy Product API URL', () => {
       const productCode = 'UN55NU7100FXZA';
       const codeType = 'modelNumber';
 
-      const result = constructProductURL(productCode, codeType);
+      const result = constructProductCodeURL(productCode, codeType);
 
       const expectedResult = 'https://api.bestbuy.com/v1/products(modelNumber=UN55NU7100FXZA)?apiKey=undefined&sort=inStoreAvailability.asc&show=inStoreAvailability,name,sku,regularPrice,salePrice,addToCartUrl,condition,image,url&format=json';
       expect(result).toBe(expectedResult);
