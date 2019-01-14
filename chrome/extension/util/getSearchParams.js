@@ -5,6 +5,7 @@
 export default function getSearchParams(searchTerms) {
   if (searchTerms && typeof searchTerms === 'string') {
     const unsafeChars = new RegExp(
+      // eslint-disable-next-line no-useless-escape
       /([\/\,\!\\\^\$\{\}\[\]\(\)\*\+\?\|\<\>\&\#\%\=\;\:\@\"\`])|(\s-\s)/,
       'gi',
     );
