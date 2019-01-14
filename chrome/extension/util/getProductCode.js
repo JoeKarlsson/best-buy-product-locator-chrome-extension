@@ -1,20 +1,37 @@
-import { PRODUCT_CODE_KEYWORDS } from '../constants/constants';
+import waitUntilVisible from './waitUntilVisible';
+import walkDOM from './walkDOM';
+import { CURRENT_SITE } from '../constants/constants';
 
-const getElementsWithText = (text) => {
-  const elements = document.querySelectorAll('*');
-  return Array.prototype.filter.call(elements, element => RegExp(text, 'i').test(element.textContent), );
+const findCode = (node, cb) => {
+  const codeRegex = /^[A-Za-z-0-9]+$/;
+  if (codeRegex.test(node.textContent.trim())) {
+    cb(node.textContent.trim());
+    return;
+  }
+  findCode(node.nextSibling, cb);
 };
 
 const getProductCode = () => new Promise((resolve) => {
-  PRODUCT_CODE_KEYWORDS.forEach(({ text, type }) => {
-    const elements = getElementsWithText(text);
-    if (elements.length) {
-      const lastEl = elements[elements.length - 1];
-      resolve({
-        code: lastEl.nextElementSibling.textContent.trim(),
-        type,
-      });
-    }
+  // wait until specification container is visible
+  waitUntilVisible(CURRENT_SITE.codeSelector, (element) => {
+    // pass specification container to walkDOM
+    walkDOM(element, (node) => {
+      if (node.nodeType === 1) {
+        if (node.innerText === CURRENT_SITE.codeText) {
+          // find actual code in close siblings
+          findCode(node.nextSibling, (code) => {
+            resolve({
+              code,
+              type: CURRENT_SITE.codeType,
+            });
+          });
+        }
+      }
+    });
+
+    setTimeout(() => {
+      resolve({});
+    }, 3000);
   });
 });
 

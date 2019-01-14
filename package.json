@@ -36,8 +36,6 @@
     "chrome",
     "extension",
     "react",
-    "redux",
-    "hot reload",
     "webpack"
   ],
   "author": "Joe Karlsson <joekarlsson1@gmail.com> & Eric Moore <moore.ericc@gmail.com >",
@@ -96,8 +94,8 @@
   "dependencies": {
     "bluebird": "^3.3.4",
     "prop-types": "^15.6.2",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
     "styled-components": "^3.4.5"
   }
 }

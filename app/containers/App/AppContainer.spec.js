@@ -1,4 +1,3 @@
-import 'jsdom-global/register';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import fetchMock from 'fetch-mock';
@@ -52,9 +51,9 @@ describe('AppContainer', () => {
     fetchMock.reset();
   });
 
-  describe('getActiveUrl', () => {
+  describe('getActiveTab', () => {
     it('should be called on mount', () => {
-      const spy = jest.spyOn(AppContainer.prototype, 'getActiveUrl');
+      const spy = jest.spyOn(AppContainer.prototype, 'getActiveTab');
       shallow(<AppContainer {...props} />);
       expect(spy).toHaveBeenCalled();
     });

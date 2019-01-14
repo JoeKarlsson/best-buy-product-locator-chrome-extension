@@ -103,7 +103,11 @@ const Popup = (props) => {
         <CloseButton isPopup={isPopup} />
       </TopBar>
       <Body>
-        <ProductImage alt={name} src={image} />
+        {image && (
+          <a href={url} target="_blank" rel="noopener noreferrer">
+            <ProductImage alt={name} src={image} />
+          </a>
+        )}
         <PopupHeader href={url} target="_blank" rel="noopener noreferrer">
           {name}
         </PopupHeader>

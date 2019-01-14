@@ -4,7 +4,7 @@ import Root from '../../app/containers/Root';
 import getProductCode from './util/getProductCode';
 import getProductTitle from './util/getProductTitle';
 import getProductData from './util/getProductData';
-import { DIV_ID } from './constants/constants';
+import { DIV_ID, STORAGE_PREFIX } from './constants/constants';
 // import css from './styles';
 
 // const style = document.createElement('style');
@@ -13,19 +13,24 @@ import { DIV_ID } from './constants/constants';
 // document.head.appendChild(style);
 
 window.addEventListener('load', async () => {
+  const productTitle = getProductTitle();
   const productCode = await getProductCode();
-  const title = getProductTitle('');
-  const productData = await getProductData(productCode.code, productCode.type);
+  const productData = await getProductData(productCode.code, productCode.type, productTitle);
   if (productData) {
-    chrome.runtime.sendMessage({ productFound: true });
-    chrome.storage.local.set({
-      productData,
-      productUrl: window.location.href,
-    });
+    chrome.runtime.sendMessage({ productFound: true, requestTabId: true }, (tabId) => {
+      chrome.storage.local.set({
+        [`${STORAGE_PREFIX}active`]: tabId,
+        [`${STORAGE_PREFIX}${tabId}`]: {
+          productData,
+          productUrl: window.location.href,
+          tabId,
+        },
+      });
 
-    const div = document.createElement('div');
-    div.id = DIV_ID;
-    document.body.appendChild(div);
-    render(<Root isPopup={false} />, div);
+      const div = document.createElement('div');
+      div.id = DIV_ID;
+      document.body.appendChild(div);
+      render(<Root isPopup={false} />, div);
+    });
   }
 });

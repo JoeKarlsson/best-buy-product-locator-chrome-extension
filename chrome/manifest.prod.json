@@ -13,18 +13,22 @@
     "48": "img/bby-icon-48.png",
     "128": "img/bby-icon-128.png"
   },
-  "web_accessible_resources": ["inject.html", "fonts/*.*", "*.eot", "*.svg", "*.woff", "*.woff2"],
+  "web_accessible_resources": [
+    "inject.html",
+    "fonts/*.*",
+    "*.eot",
+    "*.svg",
+    "*.woff",
+    "*.woff2"
+  ],
   "background": {
     "page": "background.html"
   },
   "permissions": [
-    "webview",
-    "webRequest",
     "contextMenus",
     "tabs",
     "storage",
     "geolocation",
-    "browserAction",
     "https://api.bestbuy.com/*",
     "https://img.bbystatic.com/*",
     "https://github.com/*",

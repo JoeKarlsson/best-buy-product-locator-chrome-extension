@@ -56,7 +56,7 @@ const Error = () => (
     </TopBar>
     <Body>
       <ErrorHeader>
-        We are sorry that we could not locate that product at this time. Please try again later
+        We are sorry that we could not locate this product at this time. Please try again later
       </ErrorHeader>
       <ButtonContainer target="_blank" rel="noopener noreferrer" href="https://www.bestbuy.com/">
         <Button>Shop BestBuy.com</Button>

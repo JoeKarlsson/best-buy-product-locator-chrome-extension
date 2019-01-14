@@ -1,55 +1,36 @@
-function isInjected(tabId) {
-  return chrome.tabs.executeScriptAsync(tabId, {
-    code: `var injected = window.reactExampleInjected;
-      window.reactExampleInjected = true;
-      injected;`,
-    runAt: 'document_start',
-  });
-}
+import { URL_WHITELIST } from '../constants/constants';
 
-function loadScript(name, tabId, cb) {
+const loadScript = async (name, tabId) => {
   if (process.env.NODE_ENV === 'production') {
-    chrome.tabs.executeScript(tabId, { file: `/js/${name}.bundle.js`, runAt: 'document_end' }, cb);
+    chrome.tabs.executeScript(tabId, { file: `/js/${name}.bundle.js`, runAt: 'document_end' });
   } else {
-    // dev: async fetch bundle
-    fetch(`http://localhost:3000/js/${name}.bundle.js`)
-      .then(res => res.text())
-      .then((fetchRes) => {
-        // Load redux-devtools-extension inject bundle,
-        // because inject script and page is in a different context
-        const request = new XMLHttpRequest();
-        request.open(
-          'GET',
-          `chrome-extension://${chrome.runtime.id}/js/redux-devtools-extension.js`,
-        ); // sync
-        request.send();
-        request.onload = () => {
-          if (request.readyState === XMLHttpRequest.DONE && request.status === 200) {
-            chrome.tabs.executeScript(tabId, {
-              code: request.responseText,
-              runAt: 'document_start',
-            });
-          }
-        };
-        chrome.tabs.executeScript(tabId, { code: fetchRes, runAt: 'document_end' }, cb);
-      });
+    const response = await fetch(`http://localhost:3000/js/${name}.bundle.js`);
+    const file = await response.text();
+    chrome.tabs.executeScript(tabId, { code: file, runAt: 'document_end' });
   }
-}
+};
 
-// this would be our whitelist
-const arrowURLs = [
-  '^https://www.amazon\\.com',
-  '^https://www.target\\.com',
-  '^https://www.walmart\\.com',
-];
+const isInjected = tabId => chrome.tabs.executeScriptAsync(tabId, {
+  code: `var injected = window.bbyProductLocator;
+      window.bbyProductLocator = true;
+      injected;`,
+  runAt: 'document_start',
+});
+
+const isValidPageLoad = (changeInfo, tab) => {
+  if (
+    changeInfo.status !== 'loading'
+    || !tab.url.match(URL_WHITELIST.join('|'))
+    || chrome.runtime.lastError
+  ) {
+    return false;
+  }
+  return true;
+};
 
 chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
-  if (changeInfo.status !== 'loading' || !tab.url.match(arrowURLs.join('|'))) return;
-
-  const result = await isInjected(tabId);
-  if (chrome.runtime.lastError || result[0]) return;
-
-  // eslint-disable-next-line no-console
-  loadScript('inject', tabId, () => console.log('load inject bundle success!'));
-  loadScript('badge', tabId, () => console.log('load inject bundle success!'));
+  const injected = await isInjected(tabId);
+  if (isValidPageLoad(changeInfo, tab) && !injected[0]) {
+    loadScript('inject', tabId);
+  }
 });
