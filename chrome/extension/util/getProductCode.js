@@ -1,29 +1,38 @@
-import getAmazonProductCode from './getAmazonProductCode';
-import getTargetProductCode from './getTargetProductCode';
-import getWalmartProductCode from './getWalmartProductCode';
-import * as constants from '../constants/constants';
+import waitUntilVisible from './waitUntilVisible';
+import walkDOM from './walkDOM';
+import { CURRENT_SITE } from '../constants/constants';
 
-const handleProduct = async () => {
-  let code = '';
-  let type = constants.MODEL_NUMBER;
-  switch (window.location.host) {
-    case 'www.amazon.com':
-      code = await getAmazonProductCode();
-      break;
-    case 'www.target.com':
-      code = await getTargetProductCode();
-      type = constants.UPC;
-      break;
-    case 'www.walmart.com':
-      code = await getWalmartProductCode();
-      break;
-    default:
-      break;
+const findCode = (node, cb) => {
+  const codeRegex = /^[A-Za-z-0-9]+$/;
+  if (codeRegex.test(node.textContent.trim())) {
+    cb(node.textContent.trim());
+    return;
   }
-  return {
-    code,
-    type,
-  };
+  findCode(node.nextSibling, cb);
 };
 
-export default handleProduct;
+const getProductCode = () => new Promise((resolve) => {
+  // wait until specification container is visible
+  waitUntilVisible(CURRENT_SITE.codeSelector, (element) => {
+    // pass specification container to walkDOM
+    walkDOM(element, (node) => {
+      if (node.nodeType === 1) {
+        if (node.innerText === CURRENT_SITE.codeText) {
+          // find actual code in close siblings
+          findCode(node.nextSibling, (code) => {
+            resolve({
+              code,
+              type: CURRENT_SITE.codeType,
+            });
+          });
+        }
+      }
+    });
+
+    setTimeout(() => {
+      resolve({});
+    }, 3000);
+  });
+});
+
+export default getProductCode;

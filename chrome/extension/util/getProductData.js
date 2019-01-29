@@ -1,8 +1,10 @@
 import {
-  constructProductURL,
+  constructProductCodeURL,
+  constructProductSearchURL,
   constructStoreURLNoProducts,
   constructNearestStoreMapUrl,
 } from './urlFormatter';
+import getSearchParams from './getSearchParams';
 import { getNearestStore, formatStoreHours } from './storeFormatter';
 import api from './api';
 import getGeoLocation from './getGeoLocation';
@@ -12,35 +14,54 @@ const isValidProductData = productData => productData.products && productData.pr
 
 const isValidStoreData = storeData => storeData.stores && storeData.stores.length > 0;
 
+const defaultProduct = {
+  name: undefined,
+  image: undefined,
+  addToCartUrl: undefined,
+  salePrice: undefined,
+  regularPrice: undefined,
+  url: undefined,
+};
+
 const defaultNearestStore = {
   address: undefined,
   city: undefined,
+  detailedHours: undefined,
   region: undefined,
   lat: undefined,
   lng: undefined,
 };
 
-const buildDataProductDataResult = (product = null, nearestStore = defaultNearestStore) => {
+const buildDataProductDataResult = (
+  product = defaultProduct,
+  nearestStore = defaultNearestStore,
+) => {
   const {
-    address, city, region, lat, lng
+    address, city, detailedHours, region, lat, lng
   } = nearestStore;
 
   const data = {
-    name: product.name || '',
+    name: product.name,
     image: product.image,
-    addToCartUrl: product.addToCartUrl || '',
+    addToCartUrl: product.addToCartUrl,
     product,
-    hours: formatStoreHours(nearestStore.detailedHours) || undefined,
-    nearestStore: `${city}, ${region}` || undefined,
-    nearestStoreMapUrl: constructNearestStoreMapUrl(address, lat, lng) || undefined,
-    price: product.salePrice || product.regularPrice || '',
-    url: product.url || undefined,
+    hours: detailedHours ? formatStoreHours(detailedHours) : undefined,
+    nearestStore: city ? `${city}, ${region}` : undefined,
+    nearestStoreMapUrl: address ? constructNearestStoreMapUrl(address, lat, lng) : undefined,
+    price: product.salePrice || product.regularPrice,
+    url: product.url,
   };
   return data;
 };
 
-const getProductData = async (productCode, codeType) => {
-  const productURL = constructProductURL(productCode, codeType);
+const getProductData = async (code, type, title) => {
+  let productURL;
+  if (code) {
+    productURL = constructProductCodeURL(code, type);
+  } else if (title) {
+    const params = getSearchParams(title);
+    productURL = constructProductSearchURL(params);
+  }
 
   try {
     const productData = await api(productURL);
@@ -58,11 +79,10 @@ const getProductData = async (productCode, codeType) => {
 
         return buildDataProductDataResult(product, nearestStore);
       }
-
       return buildDataProductDataResult(product);
     }
     // No product found
-    return buildDataProductDataResult();
+    return;
   } catch (err) {
     return handleError(err);
   }

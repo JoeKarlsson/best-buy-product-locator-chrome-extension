@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+import 'jsdom-global/register';
 import {
   shallow, render, mount, configure
 } from 'enzyme';

@@ -26,39 +26,41 @@ class AppContainer extends Component {
 
   getProductData() {
     const { tabId } = this.state;
-    chrome.storage.local.get([`${STORAGE_PREFIX}${tabId}`], (tabData) => {
-      if (Object.keys(tabData).length > 0) {
-        const { productData } = tabData[`${STORAGE_PREFIX}${tabId}`];
-        if (productData) {
-          const {
-            name,
-            image,
-            addToCartUrl,
-            hours,
-            nearestStore,
-            nearestStoreMapUrl,
-            price,
-            url,
-          } = productData;
+    if (tabId) {
+      chrome.storage.local.get([`${STORAGE_PREFIX}${tabId}`], (tabData) => {
+        if (Object.keys(tabData).length > 0) {
+          const { productData } = tabData[`${STORAGE_PREFIX}${tabId}`];
+          if (productData) {
+            const {
+              name,
+              image,
+              addToCartUrl,
+              hours,
+              nearestStore,
+              nearestStoreMapUrl,
+              price,
+              url,
+            } = productData;
 
-          this.setState({
-            name,
-            image,
-            addToCartUrl,
-            hours,
-            isLoading: false,
-            nearestStore,
-            nearestStoreMapUrl,
-            price,
-            url,
-          });
-        } else {
-          this.setState({
-            isLoading: false,
-          });
+            this.setState({
+              name,
+              image,
+              addToCartUrl,
+              hours,
+              isLoading: false,
+              nearestStore,
+              nearestStoreMapUrl,
+              price,
+              url,
+            });
+          } else {
+            this.setState({
+              isLoading: false,
+            });
+          }
         }
-      }
-    });
+      });
+    }
   }
 
   getActiveTab() {

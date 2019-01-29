@@ -3,6 +3,7 @@ import { COLORS } from '../../../app/constants/styles';
 
 export function updateBadgeSeen(tabId) {
   chrome.storage.local.get([`${STORAGE_PREFIX}${tabId}`], (tabData) => {
+    console.log(tabData);
     if (Object.keys(tabData).length > 0 && !tabData[`${STORAGE_PREFIX}${tabId}`].badgeSeen) {
       const data = tabData[`${STORAGE_PREFIX}${tabId}`];
       chrome.storage.local.set({

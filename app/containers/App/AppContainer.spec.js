@@ -1,11 +1,10 @@
-import 'jsdom-global/register';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import fetchMock from 'fetch-mock';
 import { shallow } from 'enzyme';
 import AppContainer from './AppContainer';
 import {
-  constructProductURL,
+  constructProductCodeURL,
   constructStoreURL,
 } from '../../../chrome/extension/util/urlFormatter';
 import mockProductData from '../../../chrome/extension/util/__mocks__/mockProductData.json';
@@ -52,9 +51,9 @@ describe('AppContainer', () => {
     fetchMock.reset();
   });
 
-  describe('getActiveUrl', () => {
+  describe('getActiveTab', () => {
     it('should be called on mount', () => {
-      const spy = jest.spyOn(AppContainer.prototype, 'getActiveUrl');
+      const spy = jest.spyOn(AppContainer.prototype, 'getActiveTab');
       shallow(<AppContainer {...props} />);
       expect(spy).toHaveBeenCalled();
     });
@@ -83,7 +82,7 @@ describe('AppContainer', () => {
     describe('initial state', () => {
       it('is rendered heathy state', () => {
         const productCode = 'UN55NU7100FXZA';
-        const productUrl = constructProductURL(productCode);
+        const productUrl = constructProductCodeURL(productCode);
         fetchMock.once(productUrl, mockProductData);
 
         const zipCode = '55126';
